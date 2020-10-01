@@ -412,14 +412,26 @@ in {
     # services.xsuspender
 
 
-    # TODO xdg management
-    # xdg. ...
+    # XDG 
+    xdg = {
+      enable = true;
+      configFile = {
+        nvim = {
+          source = ./dotfiles/vim;
+          target = "nvim";
+          recursive = true;
+          onChange = "nvim -c +PlugInstall +qall --headless";
+        };
+
+        nvim_theme = {
+          target = "nvim/colors/ansible-theme.vim";
+          source  = ./dotfiles/vim-theme;
+        };
+      };
+    };
 
 
-    # TODO xsession management
-    #
-    #xdg.configHome = ~/.config;
-    #xdg.configFile."i3/config".source = ./user-configs/i3/config;
+    # Xresources
     xresources.extraConfig = builtins.readFile (
       pkgs.fetchFromGitHub {
         owner = "solarized";
