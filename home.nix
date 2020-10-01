@@ -243,10 +243,13 @@ in {
     # TODO ssh client config
 
     # TODO look at starship theme for zsh
-    # programs.starship = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    # };
+    programs.starship = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        character.symbol = "▸";
+      };
+    };
 
     programs.tmux = {
       enable = true;
