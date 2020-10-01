@@ -29,6 +29,12 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.packages = [
+    pkgs.htop
+    pkgs.nitrogen
+    pkgs.thunderbird
+  ];
+
   # Import common options
   #imports = [ ./common.nix ];
 
@@ -297,6 +303,41 @@ in {
           size =  10;
         };
 
+        colors = {
+          primary = {
+
+            background = "0x${colors.base00}";
+            foreground = "0x${colors.base05}";
+          };
+          cursor = {
+            text = "0x${colors.base00}";
+            cursor = "0x${colors.base0D}";
+          };
+          normal = {
+            black =   "0x${colors.base00}";
+            red =     "0x${colors.base08}";
+            green =   "0x${colors.base0B}";
+            yellow =  "0x${colors.base0A}";
+            blue =    "0x${colors.base0D}";
+            magenta = "0x${colors.base0E}";
+            cyan =    "0x${colors.base0C}";
+            white =   "0x${colors.base05}";
+          };
+
+          bright = {
+            black =   "0x${colors.base03}";
+            red =     "0x${colors.base09}";
+            green =   "0x${colors.base01}";
+            yellow =  "0x${colors.base02}";
+            blue =    "0x${colors.base04}";
+            magenta = "0x${colors.base06}";
+            cyan =    "0x${colors.base0F}";
+            white =   "0x${colors.base07}";
+          };
+
+          # indexed_colors = { TODO };
+        };
+
         key_bindings = [
           {
             key = "K";
@@ -376,27 +417,39 @@ in {
     #xdg.configHome = ~/.config;
     #xdg.configFile."i3/config".source = ./user-configs/i3/config;
     xresources.extraConfig = builtins.readFile (
-        pkgs.fetchFromGitHub {
-          owner = "solarized";
-          repo = "xresources";
-          rev = "025ceddbddf55f2eb4ab40b05889148aab9699fc";
-          sha256 = "0lxv37gmh38y9d3l8nbnsm1mskcv10g3i83j0kac0a2qmypv1k9f";
-        } + "/Xresources.dark"
-        );
-      
+      pkgs.fetchFromGitHub {
+        owner = "solarized";
+        repo = "xresources";
+        rev = "025ceddbddf55f2eb4ab40b05889148aab9699fc";
+        sha256 = "0lxv37gmh38y9d3l8nbnsm1mskcv10g3i83j0kac0a2qmypv1k9f";
+      } + "/Xresources.dark"
+      );
 
       xsession.windowManager.i3 = {
         enable = true;
         package = pkgs.i3-gaps;
         config = {
+          startup = [
+            {
+              command = "picom";
+              always = false;
+              notification = false;
+            }
+
+            {
+              command = "nitrogen --restore";
+              always = true;
+              notification = false;
+            }
 
 
+            {
+              command = "nm-applet";
+              always = true;
+              notification = false;
+            }
 
-
-
-# class                   border  backgr. text     indicator
-# client.urgent           $red1   $red    $magenta $red
-
+          ];
           colors =
             {
               background = "#${colors.base00}";
@@ -415,14 +468,6 @@ in {
                 indicator = "#${colors.base00}";
                 text = "#${colors.base00}";
               };
-
-              # placeholder =  {
-              #   background = "#${colors.base03}";
-              #   border = "#${colors.base03}";
-              #   childBorder = "#${colors.base00}";
-              #   indicator = "#${colors.base00}";
-              #   text = "#${colors.base00}";
-              # };
 
               unfocused = {
                 background = "#${colors.base00}";
