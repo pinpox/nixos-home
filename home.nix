@@ -137,9 +137,13 @@ in {
 
       programs.chromium = {
         enable = true;
-        # extensions = [ TODO ]
+        extensions = [
+          "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+          "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+          "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
+          "lbhnkgjaoonakhladmcjkemebepeohkn" # Vim Tips New Tab
+        ];
       };
-
 
       programs.firefox = {
         enable = true;
