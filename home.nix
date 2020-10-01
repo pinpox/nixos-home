@@ -45,33 +45,43 @@ in {
     accounts.email.accounts = {
       pablo_tools = {
         address = "mail@pablo.tools";
+        realName = "Pablo Ovelleiro Corral";
         primary = true;
-      # gpg = {
-      #   # key = "";
-      #   signByDefault = true;
-      # };
-      # imap.host = "posteo.de";
-      # mbsync = {
-      #   enable = true;
-      #   create = "maildir";
-      # };
-      # msmtp.enable = true;
-      # notmuch.enable = true;
-      # primary = true;
-      # realName = "Ben Justus Bals";
-      # signature = {
-      #   text = ''
-      #     mfg pablo
-      #   '';
-      #   showSignature = "append";
-      # };
-      # passwordCommand = "mail-password";
-      # smtp = {
-      #   host = "";
-      # };
-      # userName = "";
+        gpg = {
+          key = "D03B218CAE771F77D7F920D9823A6154426408D3";
+          signByDefault = true;
+        };
+        mbsync.enable = false;
+        msmtp.enable = false;
+        notmuch.enable = false;
+
+        folders = {
+          # TODO
+          drafts  = "";
+        };
+
+        signature = {
+          text = ''
+            Pablo Ovelleiro Corral
+
+            Web:     https://pablo.tools
+            XMPP:    pablo1@mailbox.org
+            GPG-Key: https://pablo.tools/gpg-key
+          '';
+          showSignature = "append";
+        };
+
+        userName = "pablo1@mailbox.org";
+        passwordCommand = "pass mailbox.org/pablo1@mailbox.org";
+        imap = {
+          host = "imap.mailbox.org";
+        };
+        smtp = {
+          host = "smtp.mailbox.org";
+          port = 465;
+        };
+      };
     };
-  };
 
 
     # accounts.email.accounts.<name>.gpg
@@ -176,12 +186,20 @@ in {
         userName = "Pablo Ovelleiro Corral";
       };
 
-      # programs.go = {TODO}
+      programs.go = {
+        enable = true;
+        packages = {
+          "golang.org/x/text" = builtins.fetchGit "https://go.googlesource.com/text";
+          "golang.org/x/time" = builtins.fetchGit "https://go.googlesource.com/time";
+        };
+
+        goPath = ".go";
+
+      };
       # programs.gpg = {TODO}
+
       programs.htop = {
         enable = true;
-        # enableMouse = true;
-        # showCpuFrequency = true;
         treeView = true;
       };
 
@@ -244,13 +262,13 @@ in {
     # TODO ssh client config
 
     # TODO look at starship theme for zsh
-    programs.starship = {
-      enable = true;
-      enableZshIntegration = true;
-      settings = {
-        character.symbol = "▸";
-      };
-    };
+    # programs.starship = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   settings = {
+    #     character.symbol = "▸";
+    #   };
+    # };
 
     programs.tmux = {
       enable = true;
@@ -291,6 +309,9 @@ programs.zsh = {
   enableCompletion = true;
   autocd = true;
   dotDir = ".config/zsh";
+  sessionVariables = {
+    PURE_PROMPT_SYMBOL = "▸";
+  };
 
   history = {
     expireDuplicatesFirst = true;
@@ -328,19 +349,19 @@ programs.zsh = {
     };
 
 
-  plugins = [
-    {
-      name = "zsh-abbrev-alias";
-      file = "abbrev-alias.plugin.zsh";
-      src = builtins.fetchGit { url = https://github.com/momo-lab/zsh-abbrev-alias; };
-    }
-    {
-      name = "zsh-async";
-      file = "async.zsh";
-      src = builtins.fetchGit { url = https://github.com/mafredri/zsh-async; };
-    }
-    {
-      name = "pure";
+    plugins = [
+      {
+        name = "zsh-abbrev-alias";
+        file = "abbrev-alias.plugin.zsh";
+        src = builtins.fetchGit { url = https://github.com/momo-lab/zsh-abbrev-alias; };
+      }
+      {
+        name = "zsh-async";
+        file = "async.zsh";
+        src = builtins.fetchGit { url = https://github.com/mafredri/zsh-async; };
+      }
+      {
+        name = "pure";
       # file = ".plugin.zsh";
       src = builtins.fetchGit { url = https://github.com/sindresorhus/pure; };
     }
