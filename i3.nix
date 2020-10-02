@@ -17,37 +17,37 @@ in
             command = "picom";
             always = false;
             notification = false;
-            }
+          }
 
-            {
+          {
             command = "nitrogen --restore";
             always = true;
             notification = false;
-            }
-            {
+          }
+          {
             command = "nm-applet";
             always = true;
             notification = false;
-            }
+          }
 
-            ];
-            colors =
-            {
+        ];
+        colors =
+          {
             background = "#${vars.colors.base00}";
             focused = {
-            background = "#${vars.colors.base0D}";
-            border = "#${vars.colors.base0D}";
-            childBorder = "#${vars.colors.base00}";
-            indicator = "#${vars.colors.base0D}";
-            text = "#${vars.colors.base00}";
+              background = "#${vars.colors.base0D}";
+              border = "#${vars.colors.base0D}";
+              childBorder = "#${vars.colors.base00}";
+              indicator = "#${vars.colors.base0D}";
+              text = "#${vars.colors.base00}";
             };
 
             focusedInactive = {
-            background = "#${vars.colors.base03}";
-            border = "#${vars.colors.base03}";
-            childBorder = "#${vars.colors.base00}";
-            indicator = "#${vars.colors.base00}";
-            text = "#${vars.colors.base00}";
+              background = "#${vars.colors.base03}";
+              border = "#${vars.colors.base03}";
+              childBorder = "#${vars.colors.base00}";
+              indicator = "#${vars.colors.base00}";
+              text = "#${vars.colors.base00}";
             };
 
             unfocused = {
@@ -221,8 +221,86 @@ in
 
     services.dunst = {
       enable = true;
-      # iconTheme
-      # settings = {}
+      iconTheme = {
+        {
+          name = "hicolor";
+          package = (build of hicolor-icon-theme-0.17);
+          size = "32x32";
+        };
+      };
+
+      settings = {
+
+        global = {
+          # icon_path = "";
+          monitor = 0;
+          follow = "mouse";
+          geometry = "300x5-30+50";
+          indicate_hidden = true;
+          shrink = "no";
+          transparency = 0;
+          notification_height = 0;
+          separator_height = 2;
+          padding = 8;
+          horizontal_padding = 8;
+          frame_width = 3;
+          frame_colors = "#${vars.colors.base0D}";
+          separator_color = "frame";
+          sort = "yes";
+          frame_color = "#eceff1";
+          font = "${vars.font} 8";
+          line_height = 0;
+          markup = "full";
+          # format = "<b>%s</b>\n%b"; TODO
+          format = "<b>%s</b>\\n%b";
+          alignment = "left";
+          show_age_threshold = 60;
+          word_wrap = "yes";
+          ellipsize = "middle";
+          ignore_newline = "no";
+          stack_duplicates = "yes";
+          hide_duplicate_count = "false";
+          show_indicators = "no";
+          icon_position = "left";
+          max_icon_size = 32;
+          sticky_history = "yes";
+          history_length = 5;
+          browser = "${pkgs.chromium}/bin/chromium";
+          always_run_script = true;
+          title = "Dunst";
+          class = "Dunst";
+          startup_notification = false;
+        };
+
+        shortcuts = {
+          close = "ctrl+space";
+          close_all = "ctrl+shift+space";
+          history = "ctrl+grave";
+          context = "ctrl+shift+period";
+        };
+
+        urgency_low = {
+          background = "#${vars.colors.base00}";
+          foreground = "#${vars.colors.base05}";
+          frame_colors = "#${vars.colors.base05}";
+          timeout = 5;
+        };
+
+        urgency_normal = {
+          background = "#${vars.colors.base00}";
+          foreground = "#${vars.colors.base05}";
+          frame_colors = "#${vars.colors.base0D}";
+          timeout = 10;
+        };
+
+        urgency_critical = {
+          background = "#${vars.colors.base08}";
+          foreground = "#${vars.colors.base00}";
+          frame_colors = "#${vars.colors.base09}";
+          timeout = 15;
+        };
+
+      };
     };
 
     services.gnome-keyring = {
