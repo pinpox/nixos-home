@@ -19,6 +19,11 @@ in
             notification = false;
           }
           {
+            command = ''cbatticon --icon-type standard --low-level 20 --critical-level 10 --command-critical-level "notify-send -i battery -u critical 'battery low'" '';
+            always = false;
+            notification = false;
+          }
+          {
             command = "xfce4-volumed-pulse &";
             always = false;
             notification = false;
@@ -133,6 +138,14 @@ in
 
       };
     };
+    # services.cbatticon = {
+    #   enable = true;
+    #   # commandCriticalLevel = ''notify-send "battery critical!"'';
+    #   criticalLevelPercent = 10;
+    #   hideNotification = false;
+    #   iconType = "standard"; # notification, symbolic
+    #   lowLevelPercent = 20;
+    # };
 
 
     services.xscreensaver = {

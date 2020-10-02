@@ -16,6 +16,7 @@
   home.packages = [
     pkgs.lxappearance
     pkgs.papirus-icon-theme
+    pkgs.networkmanagerapplet
     pkgs.xfce.thunar
     pkgs.xfce.thunar-volman
     pkgs.xfce.thunar-archive-plugin
@@ -27,6 +28,7 @@
     pkgs.xorg.xrandr
     pkgs.arandr
     pkgs.spotify
+    pkgs.cbatticon
     pkgs.vlc
     pkgs.libnotify
     pkgs.xfce.xfce4-volumed-pulse
