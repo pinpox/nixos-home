@@ -25,6 +25,7 @@
     pkgs.spotify
     pkgs.vlc
     pkgs.libnotify
+    pkgs.pasystray
   ];
 
   # Imports
