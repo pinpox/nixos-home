@@ -207,6 +207,7 @@ in
         };
       };
     };
+  };
 
     # TODO ssh client config
 
