@@ -5,7 +5,9 @@
   programs.home-manager.enable = true;
 
   # Allow "unfree" licenced packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   # Include man-pages
   manual.manpages.enable = true;
@@ -26,6 +28,7 @@
     pkgs.vlc
     pkgs.libnotify
     pkgs.pasystray
+    pkgs.volctl
   ];
 
   # Imports

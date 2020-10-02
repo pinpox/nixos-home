@@ -18,7 +18,16 @@ in
             always = false;
             notification = false;
           }
-
+          {
+            command = "polybar primary";
+            always = false;
+            notification = false;
+          }
+          {
+            command = "volctl";
+            always = false;
+            notification = false;
+          }
           {
             command = "nitrogen --restore";
             always = true;
@@ -249,7 +258,7 @@ in
           font = "${vars.font} 8";
           line_height = 0;
           markup = "full";
-          format = "<b><span foreground='#${vars.colors.base0C}'>%s</span></b>\\n<span>%b</span>";
+          format = "<b><span foreground='#${vars.colors.base0D}'>%s</span></b>\\n<span>%b</span>";
           alignment = "left";
           show_age_threshold = 60;
           word_wrap = "yes";
