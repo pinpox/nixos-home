@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib,  ... }:
 
 let
   colors = {
@@ -29,15 +29,21 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = [
     pkgs.exa
     pkgs.htop
     pkgs.nitrogen
     pkgs.thunderbird
+    pkgs.xorg.xrandr
+    pkgs.arandr
+    pkgs.spotify
+    pkgs.vlc
   ];
 
-  # Import common options
-  #imports = [ ./common.nix ];
+  # Imports
+  imports = [ ./polybar.nix ];
 
   # Various options that are specific for this machine/user.
 
@@ -188,14 +194,13 @@ in {
 
       programs.go = {
         enable = true;
+        goPath = ".go";
         packages = {
           "golang.org/x/text" = builtins.fetchGit "https://go.googlesource.com/text";
           "golang.org/x/time" = builtins.fetchGit "https://go.googlesource.com/time";
         };
-
-        goPath = ".go";
-
       };
+
       # programs.gpg = {TODO}
 
       programs.htop = {
@@ -203,16 +208,13 @@ in {
         treeView = true;
       };
 
-      programs.jq = {
-        enable = true;
-      };
+      programs.jq.enable = true;
 
-      programs.keychain = {
-        enable = true;
-        enableZshIntegration = true;
-        enableXsessionIntegration = true;
-      };
-
+      # programs.keychain = {
+      #   enable = true;
+      #   enableZshIntegration = true;
+      #   enableXsessionIntegration = true;
+      # };
 
       # programs.mcfly.
 
@@ -247,8 +249,8 @@ in {
       enableZshIntegration = true;
     };
 
-    # TODO
-    # poweline-go
+    # TODO look at starship and powerline-go themes for zsh
+
     # readline
 
 
@@ -261,14 +263,6 @@ in {
 
     # TODO ssh client config
 
-    # TODO look at starship theme for zsh
-    # programs.starship = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   settings = {
-    #     character.symbol = "▸";
-    #   };
-    # };
 
     programs.tmux = {
       enable = true;
@@ -310,6 +304,7 @@ programs.zsh = {
   autocd = true;
   dotDir = ".config/zsh";
   sessionVariables = {
+    RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
     PURE_PROMPT_SYMBOL = "▸";
   };
 
@@ -494,10 +489,9 @@ programs.zsh = {
       # TODO: other options
     };
 
+
+
     # # TODO configure polybar
-    # services.polybar = {
-    #   enable = true;
-    # };
 
 
     # servieces.random-background = {} TODO
@@ -521,13 +515,45 @@ programs.zsh = {
           source = ./dotfiles/vim;
           target = "nvim";
           recursive = true;
-          onChange = "nvim -c +PlugInstall +qall --headless";
+          # onChange = "nvim -c +PlugInstall +qall --headless";
         };
 
         nvim_theme = {
           target = "nvim/colors/ansible-theme.vim";
           source  = ./dotfiles/vim-theme;
         };
+
+
+
+    mpris  ={
+      executable = true;
+      text = ''
+#!${pkgs.bash}/bin/bash
+
+# pecifying the icon(s) in the script
+# This allows us to change its appearance conditionally
+icon=""
+
+player_status=$(playerctl status 2> /dev/null)
+if [[ $? -eq 0 ]]; then
+    metadata="$(playerctl metadata artist) - $(playerctl metadata title)"
+fi
+
+# Foreground color formatting tags are optional
+if [[ $player_status = "Playing" ]]; then
+    echo "%{F#D08770}$icon $metadata"       # Orange when playing
+elif [[ $player_status = "Paused" ]]; then
+    echo "%{F#65737E}$icon $metadata"       # Greyed out info when paused
+else
+    echo "%{F#65737E}$icon"                 # Greyed out icon when stopped
+fi
+      '';
+
+      target = "polybar/mpris.sh";
+    };
+
+
+
       };
     };
 
@@ -544,8 +570,10 @@ programs.zsh = {
 
       xsession.windowManager.i3 = {
         enable = true;
+
         package = pkgs.i3-gaps;
         config = {
+          menu = "rofi";
           startup = [
             {
               command = "picom";
@@ -558,8 +586,6 @@ programs.zsh = {
               always = true;
               notification = false;
             }
-
-
             {
               command = "nm-applet";
               always = true;
@@ -604,6 +630,7 @@ programs.zsh = {
             };
 
             floating = {
+
               border = 2;
             };
 
@@ -613,6 +640,8 @@ programs.zsh = {
             };
 
             fonts = ["Source Code Pro Semibold 12px"];
+
+            bars = [];
 
             gaps = {
               bottom = 5;
@@ -626,14 +655,30 @@ programs.zsh = {
             # smartBorders = "no_gaps";
             # smartGaps = "on";
           };
-        # keybindings = {TODO}
-        modifier = "Mod4";
+          modifier = "Mod4";
+          keybindings = let
+            modifier = config.xsession.windowManager.i3.config.modifier;
+          in lib.mkOptionDefault {
 
-        # startup = {
-        #   TODO autostart commands
-        # }
+            "${modifier}+Shift+Escape" = "exec xkill";
+            "${modifier}+p"            = "exec ${pkgs.rofi}/bin/rofi -show run -lines 7 -eh 1 -bw 0  -fullscreen -padding 200";
+            "${modifier}+Shift+p"      = "exec ${pkgs.rofi-pass} -show combi -lines 7 -eh 3 -bw 0 -matching fuzzy";
+            "${modifier}+Shift+x"      = "exec xscreensaver-command -lock";
+            "${modifier}+Shift+Tab"    = "workspace prev";
+            "${modifier}+Tab"          = "workspace next";
+            "XF86AudioLowerVolume"     = "exec --no-startup-id pactl set-sink-volume 0 -5%"; #decrease sound volume
+            "XF86AudioMute"            = "exec --no-startup-id pactl set-sink-mute 0 toggle"; # mute sound
+            "XF86AudioNext"            = "exec playerctl next";
+            "XF86AudioPlay"            = "exec playerctl play-pause";
+            "XF86AudioPrev"            = "exec playerctl previous";
+            "XF86AudioRaiseVolume"     = "exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume";
+            "XF86AudioStop"            = "exec playerctl stop";
+            "XF86MonBrightnessDown"    = "exec xbacklight -dec 20"; # decrease screen brightness
+            "XF86MonBrightnessUp"      = "exec xbacklight -inc 20"; # increase screen brightness
+            "Print"                    = "exec import png:- | xclip -selection clipboard -t image/png";
+          };
 
-        terminal = "alacritty";
+          terminal = "alacritty";
 
         # window = "TODO"
         workspaceLayout = "tabbed";
