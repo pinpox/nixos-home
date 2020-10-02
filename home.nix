@@ -14,6 +14,8 @@
 
   # Install these packages for my user
   home.packages = [
+    pkgs.lxappearance
+    pkgs.papirus-icon-theme
     pkgs.xfce.thunar
     pkgs.xfce.thunar-volman
     pkgs.xfce.thunar-archive-plugin
@@ -27,8 +29,7 @@
     pkgs.spotify
     pkgs.vlc
     pkgs.libnotify
-    pkgs.pasystray
-    pkgs.volctl
+    pkgs.xfce.xfce4-volumed-pulse
   ];
 
   # Imports

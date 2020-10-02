@@ -14,17 +14,17 @@ in
         menu = "rofi";
         startup = [
           {
-            command = "picom";
+            command = "picom &";
             always = false;
             notification = false;
           }
           {
-            command = "polybar primary";
+            command = "xfce4-volumed-pulse &";
             always = false;
             notification = false;
           }
           {
-            command = "volctl";
+            command = "polybar primary &";
             always = false;
             notification = false;
           }
@@ -34,7 +34,7 @@ in
             notification = false;
           }
           {
-            command = "nm-applet";
+            command = "nm-applet &";
             always = true;
             notification = false;
           }
@@ -231,20 +231,19 @@ in
     services.dunst = {
       enable = true;
 
-      # iconTheme = {
-      #     name = "hicolor";
-      #     package = (build of hicolor-icon-theme-0.17);
-      #     size = "32x32";
-      #   };
+      iconTheme = {
+          package = pkgs.papirus-icon-theme;
+          name = "Papirus";
+          size = "22x22";
+        };
 
       settings = {
 
         global = {
-          # icon_path = "";
           monitor = 0;
           follow = "mouse";
           geometry = "300x5-30+50";
-          indicate_hidden = true;
+          indicate_hidden = "yes";
           shrink = "no";
           transparency = 0;
           notification_height = 0;
@@ -270,12 +269,12 @@ in
           icon_position = "left";
           max_icon_size = 32;
           sticky_history = "yes";
-          history_length = 5;
+          history_length = 20;
           browser = "${pkgs.chromium}/bin/chromium";
-          always_run_script = true;
+          always_run_script = "true";
           title = "Dunst";
           class = "Dunst";
-          startup_notification = false;
+          startup_notification = "false";
         };
 
         shortcuts = {
@@ -302,6 +301,7 @@ in
           foreground  = "#${vars.colors.base00}";
           timeout     = 15;
         };
+
 
       };
     };
