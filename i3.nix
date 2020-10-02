@@ -126,7 +126,64 @@ in
     };
 
 
+    services.xscreensaver = {
+      enable = true;
+      # settings = TODO
+    };
 
+    # # Xresources
+    # xresources.extraConfig = builtins.readFile (
+    #   pkgs.fetchFromGitHub {
+    #     owner = "solarized";
+    #     repo = "xresources";
+    #     rev = "025ceddbddf55f2eb4ab40b05889148aab9699fc";
+    #     sha256 = "0lxv37gmh38y9d3l8nbnsm1mskcv10g3i83j0kac0a2qmypv1k9f";
+    #   } + "/Xresources.dark"
+    #   );
+
+    services.network-manager-applet.enable = true;
+
+    # Pulseaudio tray
+    services.pasystray.enable = true;
+
+    # Picom X11 compositor
+    services.picom = {
+      enable = true;
+      # activeOpacity = TODO
+      # backend = TODO
+      # TODO: other options
+    };
+
+    programs.rofi = {
+      enable = true;
+      # TODO
+      # colors =
+      # br
+    };
+
+    # TODO ssh client config
+
+
+
+
+
+
+    services.blueman-applet.enable = true;
+
+      # TODO checkout
+    # services.cbatticon = {
+      # enable = true;
+    # };
+
+    services.dunst = {
+      enable = true;
+      # iconTheme
+      # settings = {}
+    };
+
+    services.gnome-keyring = {
+      enable = true;
+    };
 
 
   }

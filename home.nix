@@ -1,12 +1,20 @@
-  { config, pkgs, lib,  ... }:
+{ config, pkgs, lib,  ... }:
 
- {
+{
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Allow "unfree" licenced packages
   nixpkgs.config.allowUnfree = true;
 
+  # Include man-pages
+  manual.manpages.enable = true;
+
+  # Install these packages for my user
   home.packages = [
+    pkgs.xfce.thunar
+    pkgs.xfce.thunar-volman
+    pkgs.xfce.thunar-archive-plugin
     pkgs.exa
     pkgs.htop
     pkgs.nitrogen
@@ -19,61 +27,12 @@
 
   # Imports
   imports = [
-    ./polybar.nix
-    ./zsh.nix
+    ./shell.nix
     ./i3.nix
+    ./polybar.nix
+    ./browsers.nix
+    ./credentials.nix
   ];
-
-  # Various options that are specific for this machine/user.
-
-    # Email
-    accounts.email.accounts = {
-      pablo_tools = {
-        address = "mail@pablo.tools";
-        realName = "Pablo Ovelleiro Corral";
-        primary = true;
-        gpg = {
-          key = "D03B218CAE771F77D7F920D9823A6154426408D3";
-          signByDefault = true;
-        };
-        mbsync.enable = false;
-        msmtp.enable = false;
-        notmuch.enable = false;
-
-        folders = {
-          # TODO
-          drafts  = "";
-        };
-
-        signature = {
-          text = ''
-            Pablo Ovelleiro Corral
-
-            Web:     https://pablo.tools
-            XMPP:    pablo1@mailbox.org
-            GPG-Key: https://pablo.tools/gpg-key
-          '';
-          showSignature = "append";
-        };
-
-        userName = "pablo1@mailbox.org";
-        passwordCommand = "pass mailbox.org/pablo1@mailbox.org";
-        imap = {
-          host = "imap.mailbox.org";
-        };
-        smtp = {
-          host = "smtp.mailbox.org";
-          port = 465;
-        };
-      };
-    };
-
-
-    # accounts.email.accounts.<name>.gpg
-
-    # Fontconfig
-    # fonts.fontconfig.enable
-
     # GTK settings
     gtk = {
       enable = true;
@@ -94,69 +53,8 @@
         package = pkgs.papirus-icon-theme;
         name = "Papirus";
       };
-
-
-
     };
 
-      # General stuff TODO
-      # home.activation...
-      # home.packages...
-      # home.file...
-      # home.keyboard...
-      # home.language...
-      # home.sessionVariables...
-      manual.manpages.enable = true;
-
-
-      # Autorandr
-      # TODO
-
-      # Bat
-      programs.bat = {
-        enable  = true;
-        config = {
-          # TODO look up opionts
-          theme = "TwoDark";
-        };
-        # themes = { TODO };
-      };
-
-      # Broot TODO
-      # programs.broot =
-
-      # Browserpass
-      programs.browserpass = {
-        enable = true;
-        browsers = [ "chromium" "firefox" ];
-      };
-
-      programs.chromium = {
-        enable = true;
-        extensions = [
-          "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
-          "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
-          "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
-          "lbhnkgjaoonakhladmcjkemebepeohkn" # Vim Tips New Tab
-        ];
-      };
-
-      programs.firefox = {
-        enable = true;
-        # profiles = TODO
-        # extensions = [ TODO ]
-      };
-
-      programs.fzf = {
-        enable = true;
-        enableZshIntegration = true;
-        # TODO more options
-      };
-
-      programs.dircolors = {
-        enable = true;
-        enableZshIntegration = true;
-      };
 
       programs.git = {
         enable = true;
@@ -180,29 +78,10 @@
         };
       };
 
-      # programs.gpg = {TODO}
-
-      programs.htop = {
-        enable = true;
-        treeView = true;
-      };
-
-      programs.jq.enable = true;
-
-      # programs.keychain = {
-      #   enable = true;
-      #   enableZshIntegration = true;
-      #   enableXsessionIntegration = true;
-      # };
-
-      # programs.mcfly.
-
-    # programs.mvp
     programs.neomutt = {
       enable =  true;
       # TODO
     };
-
 
     programs.neovim = {
       enable = true;
@@ -216,114 +95,37 @@
       withRuby = true;
     };
 
-    programs.password-store = {
-      enable = true;
-      package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
-      # settings = TODO
-    };
-
-    # TODO maybe replace with zoxide
-    programs.pazi = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-    # TODO look at starship and powerline-go themes for zsh
-
-    # readline
-
-
-    programs.rofi = {
-      enable = true;
-      # TODO
-      # colors =
-      # br
-    };
-
-    # TODO ssh client config
-
-
-    programs.tmux = {
-      enable = true;
-      clock24 = true;
-      # TODO other optoins
-
-    };
-
-
-
-
-
-
-    services.blueman-applet.enable = true;
-
-      # TODO checkout
-    # services.cbatticon = {
-      # enable = true;
-    # };
-
-    services.dunst = {
-      enable = true;
-      # iconTheme
-      # settings = {}
-    };
-
-    services.gnome-keyring = {
-      enable = true;
-    };
-
-    services.gpg-agent = {
-      enable = true;
-      enableSshSupport = true;
-    };
-
     #TODO check out
+    # TODO look at starship and powerline-go themes for zsh
     # services.grobi
-
-    services.network-manager-applet.enable = true;
-
-    # Pulseaudio tray
-    services.pasystray.enable = true;
-
-    # Picom X11 compositor
-    services.picom = {
-      enable = true;
-      # activeOpacity = TODO
-      # backend = TODO
-      # TODO: other options
-    };
-
-
-
-    # # TODO configure polybar
-
-
-    # servieces.random-background = {} TODO
+    # readline
+    # services.random-background = {} TODO
     # services.spotifyd = {} TODO
     # services.syncthing = {} TODO
     # services.udiskie= {} TODO
-
-    services.xscreensaver = {
-      enable = true;
-      # settings = TODO
-    };
-
     # services.xsuspender
-
-
-    # XDG
-
-
-    # Xresources
-    xresources.extraConfig = builtins.readFile (
-      pkgs.fetchFromGitHub {
-        owner = "solarized";
-        repo = "xresources";
-        rev = "025ceddbddf55f2eb4ab40b05889148aab9699fc";
-        sha256 = "0lxv37gmh38y9d3l8nbnsm1mskcv10g3i83j0kac0a2qmypv1k9f";
-      } + "/Xresources.dark"
-      );
-
+    # programs.gpg = {TODO}
+    # programs.keychain = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   enableXsessionIntegration = true;
+    # };
+    # programs.mcfly.
+    # programs.mvp
+    # General stuff TODO
+    # home.activation...
+    # home.packages...
+    # home.file...
+    # home.keyboard...
+    # home.language...
+    # home.sessionVariables...
+    # Autorandr
+    # TODO
+    # Broot TODO
+    # programs.broot =
+    # accounts.email.accounts.<name>.gpg
+    # Fontconfig
+    # fonts.fontconfig.enable
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

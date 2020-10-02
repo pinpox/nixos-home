@@ -95,7 +95,52 @@ programs.zsh = {
 
 
 
+      programs.fzf = {
+        enable = true;
+        enableZshIntegration = true;
+        # TODO more options
+      };
 
+      programs.dircolors = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
+
+
+    # TODO maybe replace with zoxide
+    programs.pazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+
+
+    programs.tmux = {
+      enable = true;
+      clock24 = true;
+      # TODO other optoins
+
+    };
+
+
+      programs.htop = {
+        enable = true;
+        treeView = true;
+      };
+
+      programs.jq.enable = true;
+
+
+      # Bat
+      programs.bat = {
+        enable  = true;
+        config = {
+          # TODO look up opionts
+          theme = "TwoDark";
+        };
+        # themes = { TODO };
+      };
 
 
 
