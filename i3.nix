@@ -3,9 +3,6 @@ let
   vars = import ./vars.nix;
 in
   {
-
-
-
     xsession.windowManager.i3 = {
       enable = true;
 
@@ -19,7 +16,7 @@ in
             notification = false;
           }
           {
-            command = ''cbatticon --icon-type standard --low-level 20 --critical-level 10 --command-critical-level "notify-send -i battery -u critical 'battery low'" '';
+            command = ''cbatticon --icon-type standard --low-level 20 --critical-level 10 -u 30 --command-critical-level "notify-send -i battery -u critical 'battery low'" '';
             always = false;
             notification = false;
           }
