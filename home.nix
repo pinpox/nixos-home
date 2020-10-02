@@ -29,6 +29,7 @@
   # Imports
   imports = [
     ./shell.nix
+    ./alacritty.nix
     ./i3.nix
     ./polybar.nix
     ./browsers.nix
