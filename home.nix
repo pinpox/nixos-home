@@ -15,6 +15,7 @@
     pkgs.xfce.thunar
     pkgs.xfce.thunar-volman
     pkgs.xfce.thunar-archive-plugin
+    pkgs.xfce.gvfs
     pkgs.exa
     pkgs.htop
     pkgs.nitrogen
@@ -46,7 +47,14 @@
 
       gtk3 = {
         extraConfig =  { gtk-cursor-blink = false; gtk-recent-files-limit = 20; };
-        bookmarks = [ "file:///home/pinpox/Documents" ];
+        bookmarks = [
+          "file:///home/pinpox/Documents"
+          "file:///home/pinpox/Downloads"
+          "file:///home/pinpox/Pictures"
+          "file:///home/pinpox/Music"
+          "file:///home/pinpox/Videos"
+          "file:///home/pinpox/Seafile"
+        ];
       };
 
       iconTheme = {
@@ -104,7 +112,6 @@
     # services.syncthing = {} TODO
     # services.udiskie= {} TODO
     # services.xsuspender
-    # programs.gpg = {TODO}
     # programs.keychain = {
     #   enable = true;
     #   enableZshIntegration = true;

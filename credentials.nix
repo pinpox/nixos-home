@@ -48,8 +48,9 @@ in
     programs.password-store = {
       enable = true;
       package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
-      # settings = TODO
     };
+
+    programs.gpg.enable =  true;
 
     services.gpg-agent = {
       enable = true;
