@@ -204,7 +204,7 @@ in
               foreground = "${vars.colors.base08}";
             };
           };
-        }[
+        };
       };
     };
 
