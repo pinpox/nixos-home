@@ -34,6 +34,7 @@
     ./polybar.nix
     ./browsers.nix
     ./credentials.nix
+    ./xdg.nix
   ];
     # GTK settings
     gtk = {
