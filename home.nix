@@ -24,6 +24,7 @@
     pkgs.arandr
     pkgs.spotify
     pkgs.vlc
+    pkgs.libnotify
   ];
 
   # Imports

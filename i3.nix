@@ -221,13 +221,12 @@ in
 
     services.dunst = {
       enable = true;
-      iconTheme = {
-        {
-          name = "hicolor";
-          package = (build of hicolor-icon-theme-0.17);
-          size = "32x32";
-        };
-      };
+
+      # iconTheme = {
+      #     name = "hicolor";
+      #     package = (build of hicolor-icon-theme-0.17);
+      #     size = "32x32";
+      #   };
 
       settings = {
 
@@ -243,16 +242,14 @@ in
           separator_height = 2;
           padding = 8;
           horizontal_padding = 8;
-          frame_width = 3;
-          frame_colors = "#${vars.colors.base0D}";
+          frame_width = 0;
           separator_color = "frame";
           sort = "yes";
-          frame_color = "#eceff1";
+          frame_color = "#${vars.colors.base03}";
           font = "${vars.font} 8";
           line_height = 0;
           markup = "full";
-          # format = "<b>%s</b>\n%b"; TODO
-          format = "<b>%s</b>\\n%b";
+          format = "<b><span foreground='#${vars.colors.base0C}'>%s</span></b>\\n<span>%b</span>";
           alignment = "left";
           show_age_threshold = 60;
           word_wrap = "yes";
@@ -280,24 +277,21 @@ in
         };
 
         urgency_low = {
-          background = "#${vars.colors.base00}";
-          foreground = "#${vars.colors.base05}";
-          frame_colors = "#${vars.colors.base05}";
-          timeout = 5;
+          background  = "#${vars.colors.base01}";
+          foreground  = "#${vars.colors.base03}";
+          timeout     = 5;
         };
 
         urgency_normal = {
-          background = "#${vars.colors.base00}";
-          foreground = "#${vars.colors.base05}";
-          frame_colors = "#${vars.colors.base0D}";
-          timeout = 10;
+          background  = "#${vars.colors.base01}";
+          foreground  = "#${vars.colors.base05}";
+          timeout     = 10;
         };
 
         urgency_critical = {
-          background = "#${vars.colors.base08}";
-          foreground = "#${vars.colors.base00}";
-          frame_colors = "#${vars.colors.base09}";
-          timeout = 15;
+          background  = "#${vars.colors.base08}";
+          foreground  = "#${vars.colors.base00}";
+          timeout     = 15;
         };
 
       };
