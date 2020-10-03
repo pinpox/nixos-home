@@ -22,17 +22,47 @@ in
           };
         };
 
+ # SauceCodePro Nerd Font Mono:style=Black Italic,Italic
+ # SauceCodePro Nerd Font Mono:style=Black,Regular
+ # SauceCodePro Nerd Font Mono:style=Bold
+ # SauceCodePro Nerd Font Mono:style=Bold Italic
+ # SauceCodePro Nerd Font Mono:style=ExtraLight Italic,Italic
+ # SauceCodePro Nerd Font Mono:style=ExtraLight,Regular
+ # SauceCodePro Nerd Font Mono:style=Italic
+ # SauceCodePro Nerd Font Mono:style=Light Italic,Italic
+ # SauceCodePro Nerd Font Mono:style=Light,Regular
+ # SauceCodePro Nerd Font Mono:style=Medium Italic,Italic
+ # SauceCodePro Nerd Font Mono:style=Medium,Regular
+ # SauceCodePro Nerd Font Mono:style=Regular
+ # SauceCodePro Nerd Font Mono:style=Semibold Italic,Italic
+ # SauceCodePro Nerd Font Mono:style=Semibold,Regular
+ # SauceCodePro Nerd Font:style=Black Italic,Italic
+ # SauceCodePro Nerd Font:style=Black,Regular
+ # SauceCodePro Nerd Font:style=Bold
+ # SauceCodePro Nerd Font:style=Bold Italic
+ # SauceCodePro Nerd Font:style=ExtraLight Italic,Italic
+ # SauceCodePro Nerd Font:style=ExtraLight,Regular
+ # SauceCodePro Nerd Font:style=Italic
+ # SauceCodePro Nerd Font:style=Light Italic,Italic
+ # SauceCodePro Nerd Font:style=Light,Regular
+ # SauceCodePro Nerd Font:style=Medium Italic,Italic
+ # SauceCodePro Nerd Font:style=Medium,Regular
+ # SauceCodePro Nerd Font:style=Regular
+ # SauceCodePro Nerd Font:style=Semibold Italic,Italic
+ # SauceCodePro Nerd Font:style=Semibold,Regular
+
         font = {
           normal = {
-            family = "Source Code Pro Semibold";
+            family = "SauceCodePro Nerd Font";
+            style = "Semibold";
           };
           bold= {
-            family = "Source Code Pro Semibold";
-            style  = "bold";
+            family = "SauceCodePro Nerd Font";
+            style  = "Bold";
           };
           italic= {
-            family = "Source Code Pro Semibold";
-            style  = "italic";
+            family = "SauceCodePro Nerd Font";
+            style  = "Semibold Italic";
           };
           size =  10;
         };

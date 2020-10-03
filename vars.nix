@@ -21,6 +21,5 @@
     base0F = "b2643c"; #b2643c
   };
 
-  font = "Source Code Pro Semibold";
-
+  font = "SauceCodePro Nerd Font";
 }

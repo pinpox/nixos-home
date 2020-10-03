@@ -32,6 +32,9 @@
     pkgs.vlc
     pkgs.libnotify
     pkgs.xfce.xfce4-volumed-pulse
+    # pkgs.nerdfonts
+    # pkgs.material-design-icons
+    # pkgs.material-icons
   ];
 
   # Imports

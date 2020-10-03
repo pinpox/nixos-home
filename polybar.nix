@@ -14,9 +14,14 @@ in
       };
       script = ''polybar primary &'';
 
+      # Lookup icons with:
+      # https://www.nerdfonts.com/cheat-sheet
+      # Then copy by hex code from:
+      # https://mathew-kurian.github.io/CharacterMap/
+
       config = {
         "bar/primary" = {
-          monitor = "\${env:MONITOR:Virtual-1}";
+          monitor = "\${env:MONITOR:Virtual1}";
           bottom = true;
 
           width = "100%";
@@ -29,19 +34,18 @@ in
           line-size = 0;
           border-size = 0;
           border-color = "#00000000";
-          padding-left = 0;
-          padding-right = 0;
-          module-margin-left = 0;
-          module-margin-right = 0;
+          # padding-left = 5;
+          padding-right = 5;
+          module-margin-left = 2;
+          module-margin-right = 2;
 
-          font-0 = "Source Code Pro Semibold:pixelsize=8";
-          font-1 = "Font Awesome:pixelsize=8";
-          font-2 = "Font Awesome 5:pixelsize=8";
+          font-0 = "SauceCodePro Nerd Font:style=Semibold:pixelsize=8";
+          # font-1 = "Material Design Icons:style=Regular";
 
           modules-left="i3";
           modules-center = "music";
-          modules-right = "filesystem pulseaudio memory cpu date";
-          # Disabled modules: eth  pkg
+          modules-right = "filesystem pulseaudio eth memory cpu date";
+          # Disabled modules: pkg
 
           tray-position = "right";
           tray-padding = 2;
@@ -54,12 +58,17 @@ in
           format-unmounted-prefix-foreground = "#${vars.colors.base0D}";
           label-unmounted-foreground         = "#${vars.colors.base05}";
 
+
+          format-mounted-prefix-padding-right = 1;
+          format-unmounted-prefix-padding-right = 1;
+
           interval                 = 25;
           mount-0                  = "/";
           type                     = "internal/fs";
-          format-mounted-prefix    = " ";
-          format-mounted-padding   = 2;
-          format-unmounted-padding = 2;
+          format-mounted-prefix    = "";
+          # format-mounted-prefix-padding = 1;
+          # format-mounted-padding   = 2;
+          # format-unmounted-padding = 2;
           label-mounted            = "%percentage_used%% [%free%]";
           label-unmounted          = "%mountpoint% not mounted";
         };
@@ -75,7 +84,7 @@ in
 
           # Only show workspaces on the same output as the bar
           pin-workspaces               = true;
-          label-mode-padding           = 2;
+          # label-mode-padding           = 2;
           label-mode-background        = "#${vars.colors.base05}";
 
           # focused                    = Active workspace on focused monitor
@@ -86,13 +95,13 @@ in
 
           # unfocused                  = Inactive workspace on any monitor
           label-unfocused              = "%name%";
-          label-unfocused-padding      = 2;
           label-unfocused-background   = "${vars.colors.base01}";
+          label-unfocused-padding      = 2;
 
           # visible                    = Active workspace on unfocused monitor
           label-visible                = "%name%";
-          # label-visible-padding      = ${self.label-focused-padding}
           label-visible-background     = "#${vars.colors.base03}";
+          label-visible-padding        = 2;
 
           # urgent                     = Workspace with urgency hint set
           label-urgent                 = "%name%";
@@ -104,11 +113,11 @@ in
         "module/cpu" = {
           type = "internal/cpu";
           interval = 2;
-          format-prefix = "";
+          format-prefix-padding-right = 1;
+          format-prefix = "";
           format-prefix-foreground = "#${vars.colors.base0D}";
-          # format-background = ${colors.color-8};
           label = "%percentage%%";
-          format-padding = 2;
+          # format-padding = 2;
         };
 
 
@@ -116,11 +125,12 @@ in
         "module/memory" = {
           type = "internal/memory";
           interval = 2;
-          format-prefix = " ";
+          format-prefix = "";
+
+          format-prefix-padding-right = 1;
           format-prefix-foreground = "#${vars.colors.base0D}";
-          # format-background = ${colors.color-8}
           label = "%percentage_used%%";
-          format-padding = 2;
+          # format-padding = 2;
         };
 
         "module/wlan" = {
@@ -128,12 +138,13 @@ in
           interface = "wlan0";
           interval = 3;
 
-          format-connected-padding = 2;
-          format-disconnected-padding = 2;
+          # format-connected-padding = 2;
+          # format-disconnected-padding = 2;
 
           format-connected = "<ramp-signal> <label-connected>";
           # format-connected-background = ${colors.color-8}
           label-connected = "%signal%% %essid%";
+
 
           format-disconnected = "";
           # ; format-disconnected = <label-disconnected>
@@ -145,21 +156,23 @@ in
         };
 
 
-#         "module/eth" = {
-#           type = "internal/network";
-#           interface = "enp0s8";
-#           interval = 3;
+        "module/eth" = {
+          type = "internal/network";
+          interface = "enp0s8";
+          interval = 3;
 
-#           format-connected-prefix = " ";
-#           # format-connected-prefix-foreground = ${colors.foreground}
-#           label-connected = "%local_ip%";
-#           # format-connected-background = ${colors.color-8}
 
-#           format-disconnected = "";
-#           # ;format-disconnected = "<label-disconnected>";
-#           # ;label-disconnected = "%ifname% disconnected";
-#           # ;label-disconnected-foreground = ${colors.foreground}
-#         };
+          format-connected-prefix-padding-right = 1;
+          format-connected-prefix = "";
+          format-connected-prefix-foreground = "#${vars.colors.base0D}";
+          label-connected = "%local_ip%";
+          # format-connected-prefix-padding = 1;
+
+          format-disconnected = "";
+          # ;format-disconnected = "<label-disconnected>";
+          # ;label-disconnected = "%ifname% disconnected";
+          # ;label-disconnected-foreground = ${colors.foreground}
+        };
 
 
         "module/date" = {
@@ -177,8 +190,9 @@ in
           time = "%H:%M";
           time-alt = "%H:%M:%S";
 
-          format-prefix =" ";
-          format-padding = 2;
+          format-prefix ="";
+          format-prefix-padding-right = 1;
+          # format-padding-right = 2;
 
           label = "%date% %time%";
         };
@@ -220,16 +234,18 @@ label-volume = "%percentage%%";
 # ;   %percentage% (default)
 # ;   %decibels% (unreleased)
 # label-muted = "🔇";
-label-muted = " 0%";
+label-muted = "  0%";
 # label-muted-foreground = #666
 
 ramp-volume-foreground = "#${vars.colors.base0D}";
 format-volume-prefix-foreground = "#${vars.colors.base0D}";
 
+          # format-volume-prefix-padding = 1;
+
 # ; Only applies if <ramp-volume> is used
-ramp-volume-0 =" ";
-ramp-volume-1 =" ";
-ramp-volume-2 =" ";
+ramp-volume-0 ="";
+ramp-volume-1 ="";
+ramp-volume-2 ="";
 
 # ; Right and Middle click (unreleased)
 click-right = "pavucontrol &";
@@ -246,27 +262,6 @@ exec = "~/.config/polybar/mpris.sh";
 click-left = "playerctl play-pause";
 click-right = "playerctl next";
 };
-
-        # "module/volume" = {
-
-        #   # ;format-volume-prefix = %ramp-volume%
-        #   # format-muted-foreground = ${colors.foreground}
-        #   # ramp-volume-foreground =  ${colors.prefix-color}
-        #   # format-volume-background = ${colors.color-8}
-        #   # format-muted-background = ${colors.color-8}
-        #   # label-volume-foreground = ${root.foreground}
-
-        #   type = "internal/volume";
-        #   format-volume = "<ramp-volume> <label-volume>";
-        #   format-volume-padding = 2;
-        #   format-muted-padding = 2;
-        #   label-volume = "%percentage%";
-        #   label-muted = " 000";
-        #   label-muted-foreground = "#66";
-        #   ramp-volume-0 =" ";
-        #   ramp-volume-1 =" ";
-        #   ramp-volume-2 =" ";
-        # };
       };
     };
   }
