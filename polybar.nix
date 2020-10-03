@@ -35,7 +35,7 @@ in
           border-size = 0;
           border-color = "#00000000";
           # padding-left = 5;
-          padding-right = 5;
+          # padding-right = 5;
           module-margin-left = 2;
           module-margin-right = 2;
 
@@ -49,7 +49,7 @@ in
 
           tray-position = "right";
           tray-padding = 2;
-          # tray-background = ${colors.color-4};
+          tray-background = "#${vars.colors.base0D}";
         };
 
         "module/filesystem" = {
@@ -177,9 +177,9 @@ in
 
         "module/date" = {
 
-          format-prefix-foreground = "#${vars.colors.base0D}";
-          # format-foreground = ${colors.background}
-          # format-background = ${colors.color-4}
+          format-prefix-foreground = "#${vars.colors.base00}";
+          format-foreground        = "#${vars.colors.base00}";
+          format-background        = "#${vars.colors.base0D}";
 
           type = "internal/date";
           interval = 5;
@@ -192,7 +192,7 @@ in
 
           format-prefix ="";
           format-prefix-padding-right = 1;
-          # format-padding-right = 2;
+          format-prefix-padding-left = 1;
 
           label = "%date% %time%";
         };
