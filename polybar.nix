@@ -16,6 +16,7 @@ in
       script = ''
         #!/bin/sh
         PATH=/run/current-system/sw/bin/:/home/pinpox/.nix-profile/bin/
+        export DISPLAY=:0
 
         killall ".polybar-wrappe" || echo "Polybar was not running"
 
