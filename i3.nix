@@ -19,6 +19,11 @@ in
         ];
         startup = [
           {
+            command = "autorandr -c";
+            always = false;
+            notification = false;
+          }
+          {
             command = "picom &";
             always = false;
             notification = false;
@@ -95,7 +100,7 @@ in
             forceWrapping = true;
           };
 
-          fonts = ["Source Code Pro Semibold 12px"];
+          fonts = ["${vars.font.normal.family} ${vars.font.normal.style} ${toString vars.font.size}px"];
 
           bars = [];
 
@@ -175,7 +180,7 @@ in
 
       # General
       enable = true;
-      font = "${vars.font} 12px";
+      font = "${vars.font.normal.family} ${vars.font.normal.style} ${toString vars.font.size}px";
       cycle = true;
       # extraConfig = "";
 
@@ -262,7 +267,7 @@ in
           separator_color = "frame";
           sort = "yes";
           frame_color = "#${vars.colors.base03}";
-          font = "${vars.font} 8";
+          font = "${vars.font.normal.family} ${vars.font.normal.style} 8";
           line_height = 0;
           markup = "full";
           format = "<b><span foreground='#${vars.colors.base0D}'>%s</span></b>\\n<span>%b</span>";

@@ -12,12 +12,28 @@ in
         # iwSupport = true;
         # githubSupport = true;
       };
-      script = ''polybar primary &'';
+      # script = ''/home/pinpox/start-polybar.sh '';
+      script = ''
+        #!/bin/sh
+        PATH=/run/current-system/sw/bin/:/home/pinpox/.nix-profile/bin/
+
+        killall ".polybar-wrappe" || echo "Polybar was not running"
+
+        echo "Outputs:"
+        polybar -m
+
+        for i in $(polybar -m | awk -F: '{print $1}'); do
+          echo "Starting Polybar on monitor $"
+          MONITOR=$i polybar primary -c ~/.config/polybar/config &
+        done
+      '';
+
 
       # Lookup icons with:
       # https://www.nerdfonts.com/cheat-sheet
       # Then copy by hex code from:
       # https://mathew-kurian.github.io/CharacterMap/
+
 
       config = {
         "bar/primary" = {
@@ -34,13 +50,10 @@ in
           line-size = 0;
           border-size = 0;
           border-color = "#00000000";
-          # padding-left = 5;
-          # padding-right = 5;
           module-margin-left = 2;
           module-margin-right = 2;
 
-          font-0 = "SauceCodePro Nerd Font:style=Semibold:pixelsize=8";
-          # font-1 = "Material Design Icons:style=Regular";
+          font-0 = "${vars.font.normal.family}:style=${vars.font.normal.style}:pixelsize=8";
 
           modules-left="i3";
           modules-center = "music";
@@ -200,68 +213,39 @@ in
         "module/pulseaudio" = {
           type = "internal/pulseaudio";
 
-# ; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
-# ; If not, uses default sink
-# sink = alsa_output.pci-0000_12_00.3.analog-stereo
+        # ; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+        # ; If not, uses default sink
+        # sink = alsa_output.pci-0000_12_00.3.analog-stereo
+        # ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+        use-ui-max = false;
 
-# ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
-# ; Default: true
+        interval = 5;
 
-use-ui-max = false;
+        # label-muted-foreground = #666
+        ramp-volume-foreground = "#${vars.colors.base0D}";
+        format-volume-prefix-foreground = "#${vars.colors.base0D}";
 
-# ; Interval for volume increase/decrease (in percent points)
-# ; Default: 5
-interval = 5;
+        label-muted = "  0%";
+        ramp-volume-0 ="";
+        ramp-volume-1 ="";
+        ramp-volume-2 ="";
+        format-volume = "<ramp-volume> <label-volume>";
+        format-muted = "<label-muted>";
+        label-volume = "%percentage%%";
 
-# ; Available tags:
-# ;   <label-volume> (default)
-# ;   <ramp-volume>
-# ;   <bar-volume>
-format-volume = "<ramp-volume> <label-volume>";
-
-# ; Available tags:
-# ;   <label-muted> (default)
-# ;   <ramp-volume>
-# ;   <bar-volume>
-format-muted = "<label-muted>";
-
-# ; Available tokens:
-# ;   %percentage% (default)
-# ;   %decibels% (unreleased)
-label-volume = "%percentage%%";
-
-# ; Available tokens:
-# ;   %percentage% (default)
-# ;   %decibels% (unreleased)
-# label-muted = "🔇";
-label-muted = "  0%";
-# label-muted-foreground = #666
-
-ramp-volume-foreground = "#${vars.colors.base0D}";
-format-volume-prefix-foreground = "#${vars.colors.base0D}";
-
-          # format-volume-prefix-padding = 1;
-
-# ; Only applies if <ramp-volume> is used
-ramp-volume-0 ="";
-ramp-volume-1 ="";
-ramp-volume-2 ="";
-
-# ; Right and Middle click (unreleased)
-click-right = "pavucontrol &";
-# ; click-middle =
-};
+        click-right = "pavucontrol &";
+      };
 
 
-"module/music" = {
-type = "custom/script";
-interval = 2;
+      "module/music" = {
+        type = "custom/script";
+        interval = 2;
 
-label = "%output:0:45:...%";
-exec = "~/.config/polybar/mpris.sh";
-click-left = "playerctl play-pause";
-click-right = "playerctl next";
-};
+        label = "%output:0:45:...%";
+        exec = "~/.config/polybar/mpris.sh";
+        click-left = "playerctl play-pause";
+        click-right = "playerctl next";
       };
     };
-  }
+  };
+}

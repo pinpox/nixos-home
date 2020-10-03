@@ -21,5 +21,19 @@
     base0F = "b2643c"; #b2643c
   };
 
-  font = "SauceCodePro Nerd Font";
+  font = {
+    normal = {
+      family = "SauceCodePro Nerd Font";
+      style = "Semibold";
+    };
+    bold = {
+      family = "SauceCodePro Nerd Font";
+      style  = "Bold";
+    };
+    italic = {
+      family = "SauceCodePro Nerd Font";
+      style  = "Semibold Italic";
+    };
+    size = 10;
+  };
 }

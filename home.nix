@@ -140,6 +140,58 @@
     # home.language...
     # home.sessionVariables...
     # Autorandr
+    programs.autorandr = {
+      enable = true;
+      hooks = {
+      postswitch = {
+        "notify-i3" = "${pkgs.i3}/bin/i3-msg restart";
+        # "change-background" = readFile ./change-background.sh;
+        # "change-dpi" = ''
+        #   case "$AUTORANDR_CURRENT_PROFILE" in
+        #     default)
+        #       DPI=120
+        #       ;;
+        #     home)
+        #       DPI=192
+        #       ;;
+        #     work)
+        #       DPI=144
+        #       ;;
+        #     *)
+        #       echo "Unknown profle: $AUTORANDR_CURRENT_PROFILE"
+        #       exit 1
+        #   esac
+
+        #   echo "Xft.dpi: $DPI" | ${pkgs.xorg.xrdb}/bin/xrdb -merge
+        # '';
+      };
+    };
+    profiles = {
+      "VM" = {
+        fingerprint = {
+          # Currently matches everything, because VM has no EDID
+          Virtual1 = "*";
+        };
+        config = {
+          Virtual1 = {
+            enable = true;
+            crtc = 0;
+            primary = true;
+            position = "0x0";
+            mode = "1680x1050";
+            # gamma = "1.0:0.909:0.833";
+            rate = "60.00";
+            # rotate = "left";
+          };
+        };
+        # hooks.postswitch = buildins.readFile ./work-postswitch.sh;
+      };
+    };
+  };
+
+
+
+
     # TODO
     # Broot TODO
     # programs.broot =
