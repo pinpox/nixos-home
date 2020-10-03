@@ -104,7 +104,7 @@ in
         "module/cpu" = {
           type = "internal/cpu";
           interval = 2;
-          format-prefix = " ";
+          format-prefix = "";
           format-prefix-foreground = "#${vars.colors.base0D}";
           # format-background = ${colors.color-8};
           label = "%percentage%%";
