@@ -25,7 +25,7 @@ in
 
         for i in $(polybar -m | awk -F: '{print $1}'); do
           echo "Starting Polybar on monitor $"
-          MONITOR=$i polybar primary -c ~/.config/polybar/config &
+          MONITOR=$i polybar primary -c ~/.config/polybar/config -r &
         done
       '';
 

@@ -20,12 +20,7 @@ in
         startup = [
           {
             command = "autorandr -c";
-            always = false;
-            notification = false;
-          }
-          {
-            command = "picom &";
-            always = false;
+            always = false; # Important, run only on first start (will loop otherwise)!
             notification = false;
           }
           {
@@ -39,11 +34,6 @@ in
             notification = false;
           }
           {
-            command = "polybar primary &";
-            always = false;
-            notification = false;
-          }
-          {
             command = "nitrogen --restore";
             always = true;
             notification = false;
@@ -53,7 +43,11 @@ in
             always = true;
             notification = false;
           }
-
+          {
+            command = "pkill -USR1 polybar";
+            always = true;
+            notification = false;
+          }
         ];
         colors =
           {
@@ -170,10 +164,14 @@ in
 
     # Picom X11 compositor
     services.picom = {
+      backend = "xrender";
       enable = true;
-      # activeOpacity = TODO
-      # backend = TODO
-      # TODO: other options
+      # package = ;
+
+      activeOpacity = "1.0";
+      shadow = true;
+
+
     };
 
     programs.rofi = {
@@ -255,7 +253,7 @@ in
         global = {
           monitor = 0;
           follow = "mouse";
-          geometry = "300x5-30+50";
+          geometry = "300x5-50+50";
           indicate_hidden = "yes";
           shrink = "no";
           transparency = 0;

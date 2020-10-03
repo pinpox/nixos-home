@@ -148,6 +148,7 @@
       hooks = {
       postswitch = {
         "notify-i3" = "${pkgs.i3}/bin/i3-msg restart";
+        "restart-polybar" = "systemctl --user restart polybar.service";
         # "change-background" = readFile ./change-background.sh;
         # "change-dpi" = ''
         #   case "$AUTORANDR_CURRENT_PROFILE" in
