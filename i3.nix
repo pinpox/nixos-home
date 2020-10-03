@@ -9,6 +9,14 @@ in
       package = pkgs.i3-gaps;
       config = {
         menu = "rofi";
+        window.commands = [
+          {
+            command = "border pixel 2";
+            criteria = {
+              class = "^.*";
+            };
+          }
+        ];
         startup = [
           {
             command = "picom &";
@@ -48,7 +56,7 @@ in
             focused = {
               background = "#${vars.colors.base0D}";
               border = "#${vars.colors.base0D}";
-              childBorder = "#${vars.colors.base00}";
+              childBorder = "#${vars.colors.base0D}";
               indicator = "#${vars.colors.base0D}";
               text = "#${vars.colors.base00}";
             };
@@ -56,7 +64,7 @@ in
             focusedInactive = {
               background = "#${vars.colors.base03}";
               border = "#${vars.colors.base03}";
-              childBorder = "#${vars.colors.base00}";
+              childBorder = "#${vars.colors.base03}";
               indicator = "#${vars.colors.base00}";
               text = "#${vars.colors.base00}";
             };
@@ -64,7 +72,7 @@ in
             unfocused = {
               background = "#${vars.colors.base00}";
               border = "#${vars.colors.base03}";
-              childBorder = "#${vars.colors.base00}";
+              childBorder = "#${vars.colors.base03}";
               indicator = "#${vars.colors.base00}";
               text = "#${vars.colors.base0D}";
             };
@@ -72,14 +80,13 @@ in
             urgent = {
               background = "#${vars.colors.base08}";
               border = "#${vars.colors.base08}";
-              childBorder = "#${vars.colors.base00}";
+              childBorder = "#${vars.colors.base08}";
               indicator = "#${vars.colors.base08}";
               text = "#${vars.colors.base00}";
             };
           };
 
           floating = {
-
             border = 2;
           };
 
@@ -102,7 +109,7 @@ in
             top = 5;
             vertical = 5;
             # smartBorders = "no_gaps";
-            # smartGaps = "on";
+            # smartGaps = true;
           };
           modifier = "Mod4";
           keybindings = let
@@ -135,15 +142,6 @@ in
 
       };
     };
-    # services.cbatticon = {
-    #   enable = true;
-    #   # commandCriticalLevel = ''notify-send "battery critical!"'';
-    #   criticalLevelPercent = 10;
-    #   hideNotification = false;
-    #   iconType = "standard"; # notification, symbolic
-    #   lowLevelPercent = 20;
-    # };
-
 
     services.xscreensaver = {
       enable = true;
@@ -163,7 +161,7 @@ in
     services.network-manager-applet.enable = true;
 
     # Pulseaudio tray
-    services.pasystray.enable = true;
+    # services.pasystray.enable = true;
 
     # Picom X11 compositor
     services.picom = {
@@ -319,6 +317,4 @@ in
     services.gnome-keyring = {
       enable = true;
     };
-
-
   }

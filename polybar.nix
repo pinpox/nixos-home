@@ -1,10 +1,13 @@
 { config, pkgs, lib,  ... }:
-{
-  services.polybar = {
-    enable = true;
-    package = pkgs.polybar.override {
-      i3GapsSupport = true;
-      pulseSupport = true;
+let
+  vars = import ./vars.nix;
+in
+  {
+    services.polybar = {
+      enable = true;
+      package = pkgs.polybar.override {
+        i3GapsSupport = true;
+        pulseSupport = true;
         # alsaSupport = true;
         # iwSupport = true;
         # githubSupport = true;
@@ -20,8 +23,8 @@
           height = 22;
           radius = 0;
 
-          # background = ${colors.background};
-          # foreground = ${colors.foreground};
+          background = "#${vars.colors.base00}";
+          foreground = "#${vars.colors.base05}";
 
           line-size = 0;
           border-size = 0;
@@ -47,11 +50,9 @@
 
         "module/filesystem" = {
 
-          # format-mounted-prefix-foreground   = "${colors.prefix-color}";
-          # format-unmounted-prefix-foreground = "${colors.prefix-color}";
-          # format-mounted-background          = ${colors.color-8}
-          # format-unmounted-background        = ${colors.color-8}
-          # label-unmounted-foreground         = ${colors.foreground}
+          format-mounted-prefix-foreground   = "#${vars.colors.base0D}";
+          format-unmounted-prefix-foreground = "#${vars.colors.base0D}";
+          label-unmounted-foreground         = "#${vars.colors.base05}";
 
           interval                 = 25;
           mount-0                  = "/";
@@ -75,27 +76,27 @@
           # Only show workspaces on the same output as the bar
           pin-workspaces               = true;
           label-mode-padding           = 2;
-          # label-mode-background        = ${colors.foreground};
+          label-mode-background        = "#${vars.colors.base05}";
 
           # focused                    = Active workspace on focused monitor
           label-focused                = "%name%";
-          # label-focused-background   = ${colors.color-4};
-          # label-focused-foreground   = ${colors.background};
+          label-focused-background     = "#${vars.colors.base0D}";
+          label-focused-foreground     = "#${vars.colors.base00}";
           label-focused-padding        = 2;
 
           # unfocused                  = Inactive workspace on any monitor
           label-unfocused              = "%name%";
           label-unfocused-padding      = 2;
-          # label-unfocused-background = ${colors.color-8};
+          label-unfocused-background   = "${vars.colors.base01}";
 
           # visible                    = Active workspace on unfocused monitor
           label-visible                = "%name%";
           # label-visible-padding      = ${self.label-focused-padding}
-          # label-visible-background   = ${colors.color-8};
+          label-visible-background     = "#${vars.colors.base03}";
 
           # urgent                     = Workspace with urgency hint set
           label-urgent                 = "%name%";
-          # label-urgent-background      = ${colors.alert};
+          label-urgent-background      = "#${vars.colors.base08}";
           label-urgent-padding         = 2;
 
         };
@@ -104,7 +105,7 @@
           type = "internal/cpu";
           interval = 2;
           format-prefix = " ";
-          # format-prefix-foreground = ${colors.prefix-color};
+          format-prefix-foreground = "#${vars.colors.base0D}";
           # format-background = ${colors.color-8};
           label = "%percentage%%";
           format-padding = 2;
@@ -116,7 +117,7 @@
           type = "internal/memory";
           interval = 2;
           format-prefix = " ";
-          # format-prefix-foreground = ${colors.prefix-color}
+          format-prefix-foreground = "#${vars.colors.base0D}";
           # format-background = ${colors.color-8}
           label = "%percentage_used%%";
           format-padding = 2;
@@ -163,8 +164,7 @@
 
         "module/date" = {
 
-          # format-prefix-foreground = ${colors.background}
-          # format-prefix-background = ${colors.color-4}
+          format-prefix-foreground = "#${vars.colors.base0D}";
           # format-foreground = ${colors.background}
           # format-background = ${colors.color-4}
 
@@ -192,6 +192,7 @@
 
 # ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
 # ; Default: true
+
 use-ui-max = false;
 
 # ; Interval for volume increase/decrease (in percent points)
@@ -221,6 +222,9 @@ label-volume = "%percentage%%";
 # label-muted = "🔇";
 label-muted = " 0%";
 # label-muted-foreground = #666
+
+ramp-volume-foreground = "#${vars.colors.base0D}";
+format-volume-prefix-foreground = "#${vars.colors.base0D}";
 
 # ; Only applies if <ramp-volume> is used
 ramp-volume-0 =" ";
