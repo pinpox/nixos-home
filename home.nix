@@ -32,6 +32,7 @@
     pkgs.vlc
     pkgs.libnotify
     pkgs.xfce.xfce4-volumed-pulse
+    pkgs.pavucontrol
     # pkgs.nerdfonts
     # pkgs.material-design-icons
     # pkgs.material-icons
