@@ -107,8 +107,8 @@ in
             right = 5;
             top = 5;
             vertical = 5;
-            # smartBorders = "no_gaps";
-            # smartGaps = true;
+            smartBorders = "no_gaps";
+            smartGaps = true;
           };
           modifier = "Mod4";
           keybindings = let

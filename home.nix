@@ -15,6 +15,10 @@
   # Install these packages for my user
   home.packages = [
     pkgs.lxappearance
+    pkgs.xclip
+    pkgs.signal-desktop
+    pkgs.playerctl
+    pkgs.imagemagick
     pkgs.papirus-icon-theme
     pkgs.networkmanagerapplet
     pkgs.xfce.thunar
