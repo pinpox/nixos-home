@@ -76,6 +76,7 @@
     ./browsers.nix
     ./credentials.nix
     ./xdg.nix
+    ./games.nix
   ];
   # GTK settings
   gtk = {
