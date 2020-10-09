@@ -1,8 +1,6 @@
-{ config, pkgs, lib,  ... }:
-let
-  vars = import ./vars.nix;
-in
-{
+{ config, pkgs, lib, ... }:
+let vars = import ./vars.nix;
+in {
   # Browserpass
   programs.browserpass = {
     enable = true;

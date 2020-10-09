@@ -1,12 +1,35 @@
-{ config, pkgs, lib,  ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   # Allow "unfree" licenced packages
-  nixpkgs.config = {
-    allowUnfree = true;
+  nixpkgs.config = { allowUnfree = true; };
+
+  nixpkgs.config.retroarch = {
+    # All available cores can be found here:
+    # https://github.com/NixOS/nixpkgs/pull/82633/files#diff-036410e9211b4336186fc613f7200b12
+    enableBeetleLynx = true;
+    enableBeetlePCEFast = true;
+    enableBeetlePCFX = true;
+    enableBeetlePSX = true;
+    enableBeetlePSXHW = true;
+    enableBeetleSNES = true;
+    enableBeetleSaturn = true;
+    enableBeetleSaturnHW = true;
+    enableBeetleSuperGrafx = true;
+    enableDolphin = true;
+    enableGenesisPlusGX = true;
+    enableMAME = true;
+    enableMBGA = true;
+    enableMGBA = true;
+    enableMupen64Plus = true;
+    enablePCSXRearmed = true;
+    enableParallelN64 = true;
+    enableQuickNES = true;
+    enableSnes9x = true;
+    enableVbaM = true;
   };
 
   # Include man-pages
@@ -37,6 +60,8 @@
     pkgs.libnotify
     pkgs.xfce.xfce4-volumed-pulse
     pkgs.pavucontrol
+    # pkgs.file-roller
+    pkgs.retroarch
     # pkgs.nerdfonts
     # pkgs.material-design-icons
     # pkgs.material-icons
@@ -52,105 +77,122 @@
     ./credentials.nix
     ./xdg.nix
   ];
-    # GTK settings
-    gtk = {
-      enable = true;
-      font = {
-        # package = "Source Code Pro Semibold";
-        name = "Source Code Pro Semibold";
-      };
-      gtk2 = {
-        extraConfig = "gtk-can-change-accels = 1";
-      };
+  # GTK settings
+  gtk = {
+    enable = true;
+    font = {
+      # package = "Source Code Pro Semibold";
+      name = "Source Code Pro Semibold";
+    };
+    gtk2 = { extraConfig = "gtk-can-change-accels = 1"; };
 
-      gtk3 = {
-        extraConfig =  { gtk-cursor-blink = false; gtk-recent-files-limit = 20; };
-        bookmarks = [
-          "file:///home/pinpox/Documents"
-          "file:///home/pinpox/Downloads"
-          "file:///home/pinpox/Pictures"
-          "file:///home/pinpox/Music"
-          "file:///home/pinpox/Videos"
-          "file:///home/pinpox/Seafile"
-        ];
+    gtk3 = {
+      extraConfig = {
+        gtk-cursor-blink = false;
+        gtk-recent-files-limit = 20;
       };
-
-      iconTheme = {
-        package = pkgs.papirus-icon-theme;
-        name = "Papirus";
-      };
+      bookmarks = [
+        "file:///home/pinpox/Documents"
+        "file:///home/pinpox/Downloads"
+        "file:///home/pinpox/Pictures"
+        "file:///home/pinpox/Music"
+        "file:///home/pinpox/Videos"
+        "file:///home/pinpox/Seafile"
+      ];
     };
 
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
+    };
+  };
 
-      programs.git = {
-        enable = true;
-        # ignores TODO
-        # extraConfig TODO
-        signing = {
-          key = "TODO";
-          signByDefault = true;
-        };
-
-        userEmail = "git@pablo.tools";
-        userName = "Pablo Ovelleiro Corral";
-      };
-
-      programs.go = {
-        enable = true;
-        goPath = ".go";
-        packages = {
-          "golang.org/x/text" = builtins.fetchGit "https://go.googlesource.com/text";
-          "golang.org/x/time" = builtins.fetchGit "https://go.googlesource.com/time";
-        };
-      };
-
-    programs.neomutt = {
-      enable =  true;
-      # TODO
+  programs.git = {
+    enable = true;
+    # ignores TODO
+    # extraConfig TODO
+    signing = {
+      key = "TODO";
+      signByDefault = true;
     };
 
-    programs.neovim = {
-      enable = true;
-      # TODO
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
-      withNodeJs = true;
-      withPython = true;
-      withPython3 = true;
-      withRuby = true;
-    };
+    userEmail = "git@pablo.tools";
+    userName = "Pablo Ovelleiro Corral";
+  };
 
-    #TODO check out
-    # TODO look at starship and powerline-go themes for zsh
-    # services.grobi
-    # readline
-    # services.random-background = {} TODO
-    # services.spotifyd = {} TODO
-    # services.syncthing = {} TODO
-    # services.udiskie= {} TODO
-    # services.xsuspender
-    # programs.keychain = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   enableXsessionIntegration = true;
-    # };
-    # programs.mcfly.
-    # programs.mvp
-    # General stuff TODO
-    # home.activation...
-    # home.packages...
-    # home.file...
-    # home.keyboard...
-    # home.language...
-    home.sessionVariables = {
-      LIBGL_ALWAYS_SOFTWARE = "1";
+  programs.go = {
+    enable = true;
+    goPath = ".go";
+    packages = {
+      "golang.org/x/text" =
+        builtins.fetchGit "https://go.googlesource.com/text";
+      "golang.org/x/time" =
+        builtins.fetchGit "https://go.googlesource.com/time";
     };
+  };
 
-    # Autorandr
-    programs.autorandr = {
-      enable = true;
-      hooks = {
+  programs.neomutt = {
+    enable = true;
+    # TODO
+  };
+
+  programs.neovim = {
+    enable = true;
+    # TODO
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    withNodeJs = true;
+    withPython = true;
+    withPython3 = true;
+    withRuby = true;
+  };
+
+  #TODO check out
+  # TODO look at starship and powerline-go themes for zsh
+  # services.grobi
+  # readline
+  # services.random-background = {} TODO
+  # services.spotifyd = {} TODO
+  # services.syncthing = {} TODO
+  # services.udiskie= {} TODO
+  # services.xsuspender
+  # programs.keychain = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  #   enableXsessionIntegration = true;
+  # };
+  # programs.mcfly.
+  # programs.mvp
+  # General stuff TODO
+  # home.activation...
+  # home.packages...
+  # home.file...
+  # home.keyboard...
+  # home.language...
+  home.sessionVariables = { LIBGL_ALWAYS_SOFTWARE = "1"; };
+
+  programs.newsboat = {
+    enable = true;
+    autoReload = true;
+    urls = [
+      {
+        title = "nixOS mobile";
+        tags = [ "nixos" "nix" ];
+        url = "https://mobile.nixos.org/index.xml";
+      }
+      {
+        title = "r/NixOS";
+        tags = [ "nixos" "nix" "reddit" ];
+        url = "https://www.reddit.com/r/NixOS.rss";
+      }
+    ];
+  };
+
+  # Autorandr
+  programs.autorandr = {
+    enable = true;
+    hooks = {
       postswitch = {
         "notify-i3" = "${pkgs.i3}/bin/i3-msg restart";
         "restart-polybar" = "systemctl --user restart polybar.service";
@@ -198,15 +240,12 @@
     };
   };
 
-
-
-
-    # TODO
-    # Broot TODO
-    # programs.broot =
-    # accounts.email.accounts.<name>.gpg
-    # Fontconfig
-    # fonts.fontconfig.enable
+  # TODO
+  # Broot TODO
+  # programs.broot =
+  # accounts.email.accounts.<name>.gpg
+  # Fontconfig
+  # fonts.fontconfig.enable
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
