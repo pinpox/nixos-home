@@ -56,20 +56,20 @@
 
     shellAliases = {
       # Exa ls replacement
-      ls = "exa --group-directories-first";
-      l = "exa -lbF --git --group-directories-first";
-      ll = "exa -lbGF --git --group-directories-first";
-      llm = "exa -lbGd --git --sort=modified --group-directories-first";
+      ls = "${pkgs.exa}/bin/exa --group-directories-first";
+      l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first";
+      ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first";
+      llm = "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first";
       la =
-        "exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first";
+        "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first";
       lx =
-        "exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first";
-      lt = "exa --tree --level=2 --group-directories-first";
+        "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first";
+      lt = "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first";
       # Other
       cats = "highlight -O ansi";
       cc = "clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
       qr_gen = "qrencode -t ansi -o-";
-      top = "htop";
+      top = "${pkgs.htop}/bin/htop";
       weather = "curl -4 http://wttr.in/Koeln";
     };
 
