@@ -7,64 +7,38 @@
   # Allow "unfree" licenced packages
   nixpkgs.config = { allowUnfree = true; };
 
-  nixpkgs.config.retroarch = {
-    # All available cores can be found here:
-    # https://github.com/NixOS/nixpkgs/pull/82633/files#diff-036410e9211b4336186fc613f7200b12
-    enableBeetleLynx = true;
-    enableBeetlePCEFast = true;
-    enableBeetlePCFX = true;
-    enableBeetlePSX = true;
-    enableBeetlePSXHW = true;
-    enableBeetleSNES = true;
-    enableBeetleSaturn = true;
-    enableBeetleSaturnHW = true;
-    enableBeetleSuperGrafx = true;
-    enableDolphin = true;
-    enableGenesisPlusGX = true;
-    enableMAME = true;
-    enableMBGA = true;
-    enableMGBA = true;
-    enableMupen64Plus = true;
-    enablePCSXRearmed = true;
-    enableParallelN64 = true;
-    enableQuickNES = true;
-    enableSnes9x = true;
-    enableVbaM = true;
-  };
-
   # Include man-pages
   manual.manpages.enable = true;
 
   # Install these packages for my user
-  home.packages = [
-    pkgs.lxappearance
-    pkgs.xclip
-    pkgs.signal-desktop
-    pkgs.playerctl
-    pkgs.imagemagick
-    pkgs.papirus-icon-theme
-    pkgs.networkmanagerapplet
-    pkgs.xfce.thunar
-    pkgs.xfce.thunar-volman
-    pkgs.xfce.thunar-archive-plugin
-    pkgs.xfce.gvfs
-    pkgs.exa
-    pkgs.htop
-    pkgs.nitrogen
-    pkgs.thunderbird
-    pkgs.xorg.xrandr
-    pkgs.arandr
-    pkgs.spotify
-    pkgs.cbatticon
-    pkgs.vlc
-    pkgs.libnotify
-    pkgs.xfce.xfce4-volumed-pulse
-    pkgs.pavucontrol
-    # pkgs.file-roller
-    pkgs.retroarch
-    # pkgs.nerdfonts
-    # pkgs.material-design-icons
-    # pkgs.material-icons
+  home.packages = with pkgs; [
+    lxappearance
+    xclip
+    signal-desktop
+    playerctl
+    imagemagick
+    papirus-icon-theme
+    networkmanagerapplet
+    xfce.thunar
+    xfce.thunar-volman
+    xfce.thunar-archive-plugin
+    xfce.gvfs
+    exa
+    htop
+    nitrogen
+    thunderbird
+    xorg.xrandr
+    arandr
+    spotify
+    cbatticon
+    vlc
+    libnotify
+    xfce.xfce4-volumed-pulse
+    pavucontrol
+    retroarch
+    # nerdfonts
+    # material-design-icons
+    # material-icons
   ];
 
   # Imports
