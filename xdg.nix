@@ -2,16 +2,22 @@
   xdg = {
     enable = true;
     configFile = {
-      nvim = {
-        source = ./dotfiles/vim;
-        target = "nvim";
-        recursive = true;
-        # onChange = "nvim -c +PlugInstall +qall --headless";
-      };
+      # nvim = {
+      #   source = ./dotfiles/vim;
+      #   target = "nvim";
+      #   recursive = true;
+      #   # onChange = "nvim -c +PlugInstall +qall --headless";
+      # };
 
       nvim_theme = {
         target = "nvim/colors/ansible-theme.vim";
-        source = ./dotfiles/vim-theme;
+        source = ./vim/vim-theme;
+      };
+
+
+      coc_settings = {
+        target = "nvim/coc-settings.json";
+        source = ./vim/coc-settings.json;
       };
 
       mpris = {
