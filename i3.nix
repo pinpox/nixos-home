@@ -1,8 +1,13 @@
 { config, pkgs, lib, ... }:
 let vars = import ./vars.nix;
 in {
+
+  xsession.scriptPath = ".hm-xsession";
+  xsession.enable = true;
+
   xsession.windowManager.i3 = {
     enable = true;
+
 
     package = pkgs.i3-gaps;
     config = {
