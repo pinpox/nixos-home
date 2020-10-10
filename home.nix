@@ -13,6 +13,7 @@
   # Install these packages for my user
   home.packages = with pkgs; [
     lxappearance
+    gimp
     xclip
     signal-desktop
     playerctl
@@ -168,9 +169,9 @@
       # timakro/vim-searchant'                " Better highlighting of search
 
       start = [
-        
         # vim-indent-guides
         # vimpreviewpandoc
+        colorizer
         BufOnly-vim
         ansible-vim
         base16-vim
