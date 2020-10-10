@@ -174,7 +174,7 @@ in {
 
   # Picom X11 compositor
   services.picom = {
-    backend = "xrender";
+    backend = "glx";
     enable = true;
     # package = ;
 
