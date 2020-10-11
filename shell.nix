@@ -57,9 +57,10 @@
     shellAliases = {
       # Exa ls replacement
       ls = "${pkgs.exa}/bin/exa --group-directories-first";
-      l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first";
-      ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first";
-      llm = "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first";
+      l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
+      ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
+      llm =
+        "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first";
       la =
         "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first";
       lx =

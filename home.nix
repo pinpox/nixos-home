@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
-
-{
+let vars = import ./vars.nix;
+in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -14,11 +14,14 @@
   home.packages = with pkgs; [
     lxappearance
     gimp
+    gtk_engines
+    arc-theme
     xclip
     signal-desktop
     playerctl
     imagemagick
     papirus-icon-theme
+    matcha-gtk-theme
     networkmanagerapplet
     xfce.thunar
     xfce.thunar-volman
@@ -37,6 +40,7 @@
     xfce.xfce4-volumed-pulse
     pavucontrol
     retroarch
+    # paper-gtk-theme
     # nerdfonts
     # material-design-icons
     # material-icons
@@ -46,6 +50,7 @@
   imports = [
     ./shell.nix
     ./alacritty.nix
+    ./gtk.nix
     ./i3.nix
     ./polybar.nix
     ./browsers.nix
@@ -53,35 +58,6 @@
     ./xdg.nix
     ./games.nix
   ];
-  # GTK settings
-  gtk = {
-    enable = true;
-    font = {
-      # package = "Source Code Pro Semibold";
-      name = "Source Code Pro Semibold";
-    };
-    gtk2 = { extraConfig = "gtk-can-change-accels = 1"; };
-
-    gtk3 = {
-      extraConfig = {
-        gtk-cursor-blink = false;
-        gtk-recent-files-limit = 20;
-      };
-      bookmarks = [
-        "file:///home/pinpox/Documents"
-        "file:///home/pinpox/Downloads"
-        "file:///home/pinpox/Pictures"
-        "file:///home/pinpox/Music"
-        "file:///home/pinpox/Videos"
-        "file:///home/pinpox/Seafile"
-      ];
-    };
-
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus";
-    };
-  };
 
   programs.git = {
     enable = true;
@@ -124,96 +100,95 @@
     withRuby = true;
 
     configure = {
-    customRC =
-      lib.strings.concatStrings [
+      customRC = lib.strings.concatStrings [
 
-      # PLUGINS:
-      (lib.strings.fileContents ./vim/plugins.vim)
+        # PLUGINS:
+        (lib.strings.fileContents ./vim/plugins.vim)
 
-      # GENERAL OPTIONS:
-      (lib.strings.fileContents ./vim/general.vim)
+        # GENERAL OPTIONS:
+        (lib.strings.fileContents ./vim/general.vim)
 
-      # FILE BROWSING:
-      (lib.strings.fileContents ./vim/netrw.vim)
+        # FILE BROWSING:
+        (lib.strings.fileContents ./vim/netrw.vim)
 
-      # KEY MAPPINGS:
-      (lib.strings.fileContents ./vim/mappings.vim)
+        # KEY MAPPINGS:
+        (lib.strings.fileContents ./vim/mappings.vim)
 
-      # APPEARANCE:
-      (lib.strings.fileContents ./vim/style.vim)
+        # APPEARANCE:
+        (lib.strings.fileContents ./vim/style.vim)
 
-      # LANGUAGESERVER:
-      (lib.strings.fileContents ./vim/lsp.vim)
+        # LANGUAGESERVER:
+        (lib.strings.fileContents ./vim/lsp.vim)
 
-      # COC:
-      (lib.strings.fileContents ./vim/coc_settings.vim)
-    ];
-
-    packages.myVimPackage = with pkgs.vimPlugins; {
-
-      # loaded on launch
-
-      # TODO Missing plugins
-      # AndrewRadev/switch.vim'
-      # fvictorio/vim-textobj-backticks'
-      # jamessan/vim-gnupg', {'for': 'gpg'}   " Edit ggp-encrypted files
-      # juliosueiras/vim-terraform-snippets'
-      # lukas-reineke/indent-blankline.nvim'
-      # nicwest/vim-camelsnek'
-      # prabirshrestha/async.vim'
-      # rafalbromirski/vim-aurora'
-      # rhysd/committia.vim'                  " Better commit message editor
-      # rrethy/vim-hexokinase'
-      # stevearc/vim-arduino'
-      # thinca/vim-textobj-between'           "Text objects for a range between a character
-      # timakro/vim-searchant'                " Better highlighting of search
-
-      start = [
-        # vim-indent-guides
-        # vimpreviewpandoc
-        colorizer
-        BufOnly-vim
-        ansible-vim
-        base16-vim
-        coc-nvim
-        dracula-vim
-        fzf-vim
-        gotests-vim
-        haskell-vim
-        i3config-vim
-        indentLine
-        tabular
-        vim-airline
-        vim-airline-themes
-        vim-autoformat
-        vim-better-whitespace
-        vim-commentary
-        vim-devicons
-        vim-easy-align
-        vim-eunuch
-        vim-gitgutter
-        vim-go
-        vim-grammarous
-        vim-gutentags
-        vim-illuminate
-        vim-indent-object
-        vim-markdown
-        vim-nix
-        vim-repeat
-        vim-sandwich
-        vim-snippets
-        vim-table-mode
-        vim-terraform
-        vim-textobj-user
-        vim-vinegar
-        vim-visual-increment
-        vim-which-key
-        vista-vim
+        # COC:
+        (lib.strings.fileContents ./vim/coc_settings.vim)
       ];
-      # manually loadable by calling `:packadd $plugin-name`
-      opt = [ ];
+
+      packages.myVimPackage = with pkgs.vimPlugins; {
+
+        # loaded on launch
+
+        # TODO Missing plugins
+        # AndrewRadev/switch.vim'
+        # fvictorio/vim-textobj-backticks'
+        # jamessan/vim-gnupg', {'for': 'gpg'}   " Edit ggp-encrypted files
+        # juliosueiras/vim-terraform-snippets'
+        # lukas-reineke/indent-blankline.nvim'
+        # nicwest/vim-camelsnek'
+        # prabirshrestha/async.vim'
+        # rafalbromirski/vim-aurora'
+        # rhysd/committia.vim'                  " Better commit message editor
+        # rrethy/vim-hexokinase'
+        # stevearc/vim-arduino'
+        # thinca/vim-textobj-between'           "Text objects for a range between a character
+        # timakro/vim-searchant'                " Better highlighting of search
+
+        start = [
+          # vim-indent-guides
+          # vimpreviewpandoc
+          colorizer
+          BufOnly-vim
+          ansible-vim
+          base16-vim
+          coc-nvim
+          dracula-vim
+          fzf-vim
+          gotests-vim
+          haskell-vim
+          i3config-vim
+          indentLine
+          tabular
+          vim-airline
+          vim-airline-themes
+          vim-autoformat
+          vim-better-whitespace
+          vim-commentary
+          vim-devicons
+          vim-easy-align
+          vim-eunuch
+          vim-gitgutter
+          vim-go
+          vim-grammarous
+          vim-gutentags
+          vim-illuminate
+          vim-indent-object
+          vim-markdown
+          vim-nix
+          vim-repeat
+          vim-sandwich
+          vim-snippets
+          vim-table-mode
+          vim-terraform
+          vim-textobj-user
+          vim-vinegar
+          vim-visual-increment
+          vim-which-key
+          vista-vim
+        ];
+        # manually loadable by calling `:packadd $plugin-name`
+        opt = [ ];
+      };
     };
-  };
 
   };
 
