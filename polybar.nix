@@ -189,8 +189,8 @@ in {
         date = "";
         date-alt = " %Y-%m-%d";
 
-        time = "%H:%M";
-        time-alt = "%H:%M:%S";
+        time = "%H:%M  ";
+        time-alt = "%H:%M:%S  ";
 
         format-prefix = "";
         format-prefix-padding-right = 1;
