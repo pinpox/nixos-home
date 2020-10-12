@@ -35,11 +35,15 @@ in {
     arandr
     spotify
     cbatticon
+    manix
+    httpie
     vlc
     libnotify
     xfce.xfce4-volumed-pulse
     pavucontrol
     retroarch
+    tealdeer
+    scrot
     # paper-gtk-theme
     # nerdfonts
     # material-design-icons
