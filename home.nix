@@ -68,7 +68,7 @@ in {
     # ignores TODO
     # extraConfig TODO
     signing = {
-      key = "TODO";
+      key = "823A6154426408D3";
       signByDefault = true;
     };
 
@@ -94,7 +94,6 @@ in {
 
   programs.neovim = {
     enable = true;
-    # TODO
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
