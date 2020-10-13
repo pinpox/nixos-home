@@ -26,10 +26,11 @@ in {
         isDefault = true;
         settings = {
           "browser.startup.homepage" = "https://nixos.org";
-          "browser.display.background_color" = "#${vars.colors.base00}";
-          "browser.display.foreground_color" = "#${vars.colors.base05}";
+          # "browser.display.background_color" = "#${vars.colors.base00}";
+          # "browser.display.foreground_color" = "#${vars.colors.base05}";
           "browser.display.use_system_colors" = "true";
-          "browser.display.use_document_colors" = "true";
+          "browser.anchor_color" = "#${vars.colors.base0A}";
+          # "browser.display.use_document_colors" = "false";
           # "browser.search.region" = "GB";
           # "browser.search.isUS" = false;
           # "distribution.searchplugins.defaultLocale" = "en-GB";
@@ -60,6 +61,7 @@ in {
             --mff-tab-height: 32px;
             --mff-tab-pinned-bg: #${vars.colors.base0E};
             --mff-tab-selected-bg: #${vars.colors.base03};
+            --mff-tab-selected-fg: #${vars.colors.base0A};
             --mff-tab-soundplaying-bg: #${vars.colors.base0E};
 
             --mff-urlbar-color: #${vars.colors.base05};
@@ -98,8 +100,13 @@ in {
             background: var(--mff-tab-selected-bg) !important;
           }
 
+          .tab-text[selected="true"] {
+            color: #${vars.colors.base0A} !important;
+          }
+
           .tab-background:not[visuallyselected] {
             background: var(--mff-tab-selected-bg) !important;
+            colors: red;
             opacity: 0.5 !important;
           }
 
