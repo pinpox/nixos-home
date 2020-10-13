@@ -1,7 +1,5 @@
-
-
 { config, pkgs, lib, ... }: {
-  # # From Oh-my-ZSH
+
   # robbyrussell/oh-my-zsh folder:lib/completion
 
   # # From Prezto
@@ -56,21 +54,21 @@
 
     shellAliases = {
       # Exa ls replacement
-      ls = "${pkgs.exa}/bin/exa --group-directories-first";
-      l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
-      ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
-      llm =
+      ls      = "${pkgs.exa}/bin/exa --group-directories-first";
+      l       = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
+      ll      = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
+      llm     =
         "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first";
-      la =
+      la      =
         "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first";
-      lx =
+      lx      =
         "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first";
-      lt = "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first";
+      lt      = "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first";
       # Other
-      cats = "highlight -O ansi";
-      cc = "clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
-      qr_gen = "qrencode -t ansi -o-";
-      top = "${pkgs.htop}/bin/htop";
+      cats    = "highlight -O ansi";
+      cc      = "clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
+      qr_gen  = "qrencode -t ansi -o-";
+      top     = "${pkgs.htop}/bin/htop";
       weather = "curl -4 http://wttr.in/Koeln";
     };
 

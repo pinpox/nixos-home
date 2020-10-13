@@ -23,5 +23,4 @@
     enableSnes9x = true;
     enableVbaM = true;
   };
-
 }
