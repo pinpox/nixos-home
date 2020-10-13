@@ -150,6 +150,7 @@ in {
           # vim-indent-guides
           # vimpreviewpandoc
           colorizer
+          committia-vim
           BufOnly-vim
           ansible-vim
           base16-vim
