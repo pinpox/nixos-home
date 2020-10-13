@@ -141,10 +141,13 @@ in {
             color: var(--mff-tab-color);
           }
 
-          /* Hide the favicon for tabs */
+          /* Hide the favicon for tabs 
+
           hbox.tab-content .tab-icon-image {
             display: none !important;
           }
+
+          */
 
           /* Show the favicon for tabs that are pinned */
           hbox.tab-content[pinned=true] .tab-icon-image {
