@@ -87,6 +87,12 @@
           builtins.fetchGit { url = "https://github.com/mafredri/zsh-async"; };
       }
       {
+        name = "zsh-colored-man-pages";
+        file = "colored-man-pages.plugin.zsh";
+        src =
+          builtins.fetchGit { url = "https://github.com/ael-code/zsh-colored-man-pages"; };
+      }
+      {
         name = "pure";
         # file = ".plugin.zsh";
         src =
