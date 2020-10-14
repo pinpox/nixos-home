@@ -73,7 +73,7 @@ in {
   gtk = {
     enable = true;
 
-    font = { name = "Source Code Pro Semibold"; };
+    font = { name = "Source Code Pro"; };
 
     iconTheme = {
       name = "Papirus-Dark";

@@ -9,6 +9,7 @@ in {
       scrolling.history = 10000;
       env.TERM = "xterm-256color";
 
+      background_opacity = 0.85;
       window = {
         dimensions = {
           lines = 20;

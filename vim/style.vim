@@ -25,6 +25,9 @@ colorscheme ansible-theme
 " Italic comments
 highlight Comment cterm=italic gui=italic
 
+" Make background transparent
+highlight Normal guibg=none
+
 " Airline
 " let g:airline#extensions#ale#enabled = 1
 " let g:airline_powerline_fonts = 0
