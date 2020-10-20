@@ -13,7 +13,17 @@ in {
   # Install these packages for my user
   home.packages = with pkgs; [
     lxappearance
+    xarchiver
+    gcc
+    pkg-config
+    openvpn
+    networkmanager-openvpn
+    asciinema
+    virt-manager
+    unzip
     gimp
+    seafile-client
+    hugo
     gtk_engines
     arc-theme
     xclip
@@ -72,7 +82,7 @@ in {
       signByDefault = true;
     };
 
-    userEmail = "git@pablo.tools";
+    userEmail = "mail@pablo.tools";
     userName = "Pablo Ovelleiro Corral";
   };
 
@@ -187,7 +197,7 @@ in {
           vim-vinegar
           vim-visual-increment
           vim-which-key
-          vista-vim
+          #vista-vim
         ];
         # manually loadable by calling `:packadd $plugin-name`
         opt = [ ];
@@ -223,19 +233,35 @@ in {
   programs.newsboat = {
     enable = true;
     autoReload = true;
-    urls = [
-      {
-        title = "nixOS mobile";
-        tags = [ "nixos" "nix" ];
-        url = "https://mobile.nixos.org/index.xml";
-      }
-      {
-        title = "r/NixOS";
-        tags = [ "nixos" "nix" "reddit" ];
-        url = "https://www.reddit.com/r/NixOS.rss";
-      }
-    ];
+    # urls = [
+    #   {
+    #     title = "nixOS mobile";
+    #     tags = [ "nixos" "nix" ];
+    #     url = "https://mobile.nixos.org/index.xml";
+    #   }
+    #   {
+    #     title = "r/NixOS";
+    #     tags = [ "nixos" "nix" "reddit" ];
+    #     url = "https://www.reddit.com/r/NixOS.rss";
+    #   }
+    # ] ++ (map (x: { url = x; })
+    #   (lib.splitString "\n" (builtins.readFile ./podcast.txt)));
+
+    # ++ (map (x: { url = x; })
+    #  (lib.splitString "\n" (builtins.readFile ./youtube.txt)));
   };
+
+  # Fix until the code above is fixed, see:
+  # See https://github.com/NixOS/nix/issues/4147
+  xdg.configFile.newsboat_urls = {
+    target = "newsboat/urls";
+    text = builtins.readFile ./newsboat/youtube.txt +
+     builtins.readFile ./newsboat/podcast.txt +
+     builtins.readFile ./newsboat/other.txt;
+
+  };
+
+
 
   # Autorandr
   programs.autorandr = {
