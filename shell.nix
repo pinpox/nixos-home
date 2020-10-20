@@ -93,6 +93,12 @@
           builtins.fetchGit { url = "https://github.com/ael-code/zsh-colored-man-pages"; };
       }
       {
+        name = "zsh-syntax-highlighting";
+        file = "zsh-syntax-highlighting.zsh";
+        src =
+          builtins.fetchGit { url = "https://github.com/zsh-users/zsh-syntax-highlighting/"; };
+      }
+      {
         name = "pure";
         # file = ".plugin.zsh";
         src =
