@@ -1,5 +1,7 @@
 { config, pkgs, lib, ... }:
-let vars = import ./vars.nix;
+let
+  vars = import ./vars.nix;
+  splitString = str: builtins.filter builtins.isString (builtins.split "\n" str);
 in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -233,35 +235,30 @@ in {
   programs.newsboat = {
     enable = true;
     autoReload = true;
-    # urls = [
-    #   {
-    #     title = "nixOS mobile";
-    #     tags = [ "nixos" "nix" ];
-    #     url = "https://mobile.nixos.org/index.xml";
-    #   }
-    #   {
-    #     title = "r/NixOS";
-    #     tags = [ "nixos" "nix" "reddit" ];
-    #     url = "https://www.reddit.com/r/NixOS.rss";
-    #   }
-    # ] ++ (map (x: { url = x; })
-    #   (lib.splitString "\n" (builtins.readFile ./podcast.txt)));
+    urls = [
+      {
+        title = "nixOS mobile";
+        tags = [ "nixos" "nix" ];
+        url = "https://mobile.nixos.org/index.xml";
+      }
+      {
+        title = "r/NixOS";
+        tags = [ "nixos" "nix" "reddit" ];
+        url = "https://www.reddit.com/r/NixOS.rss";
+      }
+    ] ++ (map (x: { url = x; tags = ["rss"]; })
+      (splitString (builtins.readFile ./newsboat/rss.txt )))
 
-    # ++ (map (x: { url = x; })
-    #  (lib.splitString "\n" (builtins.readFile ./youtube.txt)));
+     ++ (map (x: { url = x; tags = ["podcast"]; })
+      (splitString (builtins.readFile ./newsboat/podcast.txt )))
+
+     ++ (map (x: { url = x; tags = ["youtube"]; })
+      (splitString (builtins.readFile ./newsboat/youtube.txt )));
   };
 
-  # Fix until the code above is fixed, see:
-  # See https://github.com/NixOS/nix/issues/4147
-  xdg.configFile.newsboat_urls = {
-    target = "newsboat/urls";
-    text = builtins.readFile ./newsboat/youtube.txt +
-     builtins.readFile ./newsboat/podcast.txt +
-     builtins.readFile ./newsboat/other.txt;
-
-  };
-
-
+  #   text = builtins.readFile ./newsboat/youtube.txt +
+  #    builtins.readFile ./newsboat/podcast.txt +
+  #    builtins.readFile ./newsboat/other.txt;
 
   # Autorandr
   programs.autorandr = {
