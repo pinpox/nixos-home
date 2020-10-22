@@ -291,27 +291,27 @@ in {
         # '';
       };
     };
-    profiles = {
-      "VM" = {
-        fingerprint = {
-          # Currently matches everything, because VM has no EDID
-          Virtual1 = "*";
-        };
-        config = {
-          Virtual1 = {
-            enable = true;
-            crtc = 0;
-            primary = true;
-            position = "0x0";
-            mode = "1680x1050";
-            # gamma = "1.0:0.909:0.833";
-            rate = "60.00";
-            # rotate = "left";
-          };
-        };
-        # hooks.postswitch = buildins.readFile ./work-postswitch.sh;
-      };
-    };
+    # profiles = {
+    #   "VM" = {
+    #     fingerprint = {
+    #       # Currently matches everything, because VM has no EDID
+    #       Virtual1 = "*";
+    #     };
+    #     config = {
+    #       Virtual1 = {
+    #         enable = true;
+    #         crtc = 0;
+    #         primary = true;
+    #         position = "0x0";
+    #         mode = "1680x1050";
+    #         # gamma = "1.0:0.909:0.833";
+    #         rate = "60.00";
+    #         # rotate = "left";
+    #       };
+    #     };
+    #     # hooks.postswitch = buildins.readFile ./work-postswitch.sh;
+    #   };
+    # };
   };
 
   # TODO

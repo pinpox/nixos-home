@@ -45,11 +45,6 @@ in {
           notification = false;
         }
         {
-          command = "nm-applet &";
-          always = true;
-          notification = false;
-        }
-        {
           command = "pkill -USR1 polybar";
           always = true;
           notification = false;
