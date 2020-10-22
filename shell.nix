@@ -48,28 +48,35 @@
       abbrev-alias v="nvim"
 
       # Global aliases, get expaned everywhere
-      abbrev-alias -g G="| grep -i"
-      abbrev-alias -g P="| ix"
+      abbrev-alias -g G="| rg -i"
+      abbrev-alias -g P="| tb"
     '';
 
     shellAliases = {
       # Exa ls replacement
-      ls      = "${pkgs.exa}/bin/exa --group-directories-first";
-      l       = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
-      ll      = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
-      llm     =
-        "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first";
-      la      =
-        "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first";
-      lx      =
-        "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first";
-      lt      = "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first";
+      ls = "${pkgs.exa}/bin/exa --group-directories-first --icons";
+      l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
+      ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
+      llm =
+        "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first --icons";
+      la =
+        "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first --icons";
+      lx =
+        "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first --icons";
+      lt =
+        "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first --icons";
+      # Pastebin (termbin.com)
+      tb = "${pkgs.netcat-gnu}/bin/nc termbin.com 9999";
+      tbc =
+        "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
+
       # Other
-      cats    = "highlight -O ansi";
-      cc      = "clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
-      qr_gen  = "qrencode -t ansi -o-";
-      top     = "${pkgs.htop}/bin/htop";
-      weather = "curl -4 http://wttr.in/Koeln";
+      c = "${pkgs.bat}/bin/bat -n --decorations never";
+      cc =
+        "${pkgs.clang}/bin/clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
+      qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
+      top = "${pkgs.htop}/bin/htop";
+      weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
     };
 
     plugins = [
@@ -89,14 +96,23 @@
       {
         name = "zsh-colored-man-pages";
         file = "colored-man-pages.plugin.zsh";
-        src =
-          builtins.fetchGit { url = "https://github.com/ael-code/zsh-colored-man-pages"; };
+        src = builtins.fetchGit {
+          url = "https://github.com/ael-code/zsh-colored-man-pages";
+        };
       }
       {
         name = "zsh-syntax-highlighting";
         file = "zsh-syntax-highlighting.zsh";
-        src =
-          builtins.fetchGit { url = "https://github.com/zsh-users/zsh-syntax-highlighting/"; };
+        src = builtins.fetchGit {
+          url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
+        };
+      }
+      {
+        name = "zsh-you-should-use";
+        file = "you-should-use.plugin.zsh";
+        src = builtins.fetchGit {
+          url = "https://github.com/MichaelAquilina/zsh-you-should-use";
+        };
       }
       {
         name = "pure";
