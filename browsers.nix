@@ -410,6 +410,8 @@ in {
 
             /* Hide scrollbar */
 
+            /*
+
             :root{
               scrollbar-width: none !important;
             }
@@ -420,6 +422,8 @@ in {
             :root{
               scrollbar-width: none !important;
             }
+
+            */
             }
 
                   '';
