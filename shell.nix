@@ -53,8 +53,9 @@
     '';
 
     shellAliases = {
+
       # Exa ls replacement
-      ls = "${pkgs.exa}/bin/exa --group-directories-first --icons";
+      ls = "${pkgs.exa}/bin/exa --group-directories-first";
       l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
       ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
       llm =
@@ -65,10 +66,16 @@
         "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first --icons";
       lt =
         "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first --icons";
+
       # Pastebin (termbin.com)
       tb = "${pkgs.netcat-gnu}/bin/nc termbin.com 9999";
       tbc =
         "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
+
+      # Gitignores
+
+      git-ignore-create-go =
+        "${pkgs.curl}/bin/curl 'https://www.toptal.com/developers/gitignore/api/vim,go,tags,ssh' > .gitignore";
 
       # Other
       c = "${pkgs.bat}/bin/bat -n --decorations never";
