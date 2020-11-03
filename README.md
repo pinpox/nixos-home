@@ -1,14 +1,13 @@
 ![nixos-home](https://socialify.git.ci/pinpox/nixos-home/image?description=1&descriptionEditable=My%20home-manager%20%24USER%20setup&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fpablo.tools%2Fimg%2Favatar.gif&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
-My user setup for [NixOS](nixos.org) Desktops.
-System configuration is in a [separate repository](https://github.com/pinpox/nixos).
-
-Visit [pablo.tools](https://pablo.tools/blog) for details.
+My user setup for [NixOS](nixos.org) Desktops.  System configuration is in a
+[separate repository](https://github.com/pinpox/nixos).  Visit
+[pablo.tools](https://pablo.tools/blog) for details.
 
 ## Setup
 
 The following steps are assumed to be taken as the user for which the
-configuratino should be set up.
+configuration should be set up.
 
 ### Install home-manager
 
