@@ -22,22 +22,15 @@ rm .config/nixpkgs/home.nix
 
 ### Install configuration
 
-The following downloads this repository as zip instead of cloning it directly.
-This is useful because the user probably does not have any known SSH-keys in
-`~/.ssh` and yubikey is not yet set up.
+Since SSH-keys may not be present and my yubikey is not set up yet, use HTTPS to
+clone the configuration instead of SSH.
 
 ```bash
-wget https://github.com/pinpox/nixos-home/archive/master.zip
+# Move generated configuration out of the way
+mv ~/.config/nixpkgs .config/nixpkgs-old
 
-# In case unzip is not present, use this shell:
-# nix-shell -p pkgs.unzip
-
-unzip master.zip
-mv nixos-home-master/* .config/nixpkgs
-
-# Cleanup
-rm -rf nixos-home-master
-rm master.zip
+# Clone repository to correct location
+git clone https://github.com/pinpox/nixos-home.git ~/.config/nixpkgs
 ```
 
 ### Rebuild
@@ -48,7 +41,13 @@ Run:
 home-manager switch
 ```
 
-If everything went well, log out and back in.
+If everything went well, log out and back in. Consider changing the remote of
+the configuation repository to use SSH now instead of HTTPS.
+
+```bash
+cd ~/.config/nixpkgs
+git remote set-url origin git@github.com:pinpox/nixos-home.git
+```
 
 # TODO 
 
