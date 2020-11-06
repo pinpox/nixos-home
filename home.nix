@@ -10,53 +10,53 @@ in {
 
   # Install these packages for my user
   home.packages = with pkgs; [
-    vagrant
-    styx
-    nix-index
+    arandr
+    arc-theme
     arduino
     arduino-cli
-    lxappearance
-    xarchiver
-    gcc
-    pkg-config
-    openvpn
-    networkmanager-openvpn
     asciinema
-    virt-manager
-    unzip
-    gimp
-    seafile-client
-    hugo
-    gtk_engines
-    arc-theme
-    xclip
-    signal-desktop
-    playerctl
-    imagemagick
-    papirus-icon-theme
-    matcha-gtk-theme
-    networkmanagerapplet
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-archive-plugin
-    xfce.gvfs
-    exa
-    htop
-    nitrogen
-    thunderbird
-    xorg.xrandr
-    arandr
-    spotify
     cbatticon
-    manix
+    exa
+    gcc
+    gimp
+    gtk_engines
+    htop
     httpie
-    vlc
+    hugo
+    imagemagick
     libnotify
-    xfce.xfce4-volumed-pulse
+    lxappearance
+    manix
+    matcha-gtk-theme
+    networkmanager-openvpn
+    networkmanagerapplet
+    nitrogen
+    nix-index
+    openvpn
+    papirus-icon-theme
     pavucontrol
+    pkg-config
+    playerctl
     retroarch
-    tealdeer
     scrot
+    seafile-client
+    signal-desktop
+    spotify
+    styx
+    tealdeer
+    thunderbird
+    unzip
+    vagrant
+    virt-manager
+    vlc
+    xarchiver
+    xclip
+    xfce.gvfs
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+    xfce.xfce4-volumed-pulse
+    xorg.xrandr
     # paper-gtk-theme
     # nerdfonts
     # material-design-icons
