@@ -65,16 +65,25 @@ in {
 
   # Imports
   imports = [
-    ./shell.nix
+    # ./grobi.nix
+    # ./xresources.nix
     ./alacritty.nix
-    ./gtk.nix
-    ./i3.nix
-    ./vim.nix
-    ./polybar.nix
     ./browsers.nix
     ./credentials.nix
-    ./xdg.nix
+    ./dunst.nix
     ./games.nix
+    ./git.nix
+    ./go.nix
+    ./gtk.nix
+    ./i3.nix
+    ./neomutt.nix
+    ./newsboat.nix
+    ./picom.nix
+    ./polybar.nix
+    ./rofi.nix
+    ./shell.nix
+    ./vim.nix
+    ./xdg.nix
   ];
 
   # Include man-pages
@@ -83,100 +92,33 @@ in {
   # Environment variables
   home.sessionVariables = { LIBGL_ALWAYS_SOFTWARE = "1"; };
 
-  programs = {
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
-    # Let Home Manager install and manage itself.
-    home-manager.enable = true;
-
-    # mvp
-
-    newsboat = {
-      enable = true;
-      autoReload = true;
-      urls = [
-        {
-          title = "nixOS mobile";
-          tags = [ "nixos" "nix" ];
-          url = "https://mobile.nixos.org/index.xml";
-        }
-        {
-          title = "r/NixOS";
-          tags = [ "nixos" "nix" "reddit" ];
-          url = "https://www.reddit.com/r/NixOS.rss";
-        }
-        {
-          title = "NixOS weekly";
-          tags = [ "nixos" "nix" ];
-          url = "https://weekly.nixos.org/feeds/all.rss.xml";
-        }
-      ] ++ (map (x: {
-        url = x;
-        tags = [ "rss" ];
-      }) (splitString (builtins.readFile ./newsboat/rss.txt)))
-
-        ++ (map (x: {
-          url = x;
-          tags = [ "podcast" ];
-        }) (splitString (builtins.readFile ./newsboat/podcast.txt)))
-
-        ++ (map (x: {
-          url = x;
-          tags = [ "youtube" ];
-        }) (splitString (builtins.readFile ./newsboat/youtube.txt)));
-    };
-
-    git = {
-      enable = true;
-      # ignores TODO
-      # extraConfig TODO
-      signing = {
-        key = "823A6154426408D3";
-        signByDefault = true;
-      };
-
-      userEmail = "mail@pablo.tools";
-      userName = "Pablo Ovelleiro Corral";
-    };
-
-    go = {
-      enable = true;
-      goPath = ".go";
-      packages = {
-        "golang.org/x/text" =
-          builtins.fetchGit "https://go.googlesource.com/text";
-        "golang.org/x/time" =
-          builtins.fetchGit "https://go.googlesource.com/time";
-      };
-    };
-
-    neomutt = {
-      enable = true;
-      # TODO
-    };
-  };
+  # TODO programs.mvp
+  # TODO ssh client config
 
   services = {
-    # grobi = {
-    #   enable = true;
-    #   # executeAfter = [ " " ];
-    #   rules = [{
-    #     name = "Kartoffel";
-    #     outputs_connected = [ "DVI-D-0" "DVI-D-1" "HDMI-0" ];
-    #     configure_row = [ "DVI-D-0" "HDMI-0" "DVI-D-1" ];
-    #     primary = "HDMI-0";
-    #     atomic = true;
-    #     execute_after = [
-    #   "${pkgs.xorg.xrandr}/bin/xrandr --output DVI-D-0 --mode 1440x900 --pos 0x0 --rotate right --output HDMI-0 --primary --mode 1920x1200 --pos 900x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-1 --mode 1280x1024 --pos 2820x0 --rotate normal"
-    #       # "${pkgs.xmonad-with-packages}/bin/xmonad --restart";
-    #     ];
-    #   }];
-    # };
+    network-manager-applet.enable = true;
+    blueman-applet.enable = true;
+    gnome-keyring = { enable = true; };
 
-    # random-background = {} TODO
-    # spotifyd = {} TODO
-    # syncthing = {} TODO
-    # udiskie= {} TODO
+    xscreensaver = {
+      enable = true;
+      # settings = TODO
+    };
+
+    # TODO check out these services
+    # Pulseaudio tray
+    # pasystray.enable = true;
+    # random-background = {}
+    # spotifyd = {}
+    # syncthing = {}
+    # udiskie= {}
     # xsuspender
+    # cbatticon = {
+    # enable = true;
+    # };
   };
 
   # General stuff TODO
