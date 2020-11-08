@@ -66,7 +66,7 @@ in {
   # Imports
   imports = [
     # ./grobi.nix
-    # ./xresources.nix
+    ./xresources.nix
     ./alacritty.nix
     ./browsers.nix
     ./credentials.nix
@@ -75,7 +75,8 @@ in {
     ./git.nix
     ./go.nix
     ./gtk.nix
-    ./i3.nix
+    # ./i3.nix
+    ./awesome.nix
     ./neomutt.nix
     ./newsboat.nix
     ./picom.nix
