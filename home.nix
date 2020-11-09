@@ -77,7 +77,7 @@ in {
     ./gtk.nix
     ./i3.nix
     ./neomutt.nix
-    ./newsboat.nix
+    # ./newsboat.nix
     ./picom.nix
     ./polybar.nix
     ./rofi.nix
