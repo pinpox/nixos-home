@@ -68,6 +68,9 @@ in {
   # Imports
   imports = [
     # ./grobi.nix
+    # ./i3.nix
+    # ./polybar.nix
+    # ./rofi.nix
     ./xresources.nix
     ./alacritty.nix
     ./browsers.nix
@@ -77,13 +80,10 @@ in {
     ./git.nix
     ./go.nix
     ./gtk.nix
-    # ./i3.nix
     ./awesome.nix
     ./neomutt.nix
     ./newsboat.nix
     ./picom.nix
-    # ./polybar.nix
-    ./rofi.nix
     ./shell.nix
     ./vim.nix
     ./xdg.nix
@@ -93,36 +93,53 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
-  home.sessionVariables = { LIBGL_ALWAYS_SOFTWARE = "1"; };
+  home.sessionVariables = {
+
+    # Workaround for alacritty
+    LIBGL_ALWAYS_SOFTWARE = "1";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  services = {
+
+    # Applets, shown in tray
+    # Networking
+    network-manager-applet.enable = true;
+
+    # Bluetooth
+    blueman-applet.enable = true;
+
+    # Pulseaudio
+    pasystray.enable = true;
+
+    # Keyring
+    gnome-keyring = { enable = true; };
+
+    # Screensaver and lock
+    xscreensaver = {
+      enable = true;
+      settings = {
+        fadeTicks = 20;
+        lock = true;
+        mode = "blank";
+      };
+    };
+  };
+
   # TODO programs.mvp
   # TODO ssh client config
 
-  services = {
-    network-manager-applet.enable = true;
-    blueman-applet.enable = true;
-    gnome-keyring = { enable = true; };
-
-    xscreensaver = {
-      enable = true;
-      # settings = TODO
-    };
-
-    # TODO check out these services
-    # Pulseaudio tray
-    # pasystray.enable = true;
-    # random-background = {}
-    # spotifyd = {}
-    # syncthing = {}
-    # udiskie= {}
-    # xsuspender
-    # cbatticon = {
-    # enable = true;
-    # };
-  };
+  # TODO check out these services
+  # random-background = {}
+  # spotifyd = {}
+  # syncthing = {}
+  # udiskie= {}
+  # xsuspender
+  # cbatticon = {
+  # enable = true;
+  # };
 
   # General stuff TODO
   # home.activation...
