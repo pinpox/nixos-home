@@ -11,21 +11,21 @@ in {
   #   } + "/Xresources.dark"
   #   );
   xresources.properties = {
-    "colors0" = "#${vars.colors.base00}";
-    "colors1" = "#${vars.colors.base01}";
-    "colors2" = "#${vars.colors.base02}";
-    "colors3" = "#${vars.colors.base03}";
-    "colors4" = "#${vars.colors.base04}";
-    "colors5" = "#${vars.colors.base05}";
-    "colors6" = "#${vars.colors.base06}";
-    "colors7" = "#${vars.colors.base07}";
-    "colors8" = "#${vars.colors.base08}";
-    "colors9" = "#${vars.colors.base09}";
-    "colors10" = "#${vars.colors.base0A}";
-    "colors11" = "#${vars.colors.base0B}";
-    "colors12" = "#${vars.colors.base0C}";
-    "colors13" = "#${vars.colors.base0D}";
-    "colors14" = "#${vars.colors.base0E}";
-    "colors15" = "#${vars.colors.base0F}";
+    "color0" = "#${vars.colors.base00}";
+    "color1" = "#${vars.colors.base01}";
+    "color2" = "#${vars.colors.base02}";
+    "color3" = "#${vars.colors.base03}";
+    "color4" = "#${vars.colors.base04}";
+    "color5" = "#${vars.colors.base05}";
+    "color6" = "#${vars.colors.base06}";
+    "color7" = "#${vars.colors.base07}";
+    "color8" = "#${vars.colors.base08}";
+    "color9" = "#${vars.colors.base09}";
+    "color10" = "#${vars.colors.base0A}";
+    "color11" = "#${vars.colors.base0B}";
+    "color12" = "#${vars.colors.base0C}";
+    "color13" = "#${vars.colors.base0D}";
+    "color14" = "#${vars.colors.base0E}";
+    "color15" = "#${vars.colors.base0F}";
   };
 }
