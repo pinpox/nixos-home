@@ -10,12 +10,17 @@ in {
 
   # Install these packages for my user
   home.packages = with pkgs; [
+    # material-design-icons
+    # material-icons
+    # nerdfonts
+    # paper-gtk-theme
     arandr
     arc-theme
     arduino
     arduino-cli
     asciinema
     cbatticon
+    evince
     exa
     gcc
     gimp
@@ -47,6 +52,7 @@ in {
     thunderbird
     unzip
     vagrant
+    viewnior
     virt-manager
     vlc
     xarchiver
@@ -57,10 +63,6 @@ in {
     xfce.thunar-volman
     xfce.xfce4-volumed-pulse
     xorg.xrandr
-    # paper-gtk-theme
-    # nerdfonts
-    # material-design-icons
-    # material-icons
   ];
 
   # Imports
@@ -80,7 +82,7 @@ in {
     ./neomutt.nix
     ./newsboat.nix
     ./picom.nix
-    ./polybar.nix
+    # ./polybar.nix
     ./rofi.nix
     ./shell.nix
     ./vim.nix
