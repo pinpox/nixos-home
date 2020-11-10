@@ -47,7 +47,7 @@ in {
     thunderbird
     unzip
     vagrant
-    virt-manager
+    # virt-manager
     vlc
     xarchiver
     xclip
