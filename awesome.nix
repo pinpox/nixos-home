@@ -16,4 +16,7 @@ in {
     # performance in some setups
     # noArgd = true;
   };
+  home.file = {
+    ".config/awesome".source = ./awesome;
+  };
 }
