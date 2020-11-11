@@ -16,6 +16,9 @@ in {
     # performance in some setups
     # noArgd = true;
   };
+
+  # Link the awesome configuration
+  # TODO link individual files ?
   home.file = {
     ".config/awesome".source = ./awesome;
   };

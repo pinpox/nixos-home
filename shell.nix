@@ -114,13 +114,13 @@
           url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
         };
       }
-      {
-        name = "zsh-you-should-use";
-        file = "you-should-use.plugin.zsh";
-        src = builtins.fetchGit {
-          url = "https://github.com/MichaelAquilina/zsh-you-should-use";
-        };
-      }
+      # {
+      #   name = "zsh-you-should-use";
+      #   file = "you-should-use.plugin.zsh";
+      #   src = builtins.fetchGit {
+      #     url = "https://github.com/MichaelAquilina/zsh-you-should-use";
+      #   };
+      # }
       {
         name = "pure";
         # file = ".plugin.zsh";
