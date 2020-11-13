@@ -66,6 +66,7 @@ in {
           coc-nvim
           dracula-vim
           fzf-vim
+          vista-vim
           gotests-vim
           haskell-vim
           i3config-vim

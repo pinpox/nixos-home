@@ -48,6 +48,10 @@ in {
     unzip
     vagrant
     # virt-manager
+    # universal-ctags # Support for Markdwon tags in vim with tagbar
+    xdot
+    graphviz
+    viewnior
     vlc
     xarchiver
     xclip
