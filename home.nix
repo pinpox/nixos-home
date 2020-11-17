@@ -82,7 +82,7 @@ in {
     ./gtk.nix
     ./awesome.nix
     ./neomutt.nix
-    ./newsboat.nix
+    # ./newsboat.nix
     ./picom.nix
     ./shell.nix
     ./vim.nix
@@ -130,6 +130,8 @@ in {
 
   # TODO programs.mvp
   # TODO ssh client config
+  programs.ssh.forwardAgent = true;
+
 
   # TODO check out these services
   # random-background = {}
