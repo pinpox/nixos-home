@@ -4,13 +4,6 @@ in {
   xdg = {
     enable = true;
     configFile = {
-      # nvim = {
-      #   source = ./dotfiles/vim;
-      #   target = "nvim";
-      #   recursive = true;
-      #   # onChange = "nvim -c +PlugInstall +qall --headless";
-      # };
-
       nvim_theme = {
         target = "nvim/colors/ansible-theme.vim";
         # source = ./vim/vim-theme;
