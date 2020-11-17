@@ -67,6 +67,7 @@ in {
           fzf-vim
           gotests-vim
           haskell-vim
+          vista-vim
           i3config-vim
           indentLine
           tabular
