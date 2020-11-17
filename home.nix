@@ -15,6 +15,9 @@ in {
     # nerdfonts
     # paper-gtk-theme
     arandr
+    lua
+    luaPackages.lgi
+    entr
     arc-theme
     arduino
     arduino-cli
