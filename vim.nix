@@ -38,8 +38,6 @@ in {
 
       packages.myVimPackage = with pkgs.vimPlugins; {
 
-        # loaded on launch
-
         # TODO Missing plugins
         # AndrewRadev/switch.vim'
         # fvictorio/vim-textobj-backticks'
@@ -55,6 +53,7 @@ in {
         # thinca/vim-textobj-between'           "Text objects for a range between a character
         # timakro/vim-searchant'                " Better highlighting of search
 
+        # loaded on launch
         start = [
           # vim-indent-guides
           # vimpreviewpandoc

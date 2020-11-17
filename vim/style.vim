@@ -26,7 +26,7 @@ colorscheme ansible-theme
 highlight Comment cterm=italic gui=italic
 
 " Make background transparent
-highlight Normal guibg=none
+" highlight Normal guibg=none
 
 " Airline
 " let g:airline#extensions#ale#enabled = 1
