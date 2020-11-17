@@ -57,6 +57,7 @@ in {
     vagrant
     viewnior
     virt-manager
+    # virt-manager
     vlc
     xarchiver
     xclip
@@ -85,7 +86,7 @@ in {
     ./gtk.nix
     ./awesome.nix
     ./neomutt.nix
-    ./newsboat.nix
+    # ./newsboat.nix
     ./picom.nix
     ./shell.nix
     ./vim.nix

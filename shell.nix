@@ -2,18 +2,6 @@
 
   # robbyrussell/oh-my-zsh folder:lib/completion
 
-  # # From Prezto
-  # sorin-ionescu/prezto
-  # sorin-ionescu/prezto folder:modules/utility
-  # sorin-ionescu/prezto folder:modules/completion
-  # sorin-ionescu/prezto folder:modules/environment
-  # sorin-ionescu/prezto folder:modules/terminal
-  # sorin-ionescu/prezto folder:modules/editor
-  # sorin-ionescu/prezto folder:modules/history
-  # sorin-ionescu/prezto folder:modules/directory
-  # sorin-ionescu/prezto folder:modules/syntax-highlighting
-  # sorin-ionescu/prezto folder:modules/zsh-history-substring-search
-
   # sindresorhus/pure
   # ael-code/zsh-colored-man-pages
 
@@ -84,6 +72,31 @@
       qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
       top = "${pkgs.htop}/bin/htop";
       weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
+    };
+
+    prezto = {
+      enable = true;
+
+      # Case insensitive completion
+      caseSensitive = false;
+
+      # Autoconvert .... to ../..
+      editor.dotExpansion = true;
+
+      # Prezto modules to load
+
+      pmodules = [
+        "utility"
+        "completion"
+        "environment"
+        "terminal"
+        "editor"
+        "history"
+        "directory"
+        "syntax-highlighting"
+        "history-substring-search"
+      ];
+
     };
 
     plugins = [
