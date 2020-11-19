@@ -15,9 +15,6 @@ in {
     # nerdfonts
     # paper-gtk-theme
     arandr
-    lua
-    luaPackages.lgi
-    entr
     arc-theme
     arduino
     arduino-cli
@@ -79,6 +76,7 @@ in {
     # ./i3.nix
     # ./polybar.nix
     # ./rofi.nix
+    ./autorandr.nix
     ./xresources.nix
     ./alacritty.nix
     ./browsers.nix
