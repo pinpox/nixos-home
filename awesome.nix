@@ -10,7 +10,7 @@ in {
     package = pkgs.awesome;
     # List of lua packages available for being used in the Awesome
     # configuration.
-    luaModules = [ ];
+    luaModules = [ pkgs.luaPackages.lgi pkgs.luaPackages.luafilesystem];
 
     # Disable client transparency support, which can be greatly detrimental to
     # performance in some setups
