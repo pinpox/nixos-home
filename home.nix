@@ -76,7 +76,7 @@ in {
     # ./i3.nix
     # ./polybar.nix
     # ./rofi.nix
-    ./autorandr.nix
+    # ./autorandr.nix
     ./xresources.nix
     ./alacritty.nix
     ./browsers.nix

@@ -21,22 +21,23 @@
     # base0E = "9d8cff"; # #9d8cff color14
     # base0F = "3f3866"; # #3f3866 color15
 
-base00 = "212733";
-base01 = "3D4751";
-base02 = "343F4C";
-base03 = "607080";
-base04 = "242B38";
-base05 = "D9D7CE";
-base06 = "FFFFFF";
-base07 = "5C6773";
-base08 = "F07178";
-base09 = "FF3333";
-base0A = "FFCC66";
-base0B = "BBE67E";
-base0C = "95E6CB";
-base0D = "5CCFE6";
-base0E = "D4BFFF";
-base0F = "FFC44C";
+# base00 = "212733"; #212733
+base00 = "202734"; #202734
+base01 = "242B38"; #242B38
+base02 = "343F4C"; #343F4C
+base03 = "3D4751"; #3D4751
+base04 = "607080"; #607080
+base05 = "D9D7CE"; #D9D7CE
+base06 = "FFFFFF"; #FFFFFF
+base07 = "5C6773"; #5C6773
+base08 = "F07178"; #F07178
+base09 = "FF3333"; #FF3333
+base0A = "FFCC66"; #FFCC66
+base0B = "BBE67E"; #BBE67E
+base0C = "95E6CB"; #95E6CB
+base0D = "5CCFE6"; #5CCFE6
+base0E = "D4BFFF"; #D4BFFF
+base0F = "FFC44C"; #FFC44C
 
 
   };
