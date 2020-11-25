@@ -110,6 +110,7 @@ in {
 
   services = {
 
+
     # Applets, shown in tray
     # Networking
     network-manager-applet.enable = true;
@@ -119,6 +120,9 @@ in {
 
     # Pulseaudio
     pasystray.enable = true;
+
+    # Battery Warning
+    cbatticon.enable = true;
 
     # Keyring
     gnome-keyring = { enable = true; };
@@ -143,9 +147,6 @@ in {
   # syncthing = {}
   # udiskie= {}
   # xsuspender
-  # cbatticon = {
-  # enable = true;
-  # };
 
   # General stuff TODO
   # home.activation...
