@@ -110,7 +110,6 @@ in {
 
   services = {
 
-
     # Applets, shown in tray
     # Networking
     network-manager-applet.enable = true;

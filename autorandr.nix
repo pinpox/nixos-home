@@ -68,26 +68,26 @@
     };
     # hooks = {
     #   postswitch = {
-        # "notify-i3" = "${pkgs.i3}/bin/i3-msg restart";
-        # "change-background" = readFile ./change-background.sh;
-        # "change-dpi" = ''
-        #   case "$AUTORANDR_CURRENT_PROFILE" in
-        #     default)
-        #       DPI=120
-        #       ;;
-        #     home)
-        #       DPI=192
-        #       ;;
-        #     work)
-        #       DPI=144
-        #       ;;
-        #     *)
-        #       echo "Unknown profle: $AUTORANDR_CURRENT_PROFILE"
-        #       exit 1
-        #   esac
-        #   echo "Xft.dpi: $DPI" | ${pkgs.xorg.xrdb}/bin/xrdb -merge
-        # ''
-      # };
+    # "notify-i3" = "${pkgs.i3}/bin/i3-msg restart";
+    # "change-background" = readFile ./change-background.sh;
+    # "change-dpi" = ''
+    #   case "$AUTORANDR_CURRENT_PROFILE" in
+    #     default)
+    #       DPI=120
+    #       ;;
+    #     home)
+    #       DPI=192
+    #       ;;
+    #     work)
+    #       DPI=144
+    #       ;;
+    #     *)
+    #       echo "Unknown profle: $AUTORANDR_CURRENT_PROFILE"
+    #       exit 1
+    #   esac
+    #   echo "Xft.dpi: $DPI" | ${pkgs.xorg.xrdb}/bin/xrdb -merge
+    # ''
+    # };
     # };
   };
 }
