@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 let vars = import ./vars.nix;
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
 in {
   # Browserpass
   programs.browserpass = {
@@ -19,6 +22,11 @@ in {
 
   programs.firefox = {
     enable = true;
+    extensions = with nur.repos.rycee.firefox-addons; [
+      https-everywhere
+      bitwarden
+    ];
+
     profiles = {
       pinpox = {
         # Extra preferences to add to user.js. 
