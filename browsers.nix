@@ -22,15 +22,20 @@ in {
 
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-bin;
     extensions = with nur.repos.rycee.firefox-addons; [
-      https-everywhere
       bitwarden
+      darkreader
+      https-everywhere
+      ublock-origin
     ];
 
     profiles = {
       pinpox = {
-        # Extra preferences to add to user.js. 
-        extraConfig = "";
+
+        # Extra preferences to add to user.js.
+        # extraConfig = "";
+
         isDefault = true;
         settings = {
           "browser.startup.homepage" = "https://nixos.org";
