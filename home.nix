@@ -8,6 +8,9 @@ in {
   # Allow "unfree" licenced packages
   nixpkgs.config = { allowUnfree = true; };
 
+  # Workaround until nixops problem is fixed in unstable
+  nixpkgs.config.permittedInsecurePackages = [ "python2.7-cryptography-2.9.2" ];
+
   # Install these packages for my user
   home.packages = with pkgs; [
     # material-design-icons
@@ -49,7 +52,8 @@ in {
     spotify
     styx
     tealdeer
-    thunderbird
+    thunderbird-bin
+    nixops
     unzip
     vagrant
     viewnior
@@ -109,7 +113,6 @@ in {
   programs.home-manager.enable = true;
 
   services = {
-
 
     # Applets, shown in tray
     # Networking
