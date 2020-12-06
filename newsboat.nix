@@ -7,7 +7,7 @@ in {
     enable = true;
     autoReload = true;
     urls = [
-# https://hackaday.com/blog/feed/
+      # https://hackaday.com/blog/feed/
       {
         title = "nixOS mobile";
         tags = [ "nixos" "nix" ];

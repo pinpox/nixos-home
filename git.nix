@@ -3,14 +3,9 @@
     git = {
       enable = true;
 
-      ignores = [
-        "tags"
-        "*.swp"
-      ];
+      ignores = [ "tags" "*.swp" ];
 
-      extraConfig = {
-        pull.rebase = false;
-      };
+      extraConfig = { pull.rebase = false; };
 
       signing = {
         key = "823A6154426408D3";
