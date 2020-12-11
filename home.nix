@@ -8,9 +8,6 @@ in {
   # Allow "unfree" licenced packages
   nixpkgs.config = { allowUnfree = true; };
 
-  # Workaround until nixops problem is fixed in unstable
-  nixpkgs.config.permittedInsecurePackages = [ "python2.7-cryptography-2.9.2" ];
-
   # Install these packages for my user
   home.packages = with pkgs; [
     # material-design-icons
@@ -53,7 +50,6 @@ in {
     styx
     tealdeer
     thunderbird-bin
-    nixops
     unzip
     vagrant
     viewnior
@@ -107,6 +103,8 @@ in {
 
     # Workaround for alacritty
     LIBGL_ALWAYS_SOFTWARE = "1";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
   # Let Home Manager install and manage itself.
