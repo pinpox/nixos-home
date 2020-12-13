@@ -28,6 +28,7 @@ set tabstop=4                  " A tab is displayed 4 collumns wide
 set softtabstop=4              " Size of a tab
 set shiftwidth=4               " Size of a tab
 set noexpandtab                " Don't expand tabs to spaces
+set undofile                   " Maintain undo history between sessions
 set undodir=~/.vimtmp          " Dir for undofiles, same dir as the tempdir
 set wildmenu                   " Complete commands
 set wrapscan                   " Wrap when searching to beginning
