@@ -45,7 +45,7 @@ let mapleader="\<Space>"
 
 " open a file using fzf
 nnoremap <leader>f :Files<CR>
-nnoremap <leader>G :GFiles<CR>
+nnoremap <leader>F :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>t :Vista finder<CR>
 
