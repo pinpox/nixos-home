@@ -65,7 +65,12 @@
       git-ignore-create-go =
         "${pkgs.curl}/bin/curl 'https://www.toptal.com/developers/gitignore/api/vim,go,tags,ssh' > .gitignore";
 
+      # Frequendly used folders
+      cdn = "cd ~/Projects/pinpox-nixos";
+      cdnh = "cd ~/.config/nixpkgs";
+
       # Other
+      lsblk = "lsblk -o name,mountpoint,label,size,type,uuid";
       c = "${pkgs.bat}/bin/bat -n --decorations never";
       cc =
         "${pkgs.clang}/bin/clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
