@@ -7,7 +7,6 @@
 
     # defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
     nixosModules = {
-
       desktop = { imports = [ ./home.nix ]; };
     };
   };

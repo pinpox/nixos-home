@@ -80,10 +80,10 @@ in {
     ./browsers.nix
     ./credentials.nix
     ./dunst.nix
-    ./games.nix
+    # ./games.nix
     ./git.nix
     ./go.nix
-    ./gtk.nix
+    # ./gtk.nix
     ./awesome.nix
     ./neomutt.nix
     # ./newsboat.nix
