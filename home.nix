@@ -77,7 +77,7 @@ in {
     # ./autorandr.nix
     ./xresources.nix
     ./alacritty.nix
-    ./browsers.nix
+    # ./browsers.nix
     ./credentials.nix
     ./dunst.nix
     # ./games.nix
