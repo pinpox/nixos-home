@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
-let vars = import ./vars.nix;
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+let
+  vars = import ./vars.nix;
+  nur = import (builtins.fetchTarball
+    "https://github.com/nix-community/NUR/archive/master.tar.gz") {
       inherit pkgs;
     };
 in {
