@@ -49,25 +49,25 @@ let
   };
 in {
 
-  nixpkgs.overlays = [
-    (self: super: {
-      generated-gtk-theme = self.stdenv.mkDerivation rec {
-        name = "generated-gtk-theme";
-        src = materia-theme;
-        buildInputs = with self; [ sassc bc which inkscape optipng ];
-        installPhase = ''
-          HOME=/build
-          chmod 777 -R .
-          patchShebangs .
-          mkdir -p $out/share/themes
-          substituteInPlace change_color.sh --replace "\$HOME/.themes" "$out/share/themes"
-          echo "Changing colours:"
-          ./change_color.sh -o Generated ${materia_colors}
-          chmod 555 -R .
-        '';
-      };
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (self: super: {
+  #     generated-gtk-theme = self.stdenv.mkDerivation rec {
+  #       name = "generated-gtk-theme";
+  #       src = materia-theme;
+  #       buildInputs = with self; [ sassc bc which inkscape optipng ];
+  #       installPhase = ''
+  #         HOME=/build
+  #         chmod 777 -R .
+  #         patchShebangs .
+  #         mkdir -p $out/share/themes
+  #         substituteInPlace change_color.sh --replace "\$HOME/.themes" "$out/share/themes"
+  #         echo "Changing colours:"
+  #         ./change_color.sh -o Generated ${materia_colors}
+  #         chmod 555 -R .
+  #       '';
+  #     };
+  #   })
+  # ];
 
   # GTK settings
   gtk = {
@@ -75,14 +75,14 @@ in {
 
     font = { name = "Source Code Pro"; };
 
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-    theme = {
-      name = "Generated";
-      package = pkgs.generated-gtk-theme;
-    };
+    # iconTheme = {
+    #   name = "Papirus-Dark";
+    #   package = pkgs.papirus-icon-theme;
+    # };
+    # theme = {
+    #   name = "Generated";
+    #   package = pkgs.generated-gtk-theme;
+    # };
     gtk3.extraConfig.gtk-cursor-theme-name = "breeze";
   };
 
