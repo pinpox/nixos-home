@@ -38,7 +38,12 @@ git clone https://github.com/pinpox/nixos-home.git ~/.config/nixpkgs
 Run:
 
 ```bash
+
+# For desktops
 home-manager switch
+
+# For servers (no GUI)
+home-manager  -f .config/nixpkgs/home-server.nix switch
 ```
 
 If everything went well, log out and back in. Consider changing the remote of
