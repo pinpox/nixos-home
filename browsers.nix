@@ -22,7 +22,7 @@ in {
     ];
   };
 
-  # nixpkgs.overlays = [ nur.overlay ]; 
+  nixpkgs.overlays = [ nur.overlay ];
 
   programs.firefox = {
     enable = true;
