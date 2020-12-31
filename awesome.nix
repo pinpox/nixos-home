@@ -1,7 +1,7 @@
-{ config, pkgs, lib, builtins, ... }:
+{ config, pkgs, lib, ... }:
 let
   vars = import ./vars.nix;
-  awesome-config = builtins.fetchgit {
+  awesome-config = pkgs.fetchgit {
     url = "https://github.com/pinpox/dotfiles-awesome.git";
     sha256 = "1vp1dn0s32ds6f9f71drz2kqsv7zz0ain7d0wvifgjhm62xbdxw0";
     fetchSubmodules = true;
