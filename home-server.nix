@@ -9,23 +9,10 @@ in {
   nixpkgs.config = { allowUnfree = true; };
 
   # Install these packages for my user
-  home.packages = with pkgs; [
-    exa
-    htop
-    httpie
-    pkg-config
-    tealdeer
-    unzip
-  ];
+  home.packages = with pkgs; [ exa htop httpie pkg-config tealdeer unzip ];
 
   # Imports
-  imports = [
-    ./credentials.nix
-    ./git.nix
-    ./shell.nix
-    ./vim.nix
-    ./xdg.nix
-  ];
+  imports = [ ./credentials.nix ./git.nix ./shell.nix ./vim.nix ./xdg.nix ];
 
   # Include man-pages
   manual.manpages.enable = true;
