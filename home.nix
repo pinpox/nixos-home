@@ -10,11 +10,13 @@ in {
 
   # nixpkgs.overlays = [ nur.overlay ];
 
+  fonts.fontconfig.enable = true;
+
   # Install these packages for my user
   home.packages = with pkgs; [
     # material-design-icons
     # material-icons
-    nerdfonts
+    # nerdfonts
     # paper-gtk-theme
     arandr
     arc-theme
