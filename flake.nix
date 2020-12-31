@@ -6,6 +6,9 @@
     # packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
 
     # defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
-    nixosModules = { desktop = { imports = [ ./home.nix ]; }; };
+    nixosModules = {
+      desktop = { imports = [ ./home.nix ]; };
+      server = { imports = [ ./home-server.nix ]; };
+    };
   };
 }
