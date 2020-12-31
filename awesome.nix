@@ -2,23 +2,12 @@
 let
   vars = import ./vars.nix;
   awesome-config = pkgs.fetchgit {
+    # Updated: 2020-12-31
     url = "https://github.com/pinpox/dotfiles-awesome.git";
-    # sha256 = "122myzf3ymssaz5shn0bdk84k62wnb664nvrkpng5kd01ainyndb";
-   fetchSubmodules = true;
-  rev =  "08189291a1d3cc906e80a8e422966849f03133dc";
-  # "date": "2020-12-31T02:15:58+01:00",
-  # "path": "/nix/store/3478f513255863pa9vz6cdxginq8sfcr-dotfiles-awesome",
-  # "fetchSubmodules": false,
-  # "deepClone": false,
-  # "leaveDotGit": false
-
-
-  sha256 =  "0zdk5mm88whi9pcgkk8p4ag655fax2jk6k1mqkzicr0zdnysc6fr";
-  # "deepClone": false,
-  # "leaveDotGit": false
-
+    fetchSubmodules = true;
+    rev = "08189291a1d3cc906e80a8e422966849f03133dc";
+    sha256 = "0zdk5mm88whi9pcgkk8p4ag655fax2jk6k1mqkzicr0zdnysc6fr";
   };
-
 in {
 
   xsession.scriptPath = ".hm-xsession";
