@@ -14,7 +14,7 @@ in {
   home.packages = with pkgs; [
     # material-design-icons
     # material-icons
-    # nerdfonts
+    nerdfonts
     # paper-gtk-theme
     arandr
     arc-theme
