@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nur, ... }:
 let
   vars = import ./vars.nix;
   #  nur = import (builtins.fetchTarball
@@ -22,15 +22,17 @@ in {
     ];
   };
 
+  # nixpkgs.overlays = [ nur.overlay ]; 
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-bin;
-    #    extensions = with nur.repos.rycee.firefox-addons; [
-    #      bitwarden
-    #      darkreader
-    #      https-everywhere
-    #      ublock-origin
-    #    ];
+    extensions = with nur.repos.rycee.firefox-addons; [
+      bitwarden
+      darkreader
+      https-everywhere
+      ublock-origin
+    ];
 
     profiles = {
       pinpox = {

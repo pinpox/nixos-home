@@ -1,13 +1,16 @@
 {
-  description = "A very basic flake";
+  description = "User configurations for pinpox";
 
-  outputs = { self, nixpkgs }: {
+  inputs.nur.url = "github:nix-community/NUR";
 
-    # packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+  outputs = { self, nixpkgs, nur }: {
 
-    # defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
     nixosModules = {
+
+      # Desktop configuration, includes GUI
       desktop = { imports = [ ./home.nix ]; };
+
+      # Serevr user configuration, only CLI
       server = { imports = [ ./home-server.nix ]; };
     };
   };
