@@ -9,8 +9,7 @@
 
       # Desktop configuration, includes GUI
       desktop = {
-        imports = [ ./home.nix ];
-        modules = [{ nixpkgs.overlays = [ nur.overlay ]; }];
+        imports = [ ./home.nix { nixpkgs.overlays = [ nur.overlay ]; } ];
       };
 
       # Serevr user configuration, only CLI
