@@ -27,7 +27,7 @@ in {
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-bin;
-    extensions = with nur.repos.rycee.firefox-addons; [
+    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       bitwarden
       darkreader
       https-everywhere
