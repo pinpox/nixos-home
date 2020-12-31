@@ -12,7 +12,6 @@ let
   # "fetchSubmodules": false,
   # "deepClone": false,
   # "leaveDotGit": false
-}
   };
 
 in {
