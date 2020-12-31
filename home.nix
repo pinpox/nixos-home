@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nur, ... }:
 let
   vars = import ./vars.nix;
   splitString = str:
