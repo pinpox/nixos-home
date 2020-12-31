@@ -1,6 +1,5 @@
 { config, pkgs, lib, nur, ... }:
-let
-  vars = import ./vars.nix;
+let vars = import ./vars.nix;
 in {
   # Browserpass
   programs.browserpass = {
@@ -17,7 +16,6 @@ in {
       "lbhnkgjaoonakhladmcjkemebepeohkn" # Vim Tips New Tab
     ];
   };
-
 
   programs.firefox = {
     enable = true;
