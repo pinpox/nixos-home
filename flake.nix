@@ -8,7 +8,10 @@
     nixosModules = {
 
       # Desktop configuration, includes GUI
-      desktop = { imports = [ ./home.nix ]; };
+      desktop = {
+        imports = [ ./home.nix ];
+        modules = [{ nixpkgs.overlays = [ nur.overlay ]; }];
+      };
 
       # Serevr user configuration, only CLI
       server = { imports = [ ./home-server.nix ]; };

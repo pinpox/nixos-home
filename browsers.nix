@@ -22,17 +22,16 @@ in {
     ];
   };
 
-  nixpkgs.overlays = [ nur.overlay ];
 
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-bin;
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      bitwarden
-      darkreader
-      https-everywhere
-      ublock-origin
-    ];
+    # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+    #   bitwarden
+    #   darkreader
+    #   https-everywhere
+    #   ublock-origin
+    # ];
 
     profiles = {
       pinpox = {

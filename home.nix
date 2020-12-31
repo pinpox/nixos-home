@@ -8,6 +8,8 @@ in {
   # Allow "unfree" licenced packages
   nixpkgs.config = { allowUnfree = true; };
 
+  # nixpkgs.overlays = [ nur.overlay ];
+
   # Install these packages for my user
   home.packages = with pkgs; [
     # material-design-icons
