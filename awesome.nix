@@ -3,7 +3,7 @@ let
   vars = import ./vars.nix;
   awesome-config = pkgs.fetchgit {
     url = "https://github.com/pinpox/dotfiles-awesome.git";
-    sha256 = "122myzf3ymssaz5shn0bdk84k62wnb664nvrkpng5kd01ainyndb";
+    # sha256 = "122myzf3ymssaz5shn0bdk84k62wnb664nvrkpng5kd01ainyndb";
     fetchSubmodules = true;
   };
 
