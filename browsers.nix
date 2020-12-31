@@ -1,10 +1,6 @@
 { config, pkgs, lib, nur, ... }:
 let
   vars = import ./vars.nix;
-  #  nur = import (builtins.fetchTarball
-  #    "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-  #      inherit pkgs;
-  #    };
 in {
   # Browserpass
   programs.browserpass = {
@@ -26,12 +22,12 @@ in {
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-bin;
-    # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-    #   bitwarden
-    #   darkreader
-    #   https-everywhere
-    #   ublock-origin
-    # ];
+    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      bitwarden
+      darkreader
+      https-everywhere
+      ublock-origin
+    ];
 
     profiles = {
       pinpox = {
