@@ -10,11 +10,7 @@
 
       # Desktop configuration, includes GUI
       desktop = {
-        imports = [
-          ./home.nix
-          dotfiles-awesome.dotfiles
-          { nixpkgs.overlays = [ nur.overlay ]; }
-        ];
+        imports = [ ./home.nix { nixpkgs.overlays = [ nur.overlay ]; } ];
       };
 
       # Serevr user configuration, only CLI

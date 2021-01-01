@@ -1,7 +1,9 @@
-{ config, pkgs, lib, awesome-config, ... }:
+{ config, pkgs, lib, dotfiles-awesome, ... }:
 let
   vars = import ./vars.nix;
 in {
+
+  imports = [ dotfiles-awesome.dotfiles ];
 
   xsession.scriptPath = ".hm-xsession";
   xsession.enable = true;
@@ -9,6 +11,7 @@ in {
   xsession.windowManager.awesome = {
     enable = true;
     package = pkgs.awesome;
+
     # List of lua packages available for being used in the Awesome
     # configuration.
     luaModules = [ pkgs.luaPackages.lgi pkgs.luaPackages.luafilesystem ];
