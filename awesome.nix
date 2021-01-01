@@ -1,9 +1,9 @@
-{ config, pkgs, lib, dotfiles-awesome, ... }:
+{ config, pkgs, lib, ... }:
 let
   vars = import ./vars.nix;
 in {
 
-  imports = [ dotfiles-awesome.dotfiles ];
+  # imports = [ dotfiles-awesome.dotfiles ];
 
   xsession.scriptPath = ".hm-xsession";
   xsession.enable = true;
