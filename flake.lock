@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1609537261,
-        "narHash": "sha256-f7B/hZJ8Lb5zrcL7ZBwReoR3egAA3qX8awJrg0fXrkY=",
+        "lastModified": 1609541429,
+        "narHash": "sha256-gG4ETL+lo5ZUB2LdGVUPydKCQ4+5e2YvWJKzJmBv//4=",
         "owner": "pinpox",
         "repo": "dotfiles-awesome",
-        "rev": "48183c12c334f34d0523bfcb90a96322c9f3dbb0",
+        "rev": "3c203396237cb53518fa9fcf543ba0eb23962cac",
         "type": "github"
       },
       "original": {
