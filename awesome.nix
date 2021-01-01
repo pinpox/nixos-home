@@ -25,10 +25,9 @@ in {
     # noArgd = true;
   };
 
+  # TODO make this a flake input
   # Link the awesome configuration
-  # TODO link individual files ?
   home.file = {
-    # ".config/awesome".source = ./awesome; 
     ".config/awesome".source = awesome-config;
   };
 }
