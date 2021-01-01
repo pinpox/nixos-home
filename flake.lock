@@ -1,6 +1,40 @@
 {
   "nodes": {
+    "dotfiles-awesome": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1609537261,
+        "narHash": "sha256-f7B/hZJ8Lb5zrcL7ZBwReoR3egAA3qX8awJrg0fXrkY=",
+        "owner": "pinpox",
+        "repo": "dotfiles-awesome",
+        "rev": "48183c12c334f34d0523bfcb90a96322c9f3dbb0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pinpox",
+        "repo": "dotfiles-awesome",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1609254719,
+        "narHash": "sha256-XB3391z8r81Bt8NfQzB+tYdTWoraY0QVdXM21JhfW+Y=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "733e537a8ad76fd355b6f501127f7d0eb8861775",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1609254719,
         "narHash": "sha256-XB3391z8r81Bt8NfQzB+tYdTWoraY0QVdXM21JhfW+Y=",
@@ -15,11 +49,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1609510510,
-        "narHash": "sha256-05uLeWgQIWASAbXPg8SxH9lDQZov5z2fl9YhTolpxkc=",
+        "lastModified": 1609526390,
+        "narHash": "sha256-XUQCSI5L2j95zXcxmNQ73Kcs+J1ttZEKp+00lu8NqaM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "0bb6916c98d3c67c672048fb000ec36a8ee8aae3",
+        "rev": "f4eece530ded4a64176489d481d6e92d64019361",
         "type": "github"
       },
       "original": {
@@ -30,7 +64,8 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
+        "dotfiles-awesome": "dotfiles-awesome",
+        "nixpkgs": "nixpkgs_2",
         "nur": "nur"
       }
     }
