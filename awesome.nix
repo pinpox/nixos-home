@@ -1,13 +1,13 @@
-{ config, pkgs, lib, awesome-config, ... }:
+{ config, pkgs, lib, awesome-config, wallpaper-generator, ... }:
 let
   vars = import ./vars.nix;
-  awesome-config = pkgs.fetchgit {
-    # Updated: 2020-12-31
-    url = "https://github.com/pinpox/dotfiles-awesome.git";
-    fetchSubmodules = true;
-    rev = "31ce82312824d5ab75e22cb0353a91408861ee95";
-    sha256 = "06rp926xwqcl7zlcdwjk002s38q1hl3vniqd73c26if7lqxzq3c8";
-  };
+  # awesome-config = pkgs.fetchgit {
+  #   # Updated: 2020-12-31
+  #   url = "https://github.com/pinpox/dotfiles-awesome.git";
+  #   fetchSubmodules = true;
+  #   rev = "31ce82312824d5ab75e22cb0353a91408861ee95";
+  #   sha256 = "06rp926xwqcl7zlcdwjk002s38q1hl3vniqd73c26if7lqxzq3c8";
+  # };
 in {
 
   xsession.scriptPath = ".hm-xsession";
@@ -26,9 +26,8 @@ in {
   };
 
   # Link the awesome configuration
-  # TODO link individual files ?
   home.file = {
-    # ".config/awesome".source = ./awesome; 
     ".config/awesome".source = awesome-config;
+    ".config/awesome/wallpaper-generator".source = wallpaper-generator;
   };
 }

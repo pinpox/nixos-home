@@ -1,9 +1,15 @@
 {
   description = "User configurations for pinpox";
 
-  inputs.nur.url = "github:nix-community/NUR";
+  inputs = {
+    nur.url = "github:nix-community/NUR";
+    awesome-config.url = "github:pinpox/dotfiles-awesome";
+    awesome-config.flake = false;
+    wallpaper-generator.url = "github:pinpox/wallpaper-generator";
+    wallpaper-generator.flake = false;
+  };
 
-  outputs = { self, nixpkgs, nur }: {
+  outputs = { self, nixpkgs, nur, wallpaper-generator, awesome-config }: {
 
     nixosModules = {
 

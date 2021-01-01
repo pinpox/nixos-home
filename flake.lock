@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "awesome-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1609461838,
+        "narHash": "sha256-56s5iryd0r8VnQYyhvMlOryMkAVY4V3ybhGe2L/6GoA=",
+        "owner": "pinpox",
+        "repo": "dotfiles-awesome",
+        "rev": "31ce82312824d5ab75e22cb0353a91408861ee95",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pinpox",
+        "repo": "dotfiles-awesome",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1609254719,
@@ -15,11 +31,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1609457751,
-        "narHash": "sha256-om23xKs8JLosJk9pvL1eBnbsQNA9MT3SU/4EvTrTK80=",
+        "lastModified": 1609510510,
+        "narHash": "sha256-05uLeWgQIWASAbXPg8SxH9lDQZov5z2fl9YhTolpxkc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "5ee0b7dbb217077245dfeab7ccb3a87e3561011f",
+        "rev": "0bb6916c98d3c67c672048fb000ec36a8ee8aae3",
         "type": "github"
       },
       "original": {
@@ -30,8 +46,26 @@
     },
     "root": {
       "inputs": {
+        "awesome-config": "awesome-config",
         "nixpkgs": "nixpkgs",
-        "nur": "nur"
+        "nur": "nur",
+        "wallpaper-generator": "wallpaper-generator"
+      }
+    },
+    "wallpaper-generator": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1609335106,
+        "narHash": "sha256-niLez8nJGRxyQArfPS6LTl/PlGdZkXZ4tMSjbT20tNo=",
+        "owner": "pinpox",
+        "repo": "wallpaper-generator",
+        "rev": "61932953ce2d3b3155a171dcd1781fe1fea932e6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pinpox",
+        "repo": "wallpaper-generator",
+        "type": "github"
       }
     }
   },
