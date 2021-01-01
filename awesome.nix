@@ -1,12 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, awesome-config, ... }:
 let
   vars = import ./vars.nix;
   awesome-config = pkgs.fetchgit {
     # Updated: 2020-12-31
     url = "https://github.com/pinpox/dotfiles-awesome.git";
     fetchSubmodules = true;
-    rev = "08189291a1d3cc906e80a8e422966849f03133dc";
-    sha256 = "0zdk5mm88whi9pcgkk8p4ag655fax2jk6k1mqkzicr0zdnysc6fr";
+  rev = "7aeb993444df7121c27b0153f18c92c4b87a3521";
+  sha256 = "1myj87lvyxjcmbqbbkd5jzv0rf2697pwvg9p1wc91xg082wfg9l5";
   };
 in {
 
