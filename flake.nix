@@ -12,7 +12,7 @@
       desktop = {
         imports = [
           ./home.nix
-          dotfiles-awesome.dotfiles
+          dotfiles-awesome.nixosModules.dotfiles
           { nixpkgs.overlays = [ nur.overlay ]; }
         ];
       };
