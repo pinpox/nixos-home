@@ -5,8 +5,8 @@ let
     # Updated: 2020-12-31
     url = "https://github.com/pinpox/dotfiles-awesome.git";
     fetchSubmodules = true;
-  rev = "7aeb993444df7121c27b0153f18c92c4b87a3521";
-  sha256 = "1myj87lvyxjcmbqbbkd5jzv0rf2697pwvg9p1wc91xg082wfg9l5";
+    rev = "31ce82312824d5ab75e22cb0353a91408861ee95";
+    sha256 = "06rp926xwqcl7zlcdwjk002s38q1hl3vniqd73c26if7lqxzq3c8";
   };
 in {
 
