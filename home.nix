@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nur, ... }:
+{ config, pkgs, lib, nur, awesome-config, wallpaper-generator, ... }:
 let
   vars = import ./vars.nix;
   splitString = str:
