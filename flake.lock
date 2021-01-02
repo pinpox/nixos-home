@@ -6,11 +6,11 @@
         "wallpaper-generator": "wallpaper-generator"
       },
       "locked": {
-        "lastModified": 1609545420,
-        "narHash": "sha256-1BeD9l6bYdIQas7qwU6iiSRttc4+ABbTtem8QdCH5+o=",
+        "lastModified": 1609546022,
+        "narHash": "sha256-QL8d9EIxEEjuuTQueHRyEeZWBa3/5FmmcbJqzIJc2kQ=",
         "owner": "pinpox",
         "repo": "dotfiles-awesome",
-        "rev": "953264d01595d5c0434a214dd045fae17c5fac05",
+        "rev": "107092bf19e3a5641e289bfdd83f73531311df4f",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1609544867,
-        "narHash": "sha256-KfMTWo/guWalBDlpJ6KGN0zcs+5rVXKoP7ltNzik8NQ=",
+        "lastModified": 1609545993,
+        "narHash": "sha256-wqKiulB7SkyxWvA1qF4SSpD8xS+Ur3oj/Jbx5m9Qn0w=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "780d02a85826084f112dd9b593036a2904c74373",
+        "rev": "d69dc334e6b913b78ebf60ce65ad922cdc64348f",
         "type": "github"
       },
       "original": {
