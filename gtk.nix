@@ -73,7 +73,9 @@ in {
   gtk = {
     enable = true;
 
-    font = { name = "Source Code Pro"; };
+    font = {
+      name = "${vars.font.normal.family} ${vars.font.normal.style} ${vars.font.size}";
+    };
 
     iconTheme = {
       name = "Papirus-Dark";

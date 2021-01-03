@@ -132,25 +132,6 @@ in {
 
   };
 
-  # TODO programs.mvp
-  # TODO ssh client config
-
-  # TODO check out these services
-  # random-background = {}
-  # spotifyd = {}
-  # syncthing = {}
-  # udiskie= {}
-  # xsuspender
-
-  # General stuff TODO
-  # home.activation...
-  # home.file...
-  # home.keyboard...
-  # home.language...
-  # readline
-  # accounts.email.accounts.<name>.gpg
-  # Fontconfig
-  # fonts.fontconfig.enable
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
