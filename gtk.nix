@@ -53,7 +53,7 @@ in {
     (self: super: {
 
       nerdfonts =
-        super.nerdfonts.override { fonts = [ "SourceCodePro" "Ubuntu" ]; };
+        super.nerdfonts.override { fonts = [ "SourceCodePro" ]; };
 
       generated-gtk-theme = self.stdenv.mkDerivation rec {
         name = "generated-gtk-theme";
@@ -78,8 +78,8 @@ in {
     enable = true;
 
     font = {
-      name = "Overpass 10";
-      package = pkgs.nerdfonts;
+      name = "Noto 12";
+      package = pkgs.noto-fonts;
     };
 
     iconTheme = {
