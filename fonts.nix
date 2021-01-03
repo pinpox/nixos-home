@@ -6,6 +6,7 @@
       ubuntu_font_family
       dejavu_fonts
       noto-fonts-emoji
+      noto-fonts
       corefonts
   ];
 
