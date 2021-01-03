@@ -52,7 +52,7 @@ in {
   nixpkgs.overlays = [
     (self: super: {
 
-      sauce-font = super.nerdfonts.override {
+      nerdfonts = super.nerdfonts.override {
         fonts = [ "SourceCodePro" ];
       };
 
@@ -80,7 +80,7 @@ in {
 
     font = {
       name = "SauceCodePro Nerd Font Semibold 16";
-      package = pkgs.sauce-font;
+      package = pkgs.nerdfonts;
     };
 
     iconTheme = {
