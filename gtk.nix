@@ -79,7 +79,7 @@ in {
     enable = true;
 
     font = {
-      name = "SauceCodePro Nerd Font Semibold 16";
+      name = "SauceCodePro Nerd Font Semibold 12";
       package = pkgs.nerdfonts;
     };
 
