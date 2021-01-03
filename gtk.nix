@@ -74,7 +74,8 @@ in {
     enable = true;
 
     font = {
-      name = "${vars.font.normal.family} ${vars.font.normal.style} 10";
+      name = "DejaVu Sans 8";
+      package = pkgs.dejavu_fonts;
     };
 
     iconTheme = {
