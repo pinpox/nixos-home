@@ -8,7 +8,6 @@
       nerdfonts
       noto-fonts-emoji
       corefonts
-      roboto
   ];
 
   # Install some fonts system-wide, especially "Source Code Pro" in the
