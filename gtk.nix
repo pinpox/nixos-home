@@ -74,7 +74,7 @@ in {
     enable = true;
 
     font = {
-      name = "${vars.font.normal.family} ${vars.font.normal.style} ${vars.font.size}";
+      name = "${vars.font.normal.family} ${vars.font.normal.style} 10";
     };
 
     iconTheme = {
