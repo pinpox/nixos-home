@@ -79,7 +79,8 @@ in {
     enable = true;
 
     font = {
-      name = "SauceCodePro Nerd Font Semibold 12";
+      # name = "SauceCodePro Nerd Font Semibold 12";
+      name "Sauce Code Pro Semibold Italic Nerd Font Complete:Semibold 10";
       package = pkgs.nerdfonts;
     };
 
