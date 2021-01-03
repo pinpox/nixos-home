@@ -7,6 +7,7 @@
       dejavu_fonts
       noto-fonts-emoji
       noto-fonts
+      nerdfonts
       corefonts
   ];
 
