@@ -85,6 +85,7 @@ in {
     ./go.nix
     ./gtk.nix
     ./awesome.nix
+    ./fonts.nix
     ./neomutt.nix
     # ./newsboat.nix
     ./picom.nix
