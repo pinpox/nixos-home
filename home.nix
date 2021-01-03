@@ -130,15 +130,6 @@ in {
     # Keyring
     gnome-keyring = { enable = true; };
 
-    # Screensaver and lock
-    xscreensaver = {
-      enable = true;
-      settings = {
-        fadeTicks = 20;
-        lock = true;
-        mode = "blank";
-      };
-    };
   };
 
   # TODO programs.mvp
