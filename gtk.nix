@@ -51,6 +51,11 @@ in {
 
   nixpkgs.overlays = [
     (self: super: {
+
+      sauce-font = super.nerdfonts.override {
+        fonts = [ "SourceCodePro" ];
+      };
+
       generated-gtk-theme = self.stdenv.mkDerivation rec {
         name = "generated-gtk-theme";
         src = materia-theme;
@@ -74,8 +79,8 @@ in {
     enable = true;
 
     font = {
-      name = "DejaVu Sans 8";
-      package = pkgs.dejavu_fonts;
+      name = "SauceCodePro Nerd Font Semibold 16";
+      package = pkgs.sauce-font;
     };
 
     iconTheme = {
