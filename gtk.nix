@@ -78,7 +78,7 @@ in {
     enable = true;
 
     font = {
-      name = "SauceCodePro Nerd Font Semibold 10";
+      name = "Overpass 10";
       package = pkgs.nerdfonts;
     };
 
