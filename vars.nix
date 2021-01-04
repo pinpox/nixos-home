@@ -62,15 +62,15 @@
 
   font = {
     normal = {
-      family = "SauceCodePro Nerd Font";
+      family = "Overpass Nerd Font";
       style = "Semibold";
     };
     bold = {
-      family = "SauceCodePro Nerd Font";
+      family = "Overpass Nerd Font";
       style = "Bold";
     };
     italic = {
-      family = "SauceCodePro Nerd Font";
+      family = "Overpass Nerd Font";
       style = "Semibold Italic";
     };
     size = 10;
