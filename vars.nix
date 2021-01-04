@@ -63,7 +63,7 @@
   font = {
     normal = {
       family = "Iosevka Nerd Font";
-      # style = "Semibold";
+      style = "Regular";
     };
     bold = {
       family = "Iosevka Nerd Font";
