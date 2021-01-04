@@ -73,6 +73,6 @@
       family = "Sauce Code Pro Nerd Fontro";
       style = "Semibold Italic";
     };
-    size = 9;
+    size = 10;
   };
 }
