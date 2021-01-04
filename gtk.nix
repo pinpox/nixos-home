@@ -78,7 +78,7 @@ in {
     enable = true;
 
     font = {
-      name = "Noto Sans Nerd Font 12";
+      name = "Iosevka Nerd Font 12";
       package = pkgs.nerdfonts;
     };
 
