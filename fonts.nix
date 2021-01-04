@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
       noto-fonts-emoji
       nerdfonts
+      roboto
       corefonts
   ];
 

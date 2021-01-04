@@ -78,8 +78,8 @@ in {
     enable = true;
 
     font = {
-      name = "Dejavu 9";
-      package = pkgs.dejavu_fonts;
+      name = "Roboto 9";
+      package = pkgs.roboto;
     };
 
     iconTheme = {
