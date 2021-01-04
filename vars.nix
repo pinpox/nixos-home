@@ -62,15 +62,15 @@
 
   font = {
     normal = {
-      family = "SourceCodePro";
+      family = "Sauce Code Pro Nerd Font";
       style = "Semibold";
     };
     bold = {
-      family = "SourceCodePro";
+      family = "Sauce Code Pro Nerd FontPro";
       style = "Bold";
     };
     italic = {
-      family = "SauceCodePro";
+      family = "Sauce Code Pro Nerd Fontro";
       style = "Semibold Italic";
     };
     size = 9;
