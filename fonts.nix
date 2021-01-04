@@ -6,9 +6,9 @@
       ubuntu_font_family
       dejavu_fonts
       noto-fonts-emoji
-      noto-fonts
       nerdfonts
       corefonts
+      # noto-fonts
   ];
 
   # Install some fonts system-wide, especially "Source Code Pro" in the
