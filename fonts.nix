@@ -6,6 +6,7 @@
       noto-fonts-emoji
       nerdfonts
       roboto
+      dejavu_fonts
       corefonts
   ];
 
