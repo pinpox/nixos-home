@@ -66,11 +66,11 @@
       style = "Semibold";
     };
     bold = {
-      family = "Sauce Code Pro Nerd FontPro";
+      family = "Sauce Code Pro Nerd Font";
       style = "Bold";
     };
     italic = {
-      family = "Sauce Code Pro Nerd Fontro";
+      family = "Sauce Code Pro Nerd Font";
       style = "Semibold Italic";
     };
     size = 10;
