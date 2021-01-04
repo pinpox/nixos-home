@@ -78,7 +78,7 @@ in {
     enable = true;
 
     font = {
-      name = "Iosevka Nerd Font 10";
+      name = "Iosevka Nerd Font 9";
       package = pkgs.nerdfonts;
     };
 

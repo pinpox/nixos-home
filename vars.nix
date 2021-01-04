@@ -73,6 +73,6 @@
       family = "Iosevka Nerd Font";
       style = "Medium Italic";
     };
-    size = 10;
+    size = 9;
   };
 }
