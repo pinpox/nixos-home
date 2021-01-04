@@ -63,7 +63,7 @@
   font = {
     normal = {
       family = "Overpass Nerd Font";
-      style = "Semibold";
+      style = "Semi-Bold";
     };
     bold = {
       family = "Overpass Nerd Font";
@@ -71,7 +71,7 @@
     };
     italic = {
       family = "Overpass Nerd Font";
-      style = "Semibold Italic";
+      style = "Semi-Bold Italic";
     };
     size = 9;
   };

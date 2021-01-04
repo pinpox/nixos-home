@@ -78,7 +78,7 @@ in {
     enable = true;
 
     font = {
-      name = "Overpass Nerd Font 9";
+      name = "Overpass Nerd Font Semi-Bold 9";
       # package = pkgs.nerdfonts;
     };
 
