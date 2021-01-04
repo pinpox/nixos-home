@@ -5,9 +5,9 @@
   home.packages = with pkgs; [
       ubuntu_font_family
       dejavu_fonts
-      noto-fonts-emoji
-      nerdfonts
-      corefonts
+      # noto-fonts-emoji
+      # nerdfonts
+      # corefonts
       # noto-fonts
   ];
 
