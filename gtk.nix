@@ -78,8 +78,8 @@ in {
     enable = true;
 
     font = {
-      name = "Roboto 9";
-      package = pkgs.roboto;
+      name = "Source Sans Pro 9";
+      package = pkgs.source-sans-pro;
     };
 
     iconTheme = {

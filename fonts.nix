@@ -3,10 +3,10 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
+      source-sans-pro
+      source-serif-pro
       noto-fonts-emoji
       nerdfonts
-      roboto
-      dejavu_fonts
       corefonts
   ];
 
