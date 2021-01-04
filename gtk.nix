@@ -78,7 +78,7 @@ in {
     enable = true;
 
     font = {
-      name = "Noto Sans 12";
+      name = "Noto Sans 9";
       package = pkgs.noto-fonts;
     };
 
