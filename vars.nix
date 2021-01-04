@@ -73,6 +73,6 @@
       family = "Overpass Mono";
       style = "Semibold Italic";
     };
-    size = 10;
+    size = 9;
   };
 }
