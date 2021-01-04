@@ -62,16 +62,16 @@
 
   font = {
     normal = {
-      family = "Overpass Mono";
+      family = "SourceCodePro";
       style = "Semibold";
     };
     bold = {
-      family = "Overpass Mono";
+      family = "SourceCodePro";
       style = "Bold";
     };
     italic = {
-      family = "Overpass Mono";
-      style = "Italic";
+      family = "SauceCodePro";
+      style = "Semibold Italic";
     };
     size = 9;
   };

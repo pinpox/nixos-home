@@ -53,7 +53,7 @@ in {
     (self: super: {
 
       nerdfonts =
-        super.nerdfonts.override { fonts = [ "Iosevka" ]; };
+        super.nerdfonts.override { fonts = [ "SourceCodePro" "Noto"]; };
 
       generated-gtk-theme = self.stdenv.mkDerivation rec {
         name = "generated-gtk-theme";

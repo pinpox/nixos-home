@@ -3,12 +3,10 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-      # ubuntu_font_family
       dejavu_fonts
-      # noto-fonts-emoji
-      # nerdfonts
-      # corefonts
-      # noto-fonts
+      noto-fonts-emoji
+      nerdfonts
+      corefonts
   ];
 
   # Install some fonts system-wide, especially "Source Code Pro" in the
