@@ -62,15 +62,15 @@
 
   font = {
     normal = {
-      family = "Overpass Mono";
+      family = "Overpass Nerd Font";
       style = "Semibold";
     };
     bold = {
-      family = "Overpass Mono";
+      family = "Overpass Nerd Font";
       style = "Bold";
     };
     italic = {
-      family = "Overpass Mono";
+      family = "Overpass Nerd Font";
       style = "Semibold Italic";
     };
     size = 9;
