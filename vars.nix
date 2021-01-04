@@ -62,15 +62,15 @@
 
   font = {
     normal = {
-      family = "Iosevka";
-      style = "Medium";
+      family = "Overpass";
+      style = "Semibold";
     };
     bold = {
-      family = "Iosevka Nerd Font";
+      family = "Overpass";
       style = "Bold";
     };
     italic = {
-      family = "Iosevka Nerd Font";
+      family = "Overpass";
       style = "Medium Italic";
     };
     size = 9;

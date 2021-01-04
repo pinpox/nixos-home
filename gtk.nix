@@ -78,8 +78,8 @@ in {
     enable = true;
 
     font = {
-      name = "Iosevka Medium 9";
-      package = pkgs.nerdfonts;
+      name = "Overpass Semibold 9";
+      # package = pkgs.nerdfonts;
     };
 
     iconTheme = {

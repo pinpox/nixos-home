@@ -3,7 +3,7 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-      ubuntu_font_family
+      # ubuntu_font_family
       dejavu_fonts
       # noto-fonts-emoji
       # nerdfonts
