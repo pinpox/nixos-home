@@ -78,8 +78,8 @@ in {
     enable = true;
 
     font = {
-      name = "Overpass Semibold 9";
-      package = pkgs.overpass;
+      name = "Dejavu 9";
+      package = pkgs.dejavu_fonts;
     };
 
     iconTheme = {
