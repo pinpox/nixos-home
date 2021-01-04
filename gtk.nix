@@ -52,8 +52,8 @@ in {
   nixpkgs.overlays = [
     (self: super: {
 
-      # nerdfonts =
-      #   super.nerdfonts.override { fonts = [ "Overpass" ]; };
+      nerdfonts =
+        super.nerdfonts.override { fonts = [ "Overpass" ]; };
 
       generated-gtk-theme = self.stdenv.mkDerivation rec {
         name = "generated-gtk-theme";
@@ -79,7 +79,7 @@ in {
 
     font = {
       name = "Overpass 9";
-      package = pkgs.overpass;
+      package = pkgs.nerdfonts;
     };
 
     iconTheme = {
