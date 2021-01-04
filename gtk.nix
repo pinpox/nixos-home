@@ -78,8 +78,8 @@ in {
     enable = true;
 
     font = {
-      name = "Overpass Nerd Font Semi-Bold 9";
-      # package = pkgs.nerdfonts;
+      name = "Overpass 9";
+      package = pkgs.nerdfonts;
     };
 
     iconTheme = {
