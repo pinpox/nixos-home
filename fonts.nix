@@ -6,7 +6,7 @@
       ubuntu_font_family
       dejavu_fonts
       noto-fonts-emoji
-      nerdfonts
+      # nerdfonts
       corefonts
       # noto-fonts
   ];
