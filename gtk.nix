@@ -79,7 +79,7 @@ in {
 
     font = {
       name = "Overpass Semibold 9";
-      # package = pkgs.nerdfonts;
+      package = pkgs.overpass;
     };
 
     iconTheme = {
