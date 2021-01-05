@@ -46,7 +46,8 @@
     base02 = "314549";
     base03 = "546E7A";
     base04 = "B2CCD6";
-    base05 = "EEFFFF";
+    # base05 = "EEFFFF";
+    base05 = "F3F5F7";
     base06 = "EEFFFF";
     base07 = "FFFFFF";
     base08 = "F07178";

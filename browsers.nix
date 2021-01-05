@@ -98,13 +98,7 @@ in {
             --urlbar-separator-color: transparent !important;
           }
 
-          /*
-            _____ _   ___ ___
-           |_   _/_\ | _ ) __|
-             | |/ _ \| _ \__ \
-             |_/_/ \_\___/___/
-
-          */
+          /* Tabs */
 
           .tab-background[selected="true"] {
             background: var(--mff-tab-selected-bg) !important;
@@ -151,14 +145,6 @@ in {
             color: var(--mff-tab-color);
           }
 
-          /* Hide the favicon for tabs 
-
-          hbox.tab-content .tab-icon-image {
-            display: none !important;
-          }
-
-          */
-
           /* Show the favicon for tabs that are pinned */
           hbox.tab-content[pinned=true] .tab-icon-image {
             display: initial !important;
@@ -170,7 +156,6 @@ in {
 
           #tabbrowser-tabs {
             --tab-loading-fill: #033433 !important;
-
           }
 
           .tab-label-container:not([textoverflow]) {
@@ -181,11 +166,6 @@ in {
             max-width: 50% !important;
             min-width: 50% !important;
           }
-
-          /* .tab-label-container::after {
-            content: "?" !important;
-
-          } */
 
           .tab-line {
             display: none !important;
@@ -206,17 +186,11 @@ in {
             background-color: var(--mff-tab-soundplaying-bg) !important;
           }
 
-
           .tab-icon-sound {
             display: none !important;
           }
 
-          /*
-            _____ ___   ___  _    ___   _   ___
-          |_   _/ _ \ / _ \| |  | _ ) /_\ | _ \
-            | || (_) | (_) | |__| _ \/ _ \|   /
-            |_| \___/ \___/|____|___/_/  \_\_|_\
-          */
+          /* Toolbar */
 
           .urlbar-icon > image {
             fill: var(--mff-icon-color) !important;
@@ -228,7 +202,6 @@ in {
           }
           .urlbar-icon {
             color: var(--mff-icon-color)  !important;
-
           }
 
           .toolbarbutton-icon {
@@ -277,7 +250,6 @@ in {
             --backbutton-background: transparent !important;
             border: none !important;
           }
-
 
           toolbar {
             background-image: none !important;
@@ -343,7 +315,6 @@ in {
             color: var(--mff-urlbar-focused-color) !important;
           }
 
-
           .megabar[breakout-extend="true"]:not([open="true"]) > #urlbar-background {
             box-shadow: none !important;
             background-color: transparent !important;
@@ -353,13 +324,7 @@ in {
             box-shadow: none !important;
           }
 
-
-          /*
-            ___ ___ ___  ___ ___   _   ___
-           / __|_ _|   \| __| _ ) /_\ | _ \
-           \__ \| || |) | _|| _ \/ _ \|   /
-           |___/___|___/|___|___/_/ \_\_|_\
-          */
+          /* Sidebar */
 
           .close-icon, .urlbar-icon {
             fill: var(--mff-icon-color) !important;
@@ -367,10 +332,6 @@ in {
 
           .sidebar-placesTree {
             color: var(--mff-sidebar-color) !important;
-          }
-
-          #sidebar-switcher-target {
-          /*   color: white !important; */
           }
 
           #sidebar-box {
@@ -390,13 +351,7 @@ in {
             display: none;
           }
 
-
-          /*
-              _   ___ ___  _____      _____  _   _  _ ___ _
-             /_\ | _ \ _ \/ _ \ \    / / _ \/_\ | \| | __| |
-            / _ \|   /   / (_) \ \/\/ /|  _/ _ \| .` | _|| |__
-           /_/ \_\_|_\_|_\\___/ \_/\_/ |_|/_/ \_\_|\_|___|____|
-           */
+          /* Arrow panel */
 
           .panel-arrowcontent {
             padding: 0px !important;
@@ -416,24 +371,6 @@ in {
                 background: var(--mff-bg) !important;
               }
             }
-
-
-            /* Hide scrollbar */
-
-            /*
-
-            :root{
-              scrollbar-width: none !important;
-            }
-
-
-            @-moz-document url(about:privatebrowsing) {
-
-            :root{
-              scrollbar-width: none !important;
-            }
-
-            */
             }
 
                   '';
