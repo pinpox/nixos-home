@@ -1,4 +1,4 @@
-# { config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }: {
 #   nixpkgs.config.retroarch = {
 #     # All available cores can be found here:
 #     # https://github.com/NixOS/nixpkgs/pull/82633/files#diff-036410e9211b4336186fc613f7200b12
@@ -23,4 +23,4 @@
 #     enableSnes9x = true;
 #     enableVbaM = true;
 #   };
-# }
+}
