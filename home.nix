@@ -42,7 +42,7 @@ in {
     pavucontrol
     pkg-config
     playerctl
-    retroarch
+    # retroarch
     scrot
     seafile-client
     signal-desktop
