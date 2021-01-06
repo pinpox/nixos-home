@@ -9,12 +9,12 @@
       enableBeetlePSX = true;
       enableBeetlePSXHW = true;
       enableBeetleSNES = true;
-      enableBeetleSaturn = true;
-      enableBeetleSaturnHW = true;
-      enableBeetleSuperGrafx = true;
-      enableDolphin = true;
+      # enableBeetleSaturn = true;
+      # enableBeetleSaturnHW = true;
+      # enableBeetleSuperGrafx = true;
+      # enableDolphin = true;
       enableGenesisPlusGX = true;
-      enableMAME = true;
+      # enableMAME = true;
       enableMBGA = true;
       enableMGBA = true;
       enableMupen64Plus = true;
