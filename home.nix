@@ -14,6 +14,11 @@ in {
     # material-icons
     # nerdfonts
     # paper-gtk-theme
+    # retroarch
+    # seafile-client
+    # universal-ctags # Support for Markdwon tags in vim with tagbar
+    # vagrant
+    # virt-manager
     arandr
     arc-theme
     arduino
@@ -42,21 +47,15 @@ in {
     pavucontrol
     pkg-config
     playerctl
-    # retroarch
     scrot
-    # seafile-client
     signal-desktop
     spotify
     styx
     tealdeer
     thunderbird-bin
     unzip
-    # vagrant
     viewnior
     virt-manager
-    # virt-manager
-    # universal-ctags # Support for Markdwon tags in vim with tagbar
-    viewnior
     vlc
     xarchiver
     xclip
