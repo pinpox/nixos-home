@@ -44,7 +44,7 @@ in {
     playerctl
     # retroarch
     scrot
-    seafile-client
+    # seafile-client
     signal-desktop
     spotify
     styx
