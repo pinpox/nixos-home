@@ -6,11 +6,11 @@
         "wallpaper-generator": "wallpaper-generator"
       },
       "locked": {
-        "lastModified": 1609972983,
-        "narHash": "sha256-qMt7Bq80qXlgo09aY+6CaDypGX/sMUcr6XlGox9QsRk=",
+        "lastModified": 1609973211,
+        "narHash": "sha256-FJq3EQ/yKA2JLUewQyA7ZJIEClk461/5TbrWxd3NsME=",
         "owner": "pinpox",
         "repo": "dotfiles-awesome",
-        "rev": "2c0a1bd442a66040e97bca2d639b3aa473854426",
+        "rev": "1a31d5d537612d1ae8f01ecc15aa116e19dbaf8d",
         "type": "github"
       },
       "original": {
@@ -37,10 +37,10 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1609779634,
-        "narHash": "sha256-LYNAH7Pv9IyoIs7di0rg6vnSC+VxhXhX94LXq04hsOE=",
-        "path": "/nix/store/7a8cxxrbmv9hw9csxbkdlv7bp63hwqmd-source",
-        "rev": "1a57d96edd156958b12782e8c8b6a374142a7248",
+        "lastModified": 1609866355,
+        "narHash": "sha256-TMzb8nMePC4OusDde+xv8AIgbNYuFku/dlLkPO/hifM=",
+        "path": "/nix/store/9kfzklpzv0bh5v7xidriwy7pq07drza8-source",
+        "rev": "d9dba88d08a9cdf483c3d45f0d7220cf97a4ce64",
         "type": "path"
       },
       "original": {
