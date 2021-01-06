@@ -66,7 +66,7 @@ in {
 
             --mff-tab-border-radius: 0px;
             --mff-tab-color: #${vars.colors.base05};
-            --mff-tab-font-family: "${vars.font.normal.family}", sans;
+            --mff-tab-font-family: "Source Sans Pro", sans;
             --mff-tab-font-size: 11pt;
             --mff-tab-font-weight: 400;
             --mff-tab-height: 32px;
@@ -77,11 +77,11 @@ in {
 
             --mff-urlbar-color: #${vars.colors.base05};
             --mff-urlbar-focused-color: #${vars.colors.base0D};
-            --mff-urlbar-font-family: "${vars.font.normal.family}", serif;
+            --mff-urlbar-font-family: "Source Sans Pro", serif;
             --mff-urlbar-font-size: 12pt;
             --mff-urlbar-font-weight: 700;
             --mff-urlbar-results-color: #${vars.colors.base05};
-            --mff-urlbar-results-font-family: "${vars.font.normal.family}", serif;
+            --mff-urlbar-results-font-family: "Source Sans Pro", serif;
             --mff-urlbar-results-font-size: 12pt;
             --mff-urlbar-results-font-weight: 700;
             --mff-urlbar-results-url-color: #${vars.colors.base0D};
