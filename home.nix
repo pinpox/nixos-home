@@ -51,7 +51,7 @@ in {
     tealdeer
     thunderbird-bin
     unzip
-    vagrant
+    # vagrant
     viewnior
     virt-manager
     # virt-manager
