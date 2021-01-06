@@ -12,7 +12,13 @@ in {
   home.packages = with pkgs; [ exa htop httpie pkg-config tealdeer unzip ];
 
   # Imports
-  imports = [ ./credentials.nix ./git.nix ./shell.nix ./vim.nix ./xdg.nix ];
+  imports = [
+    ./modules/credentials.nix
+    ./modules/git.nix
+    ./modules/shell.nix
+    ./modules/vim.nix
+    ./modules/xdg.nix
+  ];
 
   # Include man-pages
   manual.manpages.enable = true;

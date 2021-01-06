@@ -70,28 +70,28 @@ in {
 
   # Imports
   imports = [
-    # ./grobi.nix
-    # ./i3.nix
-    # ./polybar.nix
-    # ./rofi.nix
-    # ./autorandr.nix
-    ./xresources.nix
-    ./alacritty.nix
-    ./browsers.nix
-    ./credentials.nix
-    ./dunst.nix
-    ./games.nix
-    ./git.nix
-    ./go.nix
-    ./gtk.nix
-    ./awesome.nix
-    ./fonts.nix
-    ./neomutt.nix
-    # ./newsboat.nix
-    ./picom.nix
-    ./shell.nix
-    ./vim.nix
-    ./xdg.nix
+    # ./modules/autorandr.nix
+    # ./modules/grobi.nix
+    # ./modules/i3.nix
+    # ./modules/newsboat.nix
+    # ./modules/polybar.nix
+    # ./modules/rofi.nix
+    ./modules/alacritty.nix
+    ./modules/awesome.nix
+    ./modules/browsers.nix
+    ./modules/credentials.nix
+    ./modules/dunst.nix
+    ./modules/fonts.nix
+    ./modules/games.nix
+    ./modules/git.nix
+    ./modules/go.nix
+    ./modules/gtk.nix
+    ./modules/neomutt.nix
+    ./modules/picom.nix
+    ./modules/shell.nix
+    ./modules/vim.nix
+    ./modules/xdg.nix
+    ./modules/xresources.nix
   ];
 
   # Include man-pages
