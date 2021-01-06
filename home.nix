@@ -14,7 +14,7 @@ in {
     # material-icons
     # nerdfonts
     # paper-gtk-theme
-    # retroarch
+    retroarch
     # seafile-client
     # universal-ctags # Support for Markdwon tags in vim with tagbar
     # vagrant
