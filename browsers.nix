@@ -4,18 +4,19 @@ in {
   # Browserpass
   programs.browserpass = {
     enable = true;
-    browsers = [ "chromium" "firefox" ];
+    # browsers = [ "chromium" "firefox" ];
+    browsers = [  "firefox" ];
   };
 
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
-      "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
-      "lbhnkgjaoonakhladmcjkemebepeohkn" # Vim Tips New Tab
-    ];
-  };
+  # programs.chromium = {
+  #   enable = true;
+  #   extensions = [
+  #     "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+  #     "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+  #     "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
+  #     "lbhnkgjaoonakhladmcjkemebepeohkn" # Vim Tips New Tab
+  #   ];
+  # };
 
   programs.firefox = {
     enable = true;
