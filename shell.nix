@@ -182,17 +182,8 @@
   # Bat
   programs.bat = {
     enable = true;
+    # This should pick up the correct colors for the generated theme. Otherwise
+    # it is possible to generate a custom bat theme to ~/.config/bat/config
     config = { theme = "base16"; };
-
-    # TODO generate a theme based on the colors in vars.nix
-    # themes = {
-    #   dracula = builtins.readFile (pkgs.fetchFromGitHub {
-    #     owner = "dracula";
-    #     repo = "sublime"; # Bat uses sublime syntax for its themes
-    #     rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
-    #     sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
-    #   } + "/Dracula.tmTheme");
-    # }
   };
-
 }
