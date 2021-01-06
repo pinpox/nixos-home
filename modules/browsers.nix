@@ -5,7 +5,7 @@ in {
   programs.browserpass = {
     enable = true;
     # browsers = [ "chromium" "firefox" ];
-    browsers = [  "firefox" ];
+    browsers = [ "firefox" ];
   };
 
   # programs.chromium = {

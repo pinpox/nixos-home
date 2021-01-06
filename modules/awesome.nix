@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
-let
-  vars = import ./vars.nix;
+let vars = import ./vars.nix;
 in {
 
   # imports = [ dotfiles-awesome.dotfiles ];

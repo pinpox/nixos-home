@@ -52,8 +52,7 @@ in {
   nixpkgs.overlays = [
     (self: super: {
 
-      nerdfonts =
-        super.nerdfonts.override { fonts = [ "SourceCodePro" ]; };
+      nerdfonts = super.nerdfonts.override { fonts = [ "SourceCodePro" ]; };
 
       generated-gtk-theme = self.stdenv.mkDerivation rec {
         name = "generated-gtk-theme";
