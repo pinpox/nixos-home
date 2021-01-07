@@ -1,4 +1,8 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }:
+let
+  vars = import ./vars.nix;
+in
+{
 
   # robbyrussell/oh-my-zsh folder:lib/completion
 
@@ -151,7 +155,13 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    # TODO more options
+    defaultOptions = [
+        "--height 40%"
+        "--layout=reverse"
+        "--border"
+        "--inline-info"
+        "--color 'fg:#${vars.colors.base05},fg+:#${vars.colors.base08},bg:#${vars.colors.base00},preview-bg:#${vars.colors.base09},border:#${vars.colors.base0D}'"
+    ];
   };
 
   programs.dircolors = {
