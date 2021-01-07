@@ -6,11 +6,11 @@
         "wallpaper-generator": "wallpaper-generator"
       },
       "locked": {
-        "lastModified": 1610017285,
-        "narHash": "sha256-5JEuKiE3YKlStZimzJdTTZMhv/4aBHuPtvprjw7ouiw=",
+        "lastModified": 1610017419,
+        "narHash": "sha256-W0LiuD/U6M/QY8zX09x1zhKu9y1r5u3aK2UXWL3SR8M=",
         "owner": "pinpox",
         "repo": "dotfiles-awesome",
-        "rev": "0ea2a0c6173388e156f776daa39ae4d185336160",
+        "rev": "2612b8d5e1a2880906c1b7cefaf07f2bfc66c3e5",
         "type": "github"
       },
       "original": {
