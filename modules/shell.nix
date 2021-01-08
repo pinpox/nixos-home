@@ -45,7 +45,7 @@ in {
     shellAliases = {
 
       # Exa ls replacement
-      ls = "${pkgs.exa}/bin/exa --group-directories-first --icons";
+      ls = "${pkgs.exa}/bin/exa --group-directories-first";
       l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
       ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
       llm =
