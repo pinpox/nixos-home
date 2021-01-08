@@ -45,7 +45,7 @@ in {
     shellAliases = {
 
       # Exa ls replacement
-      ls = "${pkgs.exa}/bin/exa --group-directories-first";
+      ls = "${pkgs.exa}/bin/exa --group-directories-first --icons";
       l = "${pkgs.exa}/bin/exa -lbF --git --group-directories-first --icons";
       ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
       llm =
@@ -91,7 +91,6 @@ in {
       editor.dotExpansion = true;
 
       # Prezto modules to load
-
       pmodules = [
         "utility"
         "completion"
@@ -103,10 +102,10 @@ in {
         "syntax-highlighting"
         "history-substring-search"
       ];
-
     };
 
     plugins = [
+      # TODO use flake inputs for this
       {
         name = "zsh-abbrev-alias";
         file = "abbrev-alias.plugin.zsh";
@@ -161,7 +160,7 @@ in {
       "--color 'fg:#${vars.colors.base05}'" # Text
       "--color 'bg:#${vars.colors.base00}'" # Background
       "--color 'preview-fg:#${vars.colors.base05}'" # Preview window text
-      "--color 'preview-bg:#${vars.colors.base02}'" # Preview window background
+      "--color 'preview-bg:#${vars.colors.base00}'" # Preview window background
       "--color 'hl:#${vars.colors.base0A}'" # Highlighted substrings
       "--color 'fg+:#${vars.colors.base0D}'" # Text (current line)
       "--color 'bg+:#${vars.colors.base02}'" # Background (current line)
@@ -182,7 +181,6 @@ in {
     enableZshIntegration = true;
   };
 
-  # TODO maybe replace with zoxide
   programs.pazi = {
     enable = true;
     enableZshIntegration = true;
@@ -191,8 +189,7 @@ in {
   programs.tmux = {
     enable = true;
     clock24 = true;
-    # TODO other optoins
-
+    prefix = "C-a";
   };
 
   programs.htop = {
@@ -202,7 +199,6 @@ in {
 
   programs.jq.enable = true;
 
-  # Bat
   programs.bat = {
     enable = true;
     # This should pick up the correct colors for the generated theme. Otherwise
