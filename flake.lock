@@ -6,11 +6,11 @@
         "wallpaper-generator": "wallpaper-generator"
       },
       "locked": {
-        "lastModified": 1610124308,
-        "narHash": "sha256-FUcqk9ULqT2l1qv3C1JaM8B5Bl+dOnxFwH5ffbRgpus=",
+        "lastModified": 1610364151,
+        "narHash": "sha256-IsKyZAxCQxl3/E/TVg8FWgxCMoPDpmME9ssI4O7xJkU=",
         "owner": "pinpox",
         "repo": "dotfiles-awesome",
-        "rev": "a162cd6ad4dd1d00c54b1eb5baad7e7540ac0a28",
+        "rev": "992d006a7ccb1a3ae6b5272548616e13b5905291",
         "type": "github"
       },
       "original": {
@@ -21,11 +21,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1610041835,
-        "narHash": "sha256-WXWaMt8W746JDgLls4g3AfCuKbcQUNL/YjikJIgsCGQ=",
+        "lastModified": 1610219734,
+        "narHash": "sha256-hCsGe2nDz+SX4uO+lj0qPVcSGZdt52R9Yk5MOYs4djw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f211631c1cb3e94828c7650b5d12c1e5a89e0e16",
+        "rev": "257cbbcd3ab7bd96f5d24d50adc807de7c82e06d",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1610316334,
-        "narHash": "sha256-PHTXrKSme/gpk+ifIHPVWu/iee+2RmYWaJ1Oel9tkuo=",
+        "lastModified": 1610338424,
+        "narHash": "sha256-8PoXLXxK1LiVYKR10doHUk93yv9eAVS6h1EUniUT7oE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "23942e7140f4644622c181a562e1f6fdc6fbb665",
+        "rev": "6657490a4e8c37d8049a9dcddfe46fd03a724b5b",
         "type": "github"
       },
       "original": {
