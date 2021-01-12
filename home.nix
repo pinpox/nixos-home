@@ -76,6 +76,7 @@ in {
     # ./modules/polybar.nix
     # ./modules/rofi.nix
     ./modules/alacritty.nix
+    ./modules/xscreensaver.nix
     ./modules/awesome.nix
     ./modules/browsers.nix
     ./modules/credentials.nix
