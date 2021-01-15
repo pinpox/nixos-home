@@ -63,6 +63,9 @@ in {
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
+    xfce.exo # thunar "open terminal here"
+    xfce.tumbler # thunar thumbnails
+    xfce.xfconf # thunar save settings
     xfce.xfce4-volumed-pulse
     xorg.xrandr
   ];
