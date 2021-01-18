@@ -63,6 +63,7 @@ in {
           ansible-vim
           base16-vim
           coc-nvim
+          coc-lua
           dracula-vim
           fzf-vim
           vista-vim
