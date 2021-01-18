@@ -46,7 +46,7 @@
     # base02 = "314549"; # #314549
     # base03 = "546E7A"; # #546E7A
     # base04 = "B2CCD6"; # #B2CCD6
-    base05 = "F3F5F7"; # #F3F5F7
+    # base05 = "F3F5F7"; # #F3F5F7
     # base06 = "EEFFFF"; # #EEFFFF
     # base07 = "FFFFFF"; # #FFFFFF
     base08 = "F07178"; # #F07178
@@ -65,7 +65,7 @@ base01 = "3B4252"; # #3B4252
 base02 = "434C5E"; # #434C5E
 base03 = "4C566A"; # #4C566A
 base04 = "D8DEE9"; # #D8DEE9
-# base05 = "E5E9F0"; # #E5E9F0
+base05 = "E5E9F0"; # #E5E9F0
 base06 = "ECEFF4"; # #ECEFF4
 base07 = "8FBCBB"; # #8FBCBB
 # base08 = "BF616A"; # #BF616A
