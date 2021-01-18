@@ -41,22 +41,41 @@
 
     # scheme: "Material"
     # author: "Nate Peterson"
-    base00 = "263238"; # #263238
-    base01 = "2E3C43"; # #2E3C43
-    base02 = "314549"; # #314549
-    base03 = "546E7A"; # #546E7A
-    base04 = "B2CCD6"; # #B2CCD6
-    base05 = "F3F5F7"; # #F3F5F7
-    base06 = "EEFFFF"; # #EEFFFF
-    base07 = "FFFFFF"; # #FFFFFF
-    base08 = "F07178"; # #F07178
-    base09 = "F78C6C"; # #F78C6C
-    base0A = "FFCB6B"; # #FFCB6B
-    base0B = "C3E88D"; # #C3E88D
-    base0C = "89DDFF"; # #89DDFF
-    base0D = "82AAFF"; # #82AAFF
-    base0E = "C792EA"; # #C792EA
-    base0F = "FF5370"; # #FF5370
+    # base00 = "263238"; # #263238
+    # base01 = "2E3C43"; # #2E3C43
+    # base02 = "314549"; # #314549
+    # base03 = "546E7A"; # #546E7A
+    # base04 = "B2CCD6"; # #B2CCD6
+    # base05 = "F3F5F7"; # #F3F5F7
+    # base06 = "EEFFFF"; # #EEFFFF
+    # base07 = "FFFFFF"; # #FFFFFF
+    # base08 = "F07178"; # #F07178
+    # base09 = "F78C6C"; # #F78C6C
+    # base0A = "FFCB6B"; # #FFCB6B
+    # base0B = "C3E88D"; # #C3E88D
+    # base0C = "89DDFF"; # #89DDFF
+    # base0D = "82AAFF"; # #82AAFF
+    # base0E = "C792EA"; # #C792EA
+    # base0F = "FF5370"; # #FF5370
+
+# scheme: "Nord"
+# author: "arcticicestudio"
+base00 = "2E3440"; # #2E3440
+base01 = "3B4252"; # #3B4252
+base02 = "434C5E"; # #434C5E
+base03 = "4C566A"; # #4C566A
+base04 = "D8DEE9"; # #D8DEE9
+base05 = "E5E9F0"; # #E5E9F0
+base06 = "ECEFF4"; # #ECEFF4
+base07 = "8FBCBB"; # #8FBCBB
+base08 = "BF616A"; # #BF616A
+base09 = "D08770"; # #D08770
+base0A = "EBCB8B"; # #EBCB8B
+base0B = "A3BE8C"; # #A3BE8C
+base0C = "88C0D0"; # #88C0D0
+base0D = "81A1C1"; # #81A1C1
+base0E = "B48EAD"; # #B48EAD
+base0F = "5E81AC"; # #5E81AC
 
   };
 
