@@ -5,7 +5,6 @@
   home.packages = with pkgs; [
     corefonts
     font-awesome-ttf
-    gfs-fonts
     jetbrains-mono
     nerdfonts
     noto-fonts
