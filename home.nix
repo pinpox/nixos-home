@@ -55,7 +55,7 @@ in {
     thunderbird-bin
     unzip
     viewnior
-    virt-manager
+    # virt-manager
     vlc
     xarchiver
     xclip
