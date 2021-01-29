@@ -79,6 +79,7 @@ in {
       qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
       top = "${pkgs.htop}/bin/htop";
       weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
+      radio = "${pkgs.mpv}/bin/mpv http://lassul.us:8000/radio.ogg";
     };
 
     prezto = {
