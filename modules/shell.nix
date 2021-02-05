@@ -150,8 +150,10 @@ in {
       }
       {
         name = "pure";
-        file = "${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup";
-        src = pkgs.pure-prompt;
+        src = builtins.fetchGit {
+          url = "https://github.com/sindresorhus/pure";
+          rev = "8ec575c886c8bb33a87f80b9710ee5e379a0b589";
+        };
       }
     ];
   };
