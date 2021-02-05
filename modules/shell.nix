@@ -148,13 +148,7 @@ in {
           rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
         };
       }
-      {
-        name = "pure";
-        src = builtins.fetchGit {
-          url = "https://github.com/sindresorhus/pure";
-          rev = "8ec575c886c8bb33a87f80b9710ee5e379a0b589";
-        };
-      }
+      pkgs.pure-prompt;
     ];
   };
 
