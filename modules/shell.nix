@@ -150,6 +150,7 @@ in {
       }
       {
         name = "pure";
+        file = "${pkgs.pure-prompt}/share/zsh/site-functions/prompt_pure_setup";
         src = pkgs.pure-prompt;
       }
     ];
