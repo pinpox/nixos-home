@@ -109,7 +109,7 @@ in {
         # showReturnVal = true;
       };
 
-      terminal.autoTitle = =true;
+      terminal.autoTitle = true;
 
     };
 
