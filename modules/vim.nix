@@ -2,13 +2,13 @@
 let vars = import ./vars.nix;
 in {
 
-  home.file = {
-    "${config.xdg.configHome}/nvim/parser/c.so".source =
-      "${pkgs.tree-sitter.builtGrammars.c}/parser";
+  # home.file = {
+  #   "${config.xdg.configHome}/nvim/parser/c.so".source =
+  #     "${pkgs.tree-sitter.builtGrammars.c}/parser";
 
-    "${config.xdg.configHome}/nvim/parser/go.so".source =
-      "${pkgs.tree-sitter.builtGrammars.go}/parser";
-  };
+  #   "${config.xdg.configHome}/nvim/parser/go.so".source =
+  #     "${pkgs.tree-sitter.builtGrammars.go}/parser";
+  # };
 
   programs.neovim = {
     enable = true;
