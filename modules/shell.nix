@@ -148,7 +148,10 @@ in {
           rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
         };
       }
-      pkgs.pure-prompt
+      {
+        name = "pure";
+        src = pkgs.pure-prompt;
+      }
     ];
   };
 
