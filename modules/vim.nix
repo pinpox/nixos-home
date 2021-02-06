@@ -67,6 +67,7 @@ in {
         start = [
           # vim-indent-guides
           # vimpreviewpandoc
+          nvim-treesitter
           colorizer
           committia-vim
           BufOnly-vim
