@@ -3,10 +3,9 @@
 
   inputs.nur.url = "github:nix-community/NUR";
   inputs.dotfiles-awesome.url = "github:pinpox/dotfiles-awesome";
-  # inputs.neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+  inputs.neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
-  # outputs = { self, nixpkgs, dotfiles-awesome, nur, neovim-nightly }: {
-  outputs = { self, nixpkgs, dotfiles-awesome, nur}: {
+  outputs = { self, nixpkgs, dotfiles-awesome, nur, neovim-nightly }: {
 
     nixosModules = {
 
@@ -15,7 +14,7 @@
         imports = [
           ./home.nix
           dotfiles-awesome.nixosModules.dotfiles
-          # { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; }
+          { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; }
         ];
       };
 
