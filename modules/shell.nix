@@ -40,6 +40,12 @@ in {
       # Global aliases, get expaned everywhere
       abbrev-alias -g G="| rg -i"
       abbrev-alias -g P="| tb"
+
+      # Create and change to a directory
+      take () {mkdir -p -- "$1" && cd -- "$1"; }
+
+      # Create and change to a new temporary directory
+      ttake () { cd $(mktemp -d) }
     '';
 
     shellAliases = {
@@ -61,6 +67,8 @@ in {
       tb = "${pkgs.netcat-gnu}/bin/nc termbin.com 9999";
       tbc =
         "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
+
+
 
       # Gitignores
 
