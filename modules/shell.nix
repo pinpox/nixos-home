@@ -30,6 +30,11 @@ in {
       save = 15000;
       share = true;
     };
+
+    dirHashes = { docs = "$HOME/Documents"; };
+
+
+
     initExtra = ''
       abbrev-alias m="neomutt"
       abbrev-alias o="xdg-open"
@@ -46,6 +51,9 @@ in {
 
       # Create and change to a new temporary directory
       ttake () { cd $(mktemp -d) }
+
+      bindkey "$terminfo[kcuu1]" history-search-backward
+      bindkey "$terminfo[kcud1]" history-search-forward
     '';
 
     shellAliases = {
@@ -67,8 +75,6 @@ in {
       tb = "${pkgs.netcat-gnu}/bin/nc termbin.com 9999";
       tbc =
         "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
-
-
 
       # Gitignores
 
