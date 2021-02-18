@@ -20,7 +20,7 @@ in {
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-bin;
+    package = pkgs.firefox;
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       bitwarden
       darkreader
