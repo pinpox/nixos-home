@@ -16,6 +16,7 @@
           ./home.nix
           dotfiles-awesome.nixosModules.dotfiles
           # { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; }
+          { nixpkgs.overlays = [ nur.overlay ]; }
         ];
       };
 
