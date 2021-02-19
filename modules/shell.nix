@@ -33,8 +33,6 @@ in {
 
     dirHashes = { docs = "$HOME/Documents"; };
 
-
-
     initExtra = ''
       abbrev-alias m="neomutt"
       abbrev-alias o="xdg-open"

@@ -6,7 +6,7 @@
   # inputs.neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
   # outputs = { self, nixpkgs, dotfiles-awesome, nur, neovim-nightly }: {
-  outputs = { self, nixpkgs, dotfiles-awesome, nur}: {
+  outputs = { self, nixpkgs, dotfiles-awesome, nur }: {
 
     nixosModules = {
 
