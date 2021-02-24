@@ -22,6 +22,7 @@ in {
     sessionVariables = {
       RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
       PURE_PROMPT_SYMBOL = "▸";
+      ZDOTDIR = "~/.config/zsh";
     };
 
     history = {
