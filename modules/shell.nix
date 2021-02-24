@@ -163,9 +163,10 @@ in {
       }
       {
         name = "pure";
-        src = builtins.fetchGit {
-          url = "https://github.com/sindresorhus/pure";
-          rev = "8ec575c886c8bb33a87f80b9710ee5e379a0b589";
+        src = builtins.fetchFromGithub {
+          owner = "sindresorhus";
+          repo = "pure";
+          rev = "v1.16.0";
         };
       }
     ];
