@@ -167,7 +167,7 @@ in {
           owner = "sindresorhus";
           repo = "pure";
           rev = "v1.16.0";
-          sha256 = "0000000000000000000000000000000000000000000000000000";
+          sha256 = "1wsmv32pdcs0y5xq4537v66bijgnblj04bqa2k2pwja0nja3hyby";
         };
       }
     ];
