@@ -163,7 +163,7 @@ in {
       }
       {
         name = "pure";
-        src = pkgs.fetchFromGithub {
+        src = pkgs.fetchFromGitHub {
           owner = "sindresorhus";
           repo = "pure";
           rev = "v1.16.0";
