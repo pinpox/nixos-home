@@ -107,7 +107,7 @@ in {
     LIBGL_ALWAYS_SOFTWARE = "1";
     EDITOR = "nvim";
     VISUAL = "nvim";
-    ZDOTDIR="$XDG_CONFIG_HOME/zsh";
+    ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
   };
 
   # Let Home Manager install and manage itself.
