@@ -19,8 +19,8 @@ in {
     autocd = true;
     dotDir = ".config/zsh";
     sessionVariables = {
-      # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-      # ZDOTDIR = "~/.config/zsh";
+      RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+      ZDOTDIR = "~/.config/zsh";
     };
 
     history = {
@@ -114,15 +114,19 @@ in {
         "directory"
         "syntax-highlighting"
         "history-substring-search"
-        "prompt"
+        # "prompt"
       ];
 
-      prompt.theme = "powerlevel10k";
-
+      # prompt.theme = "powerlevel10k";
       terminal.autoTitle = true;
     };
 
     plugins = [
+      {
+        name = "powerlevel10k";
+        file = "powerlevel10k.zsh-theme";
+        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+      }
       # TODO use flake inputs for this
       {
         name = "zsh-abbrev-alias";
