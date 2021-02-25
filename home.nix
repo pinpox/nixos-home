@@ -55,7 +55,7 @@ in {
     thunderbird-bin
     unzip
     viewnior
-    virt-manager
+    # virt-manager
     vlc
     xarchiver
     xclip
@@ -107,6 +107,7 @@ in {
     LIBGL_ALWAYS_SOFTWARE = "1";
     EDITOR = "nvim";
     VISUAL = "nvim";
+    ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
   };
 
   # Let Home Manager install and manage itself.

@@ -22,6 +22,7 @@ in {
     sessionVariables = {
       RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
       PURE_PROMPT_SYMBOL = "▸";
+      ZDOTDIR = "~/.config/zsh";
     };
 
     history = {
@@ -30,6 +31,9 @@ in {
       save = 15000;
       share = true;
     };
+
+    dirHashes = { docs = "$HOME/Documents"; };
+
     initExtra = ''
       abbrev-alias m="neomutt"
       abbrev-alias o="xdg-open"
@@ -40,6 +44,15 @@ in {
       # Global aliases, get expaned everywhere
       abbrev-alias -g G="| rg -i"
       abbrev-alias -g P="| tb"
+
+      # Create and change to a directory
+      take () {mkdir -p -- "$1" && cd -- "$1"; }
+
+      # Create and change to a new temporary directory
+      ttake () { cd $(mktemp -d) }
+
+      bindkey "$terminfo[kcuu1]" history-search-backward
+      bindkey "$terminfo[kcud1]" history-search-forward
     '';
 
     shellAliases = {
@@ -79,6 +92,7 @@ in {
       qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
       top = "${pkgs.htop}/bin/htop";
       weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
+      radio = "${pkgs.mpv}/bin/mpv http://lassul.us:8000/radio.ogg";
     };
 
     prezto = {
@@ -102,6 +116,14 @@ in {
         "syntax-highlighting"
         "history-substring-search"
       ];
+
+      prompt = {
+        theme = "pure";
+        # showReturnVal = true;
+      };
+
+      terminal.autoTitle = true;
+
     };
 
     plugins = [
@@ -141,9 +163,11 @@ in {
       }
       {
         name = "pure";
-        src = builtins.fetchGit {
-          url = "https://github.com/sindresorhus/pure";
-          rev = "8ec575c886c8bb33a87f80b9710ee5e379a0b589";
+        src = pkgs.fetchFromGitHub {
+          owner = "sindresorhus";
+          repo = "pure";
+          rev = "v1.16.0";
+          sha256 = "1wsmv32pdcs0y5xq4537v66bijgnblj04bqa2k2pwja0nja3hyby";
         };
       }
     ];

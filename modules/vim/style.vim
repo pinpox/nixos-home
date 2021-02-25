@@ -35,6 +35,10 @@ let g:airline_theme='base16'
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = 'ℓ'
 let g:airline#extensions#tabline#enabled = 1
+
+let g:airline#extensions#nvimlsp#enabled = 0
+
+
 set noshowmode " dont show the current mode below the bar
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
