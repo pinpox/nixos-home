@@ -103,9 +103,8 @@ in {
 
   # Environment variables
 
-  systemd.user.sessionVariables = {
-    ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
-  };
+  # systemd.user.sessionVariables = {
+  # };
 
   home.sessionVariables = {
 
@@ -113,7 +112,7 @@ in {
     LIBGL_ALWAYS_SOFTWARE = "1";
     EDITOR = "nvim";
     VISUAL = "nvim";
-    ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
+    # ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
   };
 
   # Let Home Manager install and manage itself.
