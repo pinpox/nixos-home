@@ -17,7 +17,7 @@ in {
     enableAutosuggestions = true;
     enableCompletion = true;
     autocd = true;
-    # dotDir = ".config/zsh";
+    dotDir = ".config/zsh";
     # sessionVariables = {
       # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
       # ZDOTDIR = "~/.config/zsh";
