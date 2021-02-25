@@ -12,18 +12,18 @@ in {
   # mafredri/zsh-async
   # rupa/z
 
-  home.file = {
-    ".p10k.zsh" = {
-      source = ./p10k.zsh;
-      target = ".config/zsh/.p10k.zsh";
-    };
-  };
-
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
     autocd = true;
+    # dotDir = ".config/zsh";
+    # sessionVariables = {
+      # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+      # ZDOTDIR = "~/.config/zsh";
+    # };
+
+
     history = {
       expireDuplicatesFirst = true;
       ignoreSpace = false;
@@ -32,8 +32,6 @@ in {
     };
 
     dirHashes = { docs = "$HOME/Documents"; };
-
-    initExtraBeforeCompInit = builtins.readFile ./zshrc;
 
     initExtra = ''
       abbrev-alias m="neomutt"
@@ -54,6 +52,7 @@ in {
 
       bindkey "$terminfo[kcuu1]" history-search-backward
       bindkey "$terminfo[kcud1]" history-search-forward
+      source ~/.config/zsh/.p10k.zsh
     '';
 
     shellAliases = {
@@ -116,17 +115,14 @@ in {
         "directory"
         "syntax-highlighting"
         "history-substring-search"
+        # "prompt"
       ];
 
+      # prompt.theme = "powerlevel10k";
       terminal.autoTitle = true;
     };
 
     plugins = [
-      {
-        name = "h";
-        # file = "powerlevel10k.zsh-theme";
-        src = "${pkgs.h}";
-      }
       {
         name = "powerlevel10k";
         file = "powerlevel10k.zsh-theme";
