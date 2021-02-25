@@ -117,7 +117,7 @@ in {
         "prompt"
       ];
 
-      prompt.theme = "sorin";
+      prompt.theme = "powerlevel10k";
 
       terminal.autoTitle = true;
     };
