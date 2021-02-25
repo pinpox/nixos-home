@@ -12,6 +12,14 @@ in {
   # mafredri/zsh-async
   # rupa/z
 
+
+  home.file = {
+    "p10k.zsh" = {
+      source = ./p10k.zsh;
+      target = ".config/zsh/p10k.zsh";
+    };
+  };
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -52,7 +60,7 @@ in {
 
       bindkey "$terminfo[kcuu1]" history-search-backward
       bindkey "$terminfo[kcud1]" history-search-forward
-      source ~/.config/zsh/.p10k.zsh
+      source ~/.config/zsh/p10k.zsh
     '';
 
     shellAliases = {
