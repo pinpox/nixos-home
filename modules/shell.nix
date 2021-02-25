@@ -3,16 +3,9 @@ let vars = import ./vars.nix;
 in {
 
   # robbyrussell/oh-my-zsh folder:lib/completion
-
-  # ael-code/zsh-colored-man-pages
-
-  # momo-lab/zsh-abbrev-alias
   # zsh-users/zsh-completions
-  # zsh-users/zsh-syntax-highlighting
-  # mafredri/zsh-async
-  # rupa/z
 
-
+  # Prompt configuration
   home.file = {
     "p10k.zsh" = {
       source = ./p10k.zsh;
@@ -26,6 +19,7 @@ in {
     enableCompletion = true;
     autocd = true;
     dotDir = ".config/zsh";
+
     # sessionVariables = {
       # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
       # ZDOTDIR = "~/.config/zsh";
@@ -38,6 +32,8 @@ in {
       save = 15000;
       share = true;
     };
+
+    initExtraBeforeCompInit = builtins.readFile ./zshrc;
 
     dirHashes = { docs = "$HOME/Documents"; };
 
