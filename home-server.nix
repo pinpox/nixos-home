@@ -24,7 +24,7 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
-  home.sessionVariables = {
+systemd.user.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";

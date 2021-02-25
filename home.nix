@@ -60,6 +60,7 @@ in {
     xarchiver
     xclip
     xfce.gvfs
+    timewarrior
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
@@ -101,7 +102,7 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
-  home.sessionVariables = {
+  systemd.user.sessionVariables = {
 
     # Workaround for alacritty
     LIBGL_ALWAYS_SOFTWARE = "1";
