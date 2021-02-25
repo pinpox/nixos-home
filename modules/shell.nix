@@ -51,6 +51,7 @@ in {
 
       bindkey "$terminfo[kcuu1]" history-search-backward
       bindkey "$terminfo[kcud1]" history-search-forward
+      source ~/.config/zsh/.p10k.zsh
     '';
 
     shellAliases = {
