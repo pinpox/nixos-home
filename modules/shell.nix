@@ -114,23 +114,17 @@ in {
         "directory"
         "syntax-highlighting"
         "history-substring-search"
+        "prompt"
       ];
 
-      # prompt = {
-      # # theme = "pure";
-      # showReturnVal = true;
-      # };
+      prompt = {
+      theme = "powerlevel10k";
+      };
 
       terminal.autoTitle = true;
-
     };
 
     plugins = [
-      {
-        name = "powerlevel10k";
-        file = "powerlevel10k.zsh-theme";
-        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
-      }
       # TODO use flake inputs for this
       {
         name = "zsh-abbrev-alias";
