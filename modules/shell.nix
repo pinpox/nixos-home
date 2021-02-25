@@ -19,6 +19,10 @@ in {
     enableCompletion = true;
     autocd = true;
     dotDir = ".config/zsh";
+    profileExtra = ''
+    export ZDOTDIR="$HOME/.config/zsh"
+      '';
+
 
 
     # sessionVariables = {
