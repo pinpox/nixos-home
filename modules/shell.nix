@@ -127,7 +127,7 @@ in {
     plugins = [
       {
         name = "powerlevel10k";
-        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        src = "${pkgs.zsh-powerlevel10k}";
       }
       # TODO use flake inputs for this
       {
