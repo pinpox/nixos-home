@@ -69,6 +69,7 @@ in {
     xfce.xfconf # thunar save settings
     xfce.xfce4-volumed-pulse
     xorg.xrandr
+    chromium
   ];
 
   # Imports
