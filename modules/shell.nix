@@ -37,27 +37,8 @@ in {
 
     dirHashes = { docs = "$HOME/Documents"; };
 
-    initExtra = ''
-      abbrev-alias m="neomutt"
-      abbrev-alias o="xdg-open"
-      abbrev-alias q="exit"
-      abbrev-alias snvim="sudo -E nvim"
-      abbrev-alias v="nvim"
+    initExtra = builtins.readFile ./zshrc-extra;
 
-      # Global aliases, get expaned everywhere
-      abbrev-alias -g G="| rg -i"
-      abbrev-alias -g P="| tb"
-
-      # Create and change to a directory
-      take () {mkdir -p -- "$1" && cd -- "$1"; }
-
-      # Create and change to a new temporary directory
-      ttake () { cd $(mktemp -d) }
-
-      bindkey "$terminfo[kcuu1]" history-search-backward
-      bindkey "$terminfo[kcud1]" history-search-forward
-      source ~/.config/zsh/p10k.zsh
-    '';
 
     shellAliases = {
 
