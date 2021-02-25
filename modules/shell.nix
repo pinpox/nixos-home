@@ -116,7 +116,7 @@ in {
       ];
 
       # prompt = {
-      # theme = "pure";
+      # # theme = "pure";
       # showReturnVal = true;
       # };
 
@@ -125,7 +125,10 @@ in {
     };
 
     plugins = [
-      pkgs.zsh-powerlevel10k
+      {
+        name = "powerlevel10k";
+        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
       # TODO use flake inputs for this
       {
         name = "zsh-abbrev-alias";
