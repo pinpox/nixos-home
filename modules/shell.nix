@@ -4,7 +4,6 @@ in {
 
   # robbyrussell/oh-my-zsh folder:lib/completion
 
-  # sindresorhus/pure
   # ael-code/zsh-colored-man-pages
 
   # momo-lab/zsh-abbrev-alias
@@ -21,7 +20,6 @@ in {
     dotDir = ".config/zsh";
     sessionVariables = {
       RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-      PURE_PROMPT_SYMBOL = "▸";
       ZDOTDIR = "~/.config/zsh";
     };
 
@@ -117,16 +115,17 @@ in {
         "history-substring-search"
       ];
 
-      prompt = {
-        theme = "pure";
-        # showReturnVal = true;
-      };
+      # prompt = {
+      # theme = "pure";
+      # showReturnVal = true;
+      # };
 
       terminal.autoTitle = true;
 
     };
 
     plugins = [
+      pkgs.zsh-powerlevel10k
       # TODO use flake inputs for this
       {
         name = "zsh-abbrev-alias";
@@ -159,15 +158,6 @@ in {
         src = builtins.fetchGit {
           url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
           rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
-        };
-      }
-      {
-        name = "pure";
-        src = pkgs.fetchFromGitHub {
-          owner = "sindresorhus";
-          repo = "pure";
-          rev = "v1.16.0";
-          sha256 = "1wsmv32pdcs0y5xq4537v66bijgnblj04bqa2k2pwja0nja3hyby";
         };
       }
     ];
