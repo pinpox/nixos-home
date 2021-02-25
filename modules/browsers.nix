@@ -36,7 +36,17 @@ in {
 
         isDefault = true;
         settings = {
+
+          # Set the homepage
           "browser.startup.homepage" = "https://nixos.org";
+
+          # Export bookmarks to bookmarks.html when closing firefox
+          "browser.bookmarks.autoExportHTML" = "true";
+
+          # Path where to export. Default is:
+          # ~/.mozilla/firefox/pinpox/bookmarks.html
+          # "browser.bookmarks.file" = 
+
           # "browser.display.background_color" = "#${vars.colors.base00}";
           # "browser.display.foreground_color" = "#${vars.colors.base05}";
           "browser.display.use_system_colors" = "true";
