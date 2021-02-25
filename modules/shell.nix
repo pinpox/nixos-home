@@ -18,12 +18,41 @@ in {
     enableAutosuggestions = true;
     enableCompletion = true;
     autocd = true;
-    dotDir = ".config/zsh";
+    # dotDir = ".config/zsh";
 
     envExtra = ''
-      export ZDOTDIR=$XDG_CONFIG_HOME/zsh
-      source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
-      source ~/.config/zsh/p10k.zsh
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # Some 
+      # export ZDOTDIR=$XDG_CONFIG_HOME/zsh
       '';
 
     # sessionVariables = {
@@ -39,12 +68,11 @@ in {
       share = true;
     };
 
-    # initExtraBeforeCompInit = builtins.readFile ./zshrc;
+    initExtraBeforeCompInit = builtins.readFile ./zshrc;
 
-    dirHashes = { docs = "$HOME/Documents"; };
 
     initExtra = builtins.readFile ./zshrc-extra;
-
+    dirHashes = { docs = "$HOME/Documents"; };
 
     shellAliases = {
 
