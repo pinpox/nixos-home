@@ -20,10 +20,10 @@ in {
     autocd = true;
     dotDir = ".config/zsh";
 
-    # sessionVariables = {
+    sessionVariables = {
       # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-      # ZDOTDIR = "~/.config/zsh";
-    # };
+      ZDOTDIR = "$HOME/.config/zsh";
+    };
 
 
     history = {
