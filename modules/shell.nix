@@ -18,10 +18,11 @@ in {
     enableCompletion = true;
     autocd = true;
     dotDir = ".config/zsh";
-    sessionVariables = {
-      RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-      ZDOTDIR = "~/.config/zsh";
-    };
+    # sessionVariables = {
+      # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+      # ZDOTDIR = "~/.config/zsh";
+    # };
+
 
     history = {
       expireDuplicatesFirst = true;
