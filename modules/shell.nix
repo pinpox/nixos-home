@@ -19,8 +19,8 @@ in {
     autocd = true;
     dotDir = ".config/zsh";
     sessionVariables = {
-      RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-      ZDOTDIR = "~/.config/zsh";
+      # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+      # ZDOTDIR = "~/.config/zsh";
     };
 
     history = {
@@ -117,9 +117,7 @@ in {
         "prompt"
       ];
 
-      prompt = {
-      theme = "powerlevel10k";
-      };
+      prompt.theme = "sorin";
 
       terminal.autoTitle = true;
     };
