@@ -18,42 +18,8 @@ in {
     enableAutosuggestions = true;
     enableCompletion = true;
     autocd = true;
-    # dotDir = ".config/zsh";
+    dotDir = ".config/zsh";
 
-    envExtra = ''
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # Some 
-      # export ZDOTDIR=$XDG_CONFIG_HOME/zsh
-      '';
 
     # sessionVariables = {
     #   # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
