@@ -20,7 +20,10 @@ in {
     autocd = true;
     dotDir = ".config/zsh";
 
-    envExtra = "export ZDOTDIR $XDG_CONFIG_HOME/zsh";
+    envExtra = ''
+      echo 'sourcing extra'
+      export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+      '';
 
     # sessionVariables = {
     #   # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
