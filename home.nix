@@ -113,7 +113,7 @@ in {
     EDITOR = "nvim";
     VISUAL = "nvim";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
-  ''r
+  '';
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
