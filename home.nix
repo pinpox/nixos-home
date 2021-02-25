@@ -102,7 +102,7 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
-  systemd.user.sessionVariables = {
+  home.sessionVariables = {
 
     # Workaround for alacritty
     LIBGL_ALWAYS_SOFTWARE = "1";
