@@ -102,6 +102,11 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
+
+  systemd.user.sessionVariables = {
+    ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
+  };
+
   home.sessionVariables = {
 
     # Workaround for alacritty
