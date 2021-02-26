@@ -98,7 +98,7 @@ in {
       # Prezto modules to load
       pmodules = [
         "utility"
-        # "completion"
+        "completion"
         # "environment"
         # "terminal"
         # "editor"
