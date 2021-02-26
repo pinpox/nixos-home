@@ -104,7 +104,7 @@ in {
         # "editor"
         # "history"
         # "directory"
-        # "syntax-highlighting"
+        "syntax-highlighting"
         # "history-substring-search"
       ];
 
