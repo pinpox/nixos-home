@@ -98,18 +98,16 @@ in {
       # Prezto modules to load
       pmodules = [
         "utility"
-        "completion"
-        "environment"
-        "terminal"
-        "editor"
-        "history"
-        "directory"
-        "syntax-highlighting"
-        "history-substring-search"
-        # "prompt"
+        # "completion"
+        # "environment"
+        # "terminal"
+        # "editor"
+        # "history"
+        # "directory"
+        # "syntax-highlighting"
+        # "history-substring-search"
       ];
 
-      # prompt.theme = "powerlevel10k";
       terminal.autoTitle = true;
     };
 
