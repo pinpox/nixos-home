@@ -103,9 +103,9 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
-
-  # systemd.user.sessionVariables = {
-  # };
+  systemd.user.sessionVariables = {
+    ZDOTDIR = "/home/pinpox/.config/zsh";
+  };
 
   home.sessionVariables = {
 

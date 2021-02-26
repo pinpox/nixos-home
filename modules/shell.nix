@@ -19,16 +19,21 @@ in {
     enableCompletion = true;
     autocd = true;
     dotDir = ".config/zsh";
-    profileExtra = ''
-    export ZDOTDIR="$HOME/.config/zsh"
-      '';
+
+    # profileExtra = ''
+    # export ZDOTDIR="$HOME/.config/zsh"
+    #   '';
 
 
 
-    # sessionVariables = {
-    #   # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-    #   ZDOTDIR = "$HOME/.config/zsh";
-    # };
+    sessionVariables = {
+      # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+    ZDOTDIR = "/home/pinpox/.config/zsh";
+    };
+
+
+    initExtraBeforeCompInit = builtins.readFile ./zshrc;
+    initExtra = builtins.readFile ./zshrc-extra;
 
 
     history = {
@@ -38,10 +43,7 @@ in {
       share = true;
     };
 
-    initExtraBeforeCompInit = builtins.readFile ./zshrc;
 
-
-    initExtra = builtins.readFile ./zshrc-extra;
     dirHashes = { docs = "$HOME/Documents"; };
 
     shellAliases = {
