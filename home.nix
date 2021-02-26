@@ -108,7 +108,6 @@ in {
   };
 
   home.sessionVariables = {
-
     # Workaround for alacritty
     LIBGL_ALWAYS_SOFTWARE = "1";
     EDITOR = "nvim";

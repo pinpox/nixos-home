@@ -30,6 +30,14 @@ systemd.user.sessionVariables = {
     # ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
   };
 
+
+  home.sessionVariables = {
+    # Workaround for alacritty
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    ZDOTDIR = "/home/pinpox/.config/zsh";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
