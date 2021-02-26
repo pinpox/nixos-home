@@ -99,13 +99,9 @@ in {
       pmodules = [
         "utility"
         "completion"
-        # "environment"
-        # "terminal"
-        # "editor"
-        # "history"
-        # "directory"
+        "editor"
+        "directory"
         "syntax-highlighting"
-        # "history-substring-search"
       ];
 
       terminal.autoTitle = true;
