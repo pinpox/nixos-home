@@ -143,14 +143,14 @@ in {
           rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
         };
       }
-      {
-        name = "zsh-syntax-highlighting";
-        file = "zsh-syntax-highlighting.zsh";
-        src = builtins.fetchGit {
-          url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
-          rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
-        };
-      }
+      # {
+      #   name = "zsh-syntax-highlighting";
+      #   file = "zsh-syntax-highlighting.zsh";
+      #   src = builtins.fetchGit {
+      #     url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
+      #     rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
+      #   };
+      # }
     ];
   };
 
