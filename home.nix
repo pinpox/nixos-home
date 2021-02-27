@@ -30,6 +30,7 @@ in {
     gcc
     gimp
     gtk_engines
+    h # https://github.com/zimbatm/h
     htop
     httpie
     hugo
