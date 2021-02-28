@@ -5,6 +5,8 @@ in {
   # robbyrussell/oh-my-zsh folder:lib/completion
   # zsh-users/zsh-completions
 
+home.packages = with pkgs; [starship];
+
   # Prompt configuration
   home.file = {
     "p10k.zsh" = {
@@ -101,18 +103,22 @@ in {
         "completion"
         "editor"
         "directory"
-        # "syntax-highlighting"
       ];
 
       terminal.autoTitle = true;
     };
 
     plugins = [
-      {
-        name = "powerlevel10k";
-        file = "powerlevel10k.zsh-theme";
-        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
-      }
+      # {
+      #   name = "starship";
+      #   file = "starship.zsh";
+      #   src = "${pkgs.starship}/share/zsh-powerlevel10k";
+      # }
+      # {
+      #   name = "powerlevel10k";
+      #   file = "powerlevel10k.zsh-theme";
+      #   src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+      # }
       {
         name = "fast-syntax-highlighting";
         file = "fast-syntax-highlighting.plugin.zsh";
@@ -144,14 +150,6 @@ in {
           rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
         };
       }
-      # {
-      #   name = "zsh-syntax-highlighting";
-      #   file = "zsh-syntax-highlighting.zsh";
-      #   src = builtins.fetchGit {
-      #     url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
-      #     rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
-      #   };
-      # }
     ];
   };
 
