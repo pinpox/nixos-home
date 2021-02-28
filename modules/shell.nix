@@ -116,7 +116,7 @@ in {
       {
         name = "fast-syntax-highlighting";
         file = "fast-syntax-highlighting.plugin.zsh";
-        src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
+        src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
       }
       # TODO use flake inputs for this
       {
