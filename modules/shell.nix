@@ -101,7 +101,7 @@ in {
         "completion"
         "editor"
         "directory"
-        "syntax-highlighting"
+        # "syntax-highlighting"
       ];
 
       terminal.autoTitle = true;
@@ -112,6 +112,11 @@ in {
         name = "powerlevel10k";
         file = "powerlevel10k.zsh-theme";
         src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+      }
+      {
+        name = "fast-syntax-highlighting";
+        file = "fast-syntax-highlighting.plugin.zsh";
+        src = "${pkgs.zsh-fast-syntax-highlighting}";
       }
       # TODO use flake inputs for this
       {
