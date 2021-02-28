@@ -109,16 +109,6 @@ home.packages = with pkgs; [starship];
     };
 
     plugins = [
-      # {
-      #   name = "starship";
-      #   file = "starship.zsh";
-      #   src = "${pkgs.starship}/share/zsh-powerlevel10k";
-      # }
-      # {
-      #   name = "powerlevel10k";
-      #   file = "powerlevel10k.zsh-theme";
-      #   src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
-      # }
       {
         name = "fast-syntax-highlighting";
         file = "fast-syntax-highlighting.plugin.zsh";
