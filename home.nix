@@ -24,6 +24,7 @@ in {
     arduino
     arduino-cli
     asciinema
+    xfontsel
     cbatticon
     evince
     exa
