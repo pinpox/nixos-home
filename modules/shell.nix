@@ -2,16 +2,13 @@
 let vars = import ./vars.nix;
 in {
 
-  # robbyrussell/oh-my-zsh folder:lib/completion
-  # zsh-users/zsh-completions
-
 home.packages = with pkgs; [starship];
 
   # Prompt configuration
   home.file = {
-    "p10k.zsh" = {
-      source = ./p10k.zsh;
-      target = ".config/zsh/p10k.zsh";
+    "starship.toml" = {
+      source = ./starship.toml;
+      target = ".config/starship.toml";
     };
   };
 
@@ -29,7 +26,7 @@ home.packages = with pkgs; [starship];
 
 
     sessionVariables = {
-      # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+    RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
     ZDOTDIR = "/home/pinpox/.config/zsh";
     };
 
