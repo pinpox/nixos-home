@@ -98,6 +98,7 @@ in {
     ./modules/vim.nix
     ./modules/xdg.nix
     ./modules/xresources.nix
+    ./modules/lxterminal/default.nix
   ];
 
   # Include man-pages
