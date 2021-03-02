@@ -106,9 +106,7 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
-  systemd.user.sessionVariables = {
-    ZDOTDIR = "/home/pinpox/.config/zsh";
-  };
+  systemd.user.sessionVariables = { ZDOTDIR = "/home/pinpox/.config/zsh"; };
 
   home.sessionVariables = {
     # Workaround for alacritty

@@ -24,12 +24,11 @@ in {
   manual.manpages.enable = true;
 
   # Environment variables
-systemd.user.sessionVariables = {
+  systemd.user.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
     # ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
   };
-
 
   home.sessionVariables = {
     # Workaround for alacritty
