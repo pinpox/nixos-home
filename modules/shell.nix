@@ -121,14 +121,15 @@ home.packages = with pkgs; [starship];
           rev = "2f3d218f426aff21ac888217b0284a3a1470e274";
         };
       }
-      {
-        name = "zsh-async";
-        file = "async.zsh";
-        src = builtins.fetchGit {
-          url = "https://github.com/mafredri/zsh-async";
-          rev = "bbbc92bd01592513a6b7739a45b7911af18acaef";
-        };
-      }
+
+      # {
+      #   name = "zsh-async";
+      #   file = "async.zsh";
+      #   src = builtins.fetchGit {
+      #     url = "https://github.com/mafredri/zsh-async";
+      #     rev = "bbbc92bd01592513a6b7739a45b7911af18acaef";
+      #   };
+      # }
       {
         name = "zsh-colored-man-pages";
         file = "colored-man-pages.plugin.zsh";
