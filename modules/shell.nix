@@ -117,6 +117,12 @@ in {
         src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
       }
       {
+ # source /home/pinpox/.config/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+        name = "zsh-you-should-use";
+        file = "you-should-use.plugin.zsh";
+        src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use";
+      }
+      {
         # TODO use flake inputs for this
         # Has to be BEFORE zsh-you-should-use
         name = "zsh-abbrev-alias";
@@ -127,13 +133,6 @@ in {
           rev = "2f3d218f426aff21ac888217b0284a3a1470e274";
         };
       }
-      {
- # source /home/pinpox/.config/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
-        name = "zsh-you-should-use";
-        file = "you-should-use.plugin.zsh";
-        src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use";
-      }
-
       # {
       #   name = "zsh-async";
       #   file = "async.zsh";
