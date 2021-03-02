@@ -2,7 +2,7 @@
 let vars = import ./vars.nix;
 in {
 
-home.packages = with pkgs; [starship];
+  home.packages = with pkgs; [starship];
 
   # Prompt configuration
   home.file = {
@@ -26,8 +26,8 @@ home.packages = with pkgs; [starship];
 
 
     sessionVariables = {
-    RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-    ZDOTDIR = "/home/pinpox/.config/zsh";
+      RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+      ZDOTDIR = "/home/pinpox/.config/zsh";
     };
 
 
@@ -53,17 +53,17 @@ home.packages = with pkgs; [starship];
       ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
       llm =
         "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first --icons";
-      la =
-        "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first --icons";
-      lx =
-        "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first --icons";
-      lt =
-        "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first --icons";
+        la =
+          "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first --icons";
+          lx =
+          "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first --icons";
+          lt =
+            "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first --icons";
 
       # Pastebin (termbin.com)
       tb = "${pkgs.netcat-gnu}/bin/nc termbin.com 9999";
       tbc =
-        "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
+      "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
 
       # Gitignores
 
@@ -79,14 +79,14 @@ home.packages = with pkgs; [starship];
       c = "${pkgs.bat}/bin/bat -n --decorations never";
       cc =
         "${pkgs.clang}/bin/clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
-      qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
-      top = "${pkgs.htop}/bin/htop";
-      weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
-      radio = "${pkgs.mpv}/bin/mpv http://lassul.us:8000/radio.ogg";
-    };
+        qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
+        top = "${pkgs.htop}/bin/htop";
+        weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
+        radio = "${pkgs.mpv}/bin/mpv http://lassul.us:8000/radio.ogg";
+      };
 
-    prezto = {
-      enable = true;
+      prezto = {
+        enable = true;
 
       # Case insensitive completion
       caseSensitive = false;
@@ -110,6 +110,11 @@ home.packages = with pkgs; [starship];
         name = "fast-syntax-highlighting";
         file = "fast-syntax-highlighting.plugin.zsh";
         src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
+      }
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell"
       }
       # TODO use flake inputs for this
       {
