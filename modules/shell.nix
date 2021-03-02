@@ -116,8 +116,9 @@ in {
         file = "nix-shell.plugin.zsh";
         src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
       }
-      # TODO use flake inputs for this
       {
+        # TODO use flake inputs for this
+        # Has to be BEFORE zsh-you-should-use
         name = "zsh-abbrev-alias";
         file = "abbrev-alias.plugin.zsh";
         src = builtins.fetchGit {
@@ -125,6 +126,11 @@ in {
           url = "https://github.com/momo-lab/zsh-abbrev-alias";
           rev = "2f3d218f426aff21ac888217b0284a3a1470e274";
         };
+      }
+      {
+        name = "zsh-you-should-use";
+        file = "zsh-you-should-use.plugin.zsh";
+        src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use";
       }
 
       # {
