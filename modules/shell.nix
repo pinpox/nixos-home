@@ -71,8 +71,8 @@ in {
         "${pkgs.curl}/bin/curl 'https://www.toptal.com/developers/gitignore/api/vim,go,tags,ssh' > .gitignore";
 
       # Frequendly used folders
-      cdn = "cd ~/Projects/pinpox-nixos";
-      cdnh = "cd ~/.config/nixpkgs";
+      cdn = "cd ~/code/github.com/pinpox/nixos";
+      cdnh = "cd ~/code/github.com/pinpox/nixos-home";
 
       # Other
       lsblk = "lsblk -o name,mountpoint,label,size,type,uuid";
