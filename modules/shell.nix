@@ -2,7 +2,7 @@
 let vars = import ./vars.nix;
 in {
 
-  home.packages = with pkgs; [starship];
+  home.packages = with pkgs; [ starship ];
 
   # Prompt configuration
   home.file = {
@@ -23,17 +23,13 @@ in {
     # export ZDOTDIR="$HOME/.config/zsh"
     #   '';
 
-
-
     sessionVariables = {
       RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
       ZDOTDIR = "/home/pinpox/.config/zsh";
     };
 
-
     initExtraBeforeCompInit = builtins.readFile ./zshrc;
     initExtra = builtins.readFile ./zshrc-extra;
-
 
     history = {
       expireDuplicatesFirst = true;
@@ -41,7 +37,6 @@ in {
       save = 15000;
       share = true;
     };
-
 
     dirHashes = { docs = "$HOME/Documents"; };
 
@@ -53,20 +48,19 @@ in {
       ll = "${pkgs.exa}/bin/exa -lbGF --git --group-directories-first --icons";
       llm =
         "${pkgs.exa}/bin/exa -lbGd --git --sort=modified --group-directories-first --icons";
-        la =
-          "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first --icons";
-          lx =
-          "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first --icons";
-          lt =
-            "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first --icons";
+      la =
+        "${pkgs.exa}/bin/exa -lbhHigmuSa --time-style=long-iso --git --color-scale --group-directories-first --icons";
+      lx =
+        "${pkgs.exa}/bin/exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale --group-directories-first --icons";
+      lt =
+        "${pkgs.exa}/bin/exa --tree --level=2 --group-directories-first --icons";
 
       # Pastebin (termbin.com)
       tb = "${pkgs.netcat-gnu}/bin/nc termbin.com 9999";
       tbc =
-      "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
+        "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
 
       # Gitignores
-
       git-ignore-create-go =
         "${pkgs.curl}/bin/curl 'https://www.toptal.com/developers/gitignore/api/vim,go,tags,ssh' > .gitignore";
 
@@ -79,14 +73,14 @@ in {
       c = "${pkgs.bat}/bin/bat -n --decorations never";
       cc =
         "${pkgs.clang}/bin/clang -Wall -Wextra -pedantic -std=c99 -Wshadow -Weverything";
-        qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
-        top = "${pkgs.htop}/bin/htop";
-        weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
-        radio = "${pkgs.mpv}/bin/mpv http://lassul.us:8000/radio.ogg";
-      };
+      qr_gen = "${pkgs.qrencode}/bin/qrencode -t ansi -o-";
+      top = "${pkgs.htop}/bin/htop";
+      weather = "${pkgs.curl}/bin/curl -4 http://wttr.in/Koeln";
+      radio = "${pkgs.mpv}/bin/mpv http://lassul.us:8000/radio.ogg";
+    };
 
-      prezto = {
-        enable = true;
+    prezto = {
+      enable = true;
 
       # Case insensitive completion
       caseSensitive = false;
@@ -95,12 +89,7 @@ in {
       editor.dotExpansion = true;
 
       # Prezto modules to load
-      pmodules = [
-        "utility"
-        "completion"
-        "editor"
-        "directory"
-      ];
+      pmodules = [ "utility" "completion" "editor" "directory" ];
 
       terminal.autoTitle = true;
     };
@@ -117,14 +106,7 @@ in {
         src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
       }
       {
- # source /home/pinpox/.config/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
-        name = "zsh-you-should-use";
-        file = "you-should-use.plugin.zsh";
-        src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use";
-      }
-      {
         # TODO use flake inputs for this
-        # Has to be BEFORE zsh-you-should-use
         name = "zsh-abbrev-alias";
         file = "abbrev-alias.plugin.zsh";
         src = builtins.fetchGit {
@@ -133,14 +115,6 @@ in {
           rev = "2f3d218f426aff21ac888217b0284a3a1470e274";
         };
       }
-      # {
-      #   name = "zsh-async";
-      #   file = "async.zsh";
-      #   src = builtins.fetchGit {
-      #     url = "https://github.com/mafredri/zsh-async";
-      #     rev = "bbbc92bd01592513a6b7739a45b7911af18acaef";
-      #   };
-      # }
       {
         name = "zsh-colored-man-pages";
         file = "colored-man-pages.plugin.zsh";
