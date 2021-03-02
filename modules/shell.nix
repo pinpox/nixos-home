@@ -131,7 +131,7 @@ in {
  # source /home/pinpox/.config/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
         name = "zsh-you-should-use";
         file = "you-should-use.plugin.zsh";
-        src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/zsh-you-should-use";
+        src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use";
       }
 
       # {
