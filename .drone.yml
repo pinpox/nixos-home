@@ -49,7 +49,7 @@ steps:
       from_secret: deploy_key
   when:
     branch:
-    - main
+    - master
     event:
     - push
     - cron
