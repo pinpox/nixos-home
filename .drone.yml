@@ -23,13 +23,6 @@ steps:
   environment:
     NIX_PATH: nixpkgs=channel:nixos-unstable
 
-- name: Build all hosts
-  image: nixpkgs/nix-flakes
-  commands:
-  - nix-build krops.nix -A all
-  environment:
-    NIX_PATH: nixpkgs=channel:nixos-unstable
-
 ---
 kind: pipeline
 type: docker
@@ -60,4 +53,3 @@ steps:
     event:
     - push
     - cron
-
