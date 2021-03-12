@@ -1,5 +1,7 @@
 ![nixos-home](https://socialify.git.ci/pinpox/nixos-home/image?description=1&descriptionEditable=My%20home-manager%20%24USER%20setup&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fpablo.tools%2Fimg%2Favatar.gif&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
+[![Build Status](https://drone.lounge.rocks/api/badges/pinpox/nixos-home/status.svg)](https://drone.lounge.rocks/pinpox/nixos-home)
+
 My user setup for [NixOS](https://nixos.org) Desktops.  System configuration is in a
 [separate repository](https://github.com/pinpox/nixos).  Visit
 [pablo.tools](https://pablo.tools/blog) for details.
