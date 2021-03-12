@@ -2,14 +2,13 @@
 let vars = import ./vars.nix;
 in {
 
-  # robbyrussell/oh-my-zsh folder:lib/completion
-  # zsh-users/zsh-completions
+  home.packages = with pkgs; [ starship ];
 
   # Prompt configuration
   home.file = {
-    "p10k.zsh" = {
-      source = ./p10k.zsh;
-      target = ".config/zsh/p10k.zsh";
+    "starship.toml" = {
+      source = ./starship.toml;
+      target = ".config/starship.toml";
     };
   };
 
@@ -24,17 +23,13 @@ in {
     # export ZDOTDIR="$HOME/.config/zsh"
     #   '';
 
-
-
     sessionVariables = {
-      # RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
-    ZDOTDIR = "/home/pinpox/.config/zsh";
+      RPS1 = ""; # Disable the right side prompt that "walters" theme introduces
+      ZDOTDIR = "/home/pinpox/.config/zsh";
     };
-
 
     initExtraBeforeCompInit = builtins.readFile ./zshrc;
     initExtra = builtins.readFile ./zshrc-extra;
-
 
     history = {
       expireDuplicatesFirst = true;
@@ -42,7 +37,6 @@ in {
       save = 15000;
       share = true;
     };
-
 
     dirHashes = { docs = "$HOME/Documents"; };
 
@@ -67,13 +61,12 @@ in {
         "${pkgs.netcat-gnu}/bin/nc termbin.com 9999 | ${pkgs.xclip}/bin/xclip -selection c";
 
       # Gitignores
-
       git-ignore-create-go =
         "${pkgs.curl}/bin/curl 'https://www.toptal.com/developers/gitignore/api/vim,go,tags,ssh' > .gitignore";
 
       # Frequendly used folders
-      cdn = "cd ~/Projects/pinpox-nixos";
-      cdnh = "cd ~/.config/nixpkgs";
+      cdn = "cd ~/code/github.com/pinpox/nixos";
+      cdnh = "cd ~/code/github.com/pinpox/nixos-home";
 
       # Other
       lsblk = "lsblk -o name,mountpoint,label,size,type,uuid";
@@ -96,39 +89,30 @@ in {
       editor.dotExpansion = true;
 
       # Prezto modules to load
-      pmodules = [
-        "utility"
-        "completion"
-        "editor"
-        "directory"
-        "syntax-highlighting"
-      ];
+      pmodules = [ "utility" "completion" "editor" "directory" ];
 
       terminal.autoTitle = true;
     };
 
     plugins = [
       {
-        name = "powerlevel10k";
-        file = "powerlevel10k.zsh-theme";
-        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+        name = "fast-syntax-highlighting";
+        file = "fast-syntax-highlighting.plugin.zsh";
+        src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
       }
-      # TODO use flake inputs for this
       {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
+      }
+      {
+        # TODO use flake inputs for this
         name = "zsh-abbrev-alias";
         file = "abbrev-alias.plugin.zsh";
         src = builtins.fetchGit {
           # Updated 2020-12-31
           url = "https://github.com/momo-lab/zsh-abbrev-alias";
           rev = "2f3d218f426aff21ac888217b0284a3a1470e274";
-        };
-      }
-      {
-        name = "zsh-async";
-        file = "async.zsh";
-        src = builtins.fetchGit {
-          url = "https://github.com/mafredri/zsh-async";
-          rev = "bbbc92bd01592513a6b7739a45b7911af18acaef";
         };
       }
       {
@@ -139,14 +123,6 @@ in {
           rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
         };
       }
-      # {
-      #   name = "zsh-syntax-highlighting";
-      #   file = "zsh-syntax-highlighting.zsh";
-      #   src = builtins.fetchGit {
-      #     url = "https://github.com/zsh-users/zsh-syntax-highlighting/";
-      #     rev = "932e29a0c75411cb618f02995b66c0a4a25699bc";
-      #   };
-      # }
     ];
   };
 

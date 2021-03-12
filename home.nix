@@ -24,6 +24,7 @@ in {
     arduino
     arduino-cli
     asciinema
+    xfontsel
     cbatticon
     evince
     exa
@@ -98,15 +99,14 @@ in {
     ./modules/vim.nix
     ./modules/xdg.nix
     ./modules/xresources.nix
+    ./modules/lxterminal/default.nix
   ];
 
   # Include man-pages
   manual.manpages.enable = true;
 
   # Environment variables
-  systemd.user.sessionVariables = {
-    ZDOTDIR = "/home/pinpox/.config/zsh";
-  };
+  systemd.user.sessionVariables = { ZDOTDIR = "/home/pinpox/.config/zsh"; };
 
   home.sessionVariables = {
     # Workaround for alacritty

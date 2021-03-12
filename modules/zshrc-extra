@@ -16,3 +16,4 @@ ttake () { cd $(mktemp -d) }
 
 bindkey "$terminfo[kcuu1]" history-search-backward
 bindkey "$terminfo[kcud1]" history-search-forward
+eval "$(h --setup ~/code)"
