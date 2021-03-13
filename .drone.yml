@@ -22,6 +22,11 @@ steps:
   - nix --experimental-features "nix-command flakes" flake check --show-trace
   environment:
     NIX_PATH: nixpkgs=channel:nixos-unstable
+  when:
+    branch:
+    - master
+    event:
+    - push
 
 ---
 kind: pipeline
