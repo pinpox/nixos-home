@@ -42,7 +42,7 @@ in {
       (lib.strings.fileContents ./vim/lsp.vim)
 
       # COC:
-      (lib.strings.fileContents ./vim/coc_settings.vim)
+      # (lib.strings.fileContents ./vim/coc_settings.vim)
     ];
 
     # loaded on launch
@@ -57,8 +57,10 @@ in {
       BufOnly-vim
       ansible-vim
       base16-vim
-      coc-nvim
-      coc-lua
+      nvim-lspconfig
+      nvim-compe
+      # coc-nvim
+      # coc-lua
       dracula-vim
       fzf-vim
       vista-vim
