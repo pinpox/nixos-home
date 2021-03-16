@@ -21,6 +21,8 @@ in {
     withPython3 = true;
     withRuby = true;
 
+    extraPackages = with pkgs; [ nodePackages.bash-language-server gopls nodePackages.pyright shfmt ];
+
     extraConfig = lib.strings.concatStrings [
 
       # PLUGINS:
@@ -78,7 +80,7 @@ in {
       vim-easy-align
       vim-eunuch
       vim-gitgutter
-      vim-go
+      # vim-go
       vim-grammarous
       vim-gutentags
       vim-illuminate

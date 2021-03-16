@@ -154,4 +154,13 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 require'lspconfig'.pyright.setup{}
 
 require'lspconfig'.bashls.setup{}
+require'lspconfig'.gopls.setup{}
+
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    update_in_insert = true,
+  }
+)
+
 EOF
