@@ -123,11 +123,11 @@ in {
           rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
         };
       }
-      {
-        name = "zsh-fzf-tab";
-        file = "fzf-tab.plugin.zsh";
-        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
-      }
+      # {
+      #   name = "zsh-fzf-tab";
+      #   file = "fzf-tab.plugin.zsh";
+      #   src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+      # }
     ];
   };
 
