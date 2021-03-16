@@ -89,7 +89,7 @@ in {
       editor.dotExpansion = true;
 
       # Prezto modules to load
-      pmodules = [ "utility" "completion" "editor" "directory" ];
+      pmodules = [ "utility" "editor" "directory" ];
 
       terminal.autoTitle = true;
     };
@@ -122,6 +122,11 @@ in {
           url = "https://github.com/ael-code/zsh-colored-man-pages";
           rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
         };
+      }
+      {
+        name = "zsh-fzf-tab";
+        file = "fzf-tab.plugin.zsh";
+        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
       }
     ];
   };
