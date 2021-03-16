@@ -20,6 +20,7 @@ in {
     # vagrant
     # virt-manager
     arandr
+    meld
     arc-theme
     arduino
     arduino-cli
