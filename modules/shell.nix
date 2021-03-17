@@ -89,7 +89,8 @@ in {
       editor.dotExpansion = true;
 
       # Prezto modules to load
-      pmodules = [ "utility" "editor" "directory" ];
+      # pmodules = [ "utility" "editor" "directory" "completion"];
+      pmodules = [ "utility" "editor" "directory"];
 
       terminal.autoTitle = true;
     };
