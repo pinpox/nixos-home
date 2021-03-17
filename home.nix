@@ -25,7 +25,7 @@ in {
     arduino
     arduino-cli
     asciinema
-    xfontsel
+    chromium
     cbatticon
     evince
     exa
@@ -71,8 +71,9 @@ in {
     xfce.tumbler # thunar thumbnails
     xfce.xfconf # thunar save settings
     xfce.xfce4-volumed-pulse
+    xfontsel
     xorg.xrandr
-    chromium
+    yubioath-desktop
   ];
 
   # Imports
