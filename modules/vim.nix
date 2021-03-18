@@ -49,7 +49,7 @@ in {
       vim-nix
       # vim-indent-guides
       # vimpreviewpandoc
-      nvim-compe
+      # nvim-compe
       nvim-treesitter
       colorizer
       committia-vim
