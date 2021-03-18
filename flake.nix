@@ -26,7 +26,7 @@
       server = {
         imports = [
           ./home-server.nix
-          { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; }
+          { nixpkgs.overlays = [ nur.overlay ]; }
         ];
       };
     };

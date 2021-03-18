@@ -118,6 +118,8 @@ in {
     ZDOTDIR = "/home/pinpox/.config/zsh";
   };
 
+  programs.neovim.package = pkgs.neovim-nightly;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
