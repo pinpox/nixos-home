@@ -50,7 +50,7 @@ in {
       # vim-indent-guides
       # vimpreviewpandoc
       # nvim-compe
-      nvim-treesitter
+      # nvim-treesitter
       colorizer
       committia-vim
       BufOnly-vim
