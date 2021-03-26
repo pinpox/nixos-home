@@ -25,7 +25,6 @@ in {
     arduino
     arduino-cli
     asciinema
-    xfontsel
     cbatticon
     evince
     exa
@@ -72,6 +71,7 @@ in {
     xfce.xfconf # thunar save settings
     xfce.xfce4-volumed-pulse
     xorg.xrandr
+    yubioath-desktop
   ];
 
   # Imports
@@ -83,6 +83,7 @@ in {
     # ./modules/polybar.nix
     # ./modules/rofi.nix
     ./modules/alacritty.nix
+    ./modules/xscreensaver.nix
     ./modules/awesome.nix
     ./modules/browsers.nix
     ./modules/chromium.nix
@@ -93,7 +94,6 @@ in {
     ./modules/git.nix
     ./modules/go.nix
     ./modules/gtk.nix
-    ./modules/lxterminal/default.nix
     ./modules/neomutt.nix
     ./modules/picom.nix
     ./modules/shell.nix
@@ -116,6 +116,8 @@ in {
     VISUAL = "nvim";
     ZDOTDIR = "/home/pinpox/.config/zsh";
   };
+
+  programs.neovim.package = pkgs.neovim-nightly;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

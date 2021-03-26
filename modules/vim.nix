@@ -12,7 +12,6 @@ in {
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -50,8 +49,8 @@ in {
       vim-nix
       # vim-indent-guides
       # vimpreviewpandoc
-      nvim-compe
-      nvim-treesitter
+      # nvim-compe
+      # nvim-treesitter
       colorizer
       committia-vim
       BufOnly-vim
