@@ -20,7 +20,6 @@ in {
     # vagrant
     # virt-manager
     arandr
-    meld
     arc-theme
     arduino
     arduino-cli
@@ -40,6 +39,7 @@ in {
     lxappearance
     manix
     matcha-gtk-theme
+    meld
     networkmanager-openvpn
     networkmanagerapplet
     nitrogen
@@ -55,21 +55,20 @@ in {
     styx
     tealdeer
     thunderbird-bin
+    timewarrior
     unzip
     viewnior
-    # virt-manager
     vlc
     xarchiver
     xclip
+    xfce.exo # thunar "open terminal here"
     xfce.gvfs
-    timewarrior
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
-    xfce.exo # thunar "open terminal here"
     xfce.tumbler # thunar thumbnails
-    xfce.xfconf # thunar save settings
     xfce.xfce4-volumed-pulse
+    xfce.xfconf # thunar save settings
     xorg.xrandr
     yubioath-desktop
   ];
@@ -83,7 +82,6 @@ in {
     # ./modules/polybar.nix
     # ./modules/rofi.nix
     ./modules/alacritty.nix
-    ./modules/xscreensaver.nix
     ./modules/awesome.nix
     ./modules/browsers.nix
     ./modules/chromium.nix
