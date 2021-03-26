@@ -33,48 +33,32 @@ in {
     extraConfig = lib.strings.concatStrings [
 
       # PLUGINS:
-      (lib.strings.fileContents ./vim/plugins.vim)
+      (lib.strings.fileContents ./vimscript/plugins.vim)
 
       # GENERAL OPTIONS:
-      (lib.strings.fileContents ./vim/general.vim)
+      (lib.strings.fileContents ./vimscript/general.vim)
 
       # FILE BROWSING:
-      (lib.strings.fileContents ./vim/netrw.vim)
+      (lib.strings.fileContents ./vimscript/netrw.vim)
 
       # KEY MAPPINGS:
-      (lib.strings.fileContents ./vim/mappings.vim)
+      (lib.strings.fileContents ./vimscript/mappings.vim)
 
       # APPEARANCE:
-      (lib.strings.fileContents ./vim/style.vim)
-
-      # LANGUAGESERVER:
-      # (lib.strings.fileContents ./vim/lsp.vim)
+      (lib.strings.fileContents ./vimscript/style.vim)
 
       # TODO
       # https://github.com/windwp/nvim-autopairs
 
       ''
-        ${lib.strings.fileContents ./vim/lsp-config.vim}
+
+
 
         lua << EOF
-        ${lib.strings.fileContents ./vim/compe-config.lua}
-        require'lspconfig'.pyright.setup{}
-        require'lspconfig'.gopls.setup{}
-        require'lspconfig'.terraformls.setup{}
-        require'lspconfig'.bashls.setup{}
-        require'lspconfig'.yamlls.setup{}
-
-        require'lspconfig'.jsonls.setup {
-            commands = {
-              Format = {
-                function()
-                  vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-                end
-              }
-            }
-        }
-
+        ${lib.strings.fileContents ./lua/init.lua}
         EOF
+
+        ${lib.strings.fileContents ./vimscript/lsp-config.vim}
       ''
 
       # COC:

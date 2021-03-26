@@ -95,7 +95,7 @@ in {
     ./modules/neomutt.nix
     ./modules/picom.nix
     ./modules/shell.nix
-    ./modules/vim.nix
+    ./modules/vim
     ./modules/xdg.nix
     ./modules/xresources.nix
     ./modules/xscreensaver.nix

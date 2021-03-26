@@ -16,7 +16,7 @@ in {
     ./modules/credentials.nix
     ./modules/git.nix
     ./modules/shell.nix
-    ./modules/vim.nix
+    ./modules/vim
     ./modules/xdg.nix
   ];
 
