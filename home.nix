@@ -72,7 +72,6 @@ in {
     xfce.xfconf # thunar save settings
     xfce.xfce4-volumed-pulse
     xorg.xrandr
-    chromium
   ];
 
   # Imports
@@ -84,9 +83,9 @@ in {
     # ./modules/polybar.nix
     # ./modules/rofi.nix
     ./modules/alacritty.nix
-    ./modules/xscreensaver.nix
     ./modules/awesome.nix
     ./modules/browsers.nix
+    ./modules/chromium.nix
     ./modules/credentials.nix
     ./modules/dunst.nix
     ./modules/fonts.nix
@@ -94,13 +93,14 @@ in {
     ./modules/git.nix
     ./modules/go.nix
     ./modules/gtk.nix
+    ./modules/lxterminal/default.nix
     ./modules/neomutt.nix
     ./modules/picom.nix
     ./modules/shell.nix
     ./modules/vim.nix
     ./modules/xdg.nix
     ./modules/xresources.nix
-    ./modules/lxterminal/default.nix
+    ./modules/xscreensaver.nix
   ];
 
   # Include man-pages
