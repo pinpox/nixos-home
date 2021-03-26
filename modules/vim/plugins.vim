@@ -1,4 +1,3 @@
-
 " Plugin options
 
 " Arduino
@@ -8,40 +7,6 @@ let g:arduino_args = '--verbose-upload'
 
 " Markdown
 let g:livedown_browser = "firefox"                                " the browser to use for preview
-
-" Ultisnips
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" Deoplete
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-" let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
-" call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
-" if !exists('g:deoplete#omni_patterns')
-" 	let g:deoplete#omni_patterns = {}
-" endif
-" let g:deoplete#omni_patterns.tex =
-" 			\ '\v\\%('
-" 			\ . '\a*cite\a*%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-" 			\ . '|\a*ref%(\s*\{[^}]*|range\s*\{[^,}]*%(}\{)?)'
-" 			\ . '|hyperref\s*\[[^]]*'
-" 			\ . '|includegraphics\*?%(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-" 			\ . '|%(include%(only)?|input)\s*\{[^}]*'
-" 			\ . ')\m'
-
-
-" Ale
-" let g:ale_linters ={
-" \   'haskell': ['hlint', 'hdevtools', 'hfmt'],
-" \}
-let g:ale_sign_column_always = 1    "Keep the sign gutter open
-
-" Neomake
-" autocmd! BufWritePost * Neomake " run neomake on file save
-" call neomake#configure#automake('nrwi', 500)
-" Default file type for .tex files
 
 " Fzf, show file preview
 let g:fzf_files_options = '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
@@ -55,20 +20,6 @@ let g:switch_custom_definitions =
 			\   ['LOW', 'HIGH']
 			\ ]
 
-let g:grammarous#disabled_rules = {
-            \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
-            \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
-            \ }
-
-" set to 1, nvim will open the preview window after entering the markdown buffer
-" default: 0
-let g:mkdp_auto_start = 0
-
-
-" specify browser to open preview page
-let g:mkdp_browser = 'chromium'
-
-let g:mkdp_echo_preview_url = 1
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -77,15 +28,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
-
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
-
-
 " disable concellevel for markdown
 let g:vim_markdown_conceal = 0
-
 
 " Terraform options
 let g:terraform_align=1

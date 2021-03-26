@@ -13,7 +13,11 @@ in {
 
   home.packages = with pkgs; [
     nodePackages.pyright
+    nodePackages.yaml-language-server
+    nodePackages.vscode-json-languageserver-bin
     gopls
+    terraform-ls
+    terraform # TODO add options to enable/disable large packages like terraform
   ];
 
   programs.neovim = {
@@ -46,6 +50,8 @@ in {
       # LANGUAGESERVER:
       # (lib.strings.fileContents ./vim/lsp.vim)
 
+      # TODO
+      # https://github.com/windwp/nvim-autopairs
 
       ''
         ${lib.strings.fileContents ./vim/lsp-config.vim}
@@ -54,6 +60,20 @@ in {
         ${lib.strings.fileContents ./vim/compe-config.lua}
         require'lspconfig'.pyright.setup{}
         require'lspconfig'.gopls.setup{}
+        require'lspconfig'.terraformls.setup{}
+        require'lspconfig'.bashls.setup{}
+        require'lspconfig'.yamlls.setup{}
+
+        require'lspconfig'.jsonls.setup {
+            commands = {
+              Format = {
+                function()
+                  vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
+                end
+              }
+            }
+        }
+
         EOF
       ''
 
