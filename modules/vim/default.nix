@@ -72,6 +72,7 @@ in {
       # vimpreviewpandoc
       nvim-compe
       nvim-lspconfig
+      lsp_extensions-nvim
       # nvim-treesitter
       colorizer
       committia-vim
