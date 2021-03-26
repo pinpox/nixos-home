@@ -10,6 +10,12 @@ in {
   #     "${pkgs.tree-sitter.builtGrammars.go}/parser";
   # };
 
+
+  home.packages = with pkgs; [
+    nodePackages.pyright
+    gopls
+  ];
+
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -38,10 +44,21 @@ in {
       (lib.strings.fileContents ./vim/style.vim)
 
       # LANGUAGESERVER:
-      (lib.strings.fileContents ./vim/lsp.vim)
+      # (lib.strings.fileContents ./vim/lsp.vim)
+
+
+      ''
+        ${lib.strings.fileContents ./vim/lsp-config.vim}
+
+        lua << EOF
+        ${lib.strings.fileContents ./vim/compe-config.lua}
+        require'lspconfig'.pyright.setup{}
+        require'lspconfig'.gopls.setup{}
+        EOF
+      ''
 
       # COC:
-      (lib.strings.fileContents ./vim/coc_settings.vim)
+      # (lib.strings.fileContents ./vim/coc_settings.vim)
     ];
 
     # loaded on launch
@@ -49,16 +66,17 @@ in {
       vim-nix
       # vim-indent-guides
       # vimpreviewpandoc
-      # nvim-compe
+      nvim-compe
+      nvim-lspconfig
       # nvim-treesitter
       colorizer
       committia-vim
       BufOnly-vim
       ansible-vim
       base16-vim
-      coc-nvim
-      coc-lua
-      dracula-vim
+      # coc-nvim
+      # coc-lua
+      # dracula-vim
       fzf-vim
       vista-vim
       gotests-vim
