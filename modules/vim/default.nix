@@ -1,5 +1,12 @@
 { config, pkgs, lib, ... }:
-let vars = import ./vars.nix;
+let
+  vars = import ./vars.nix;
+  plugin = name: repo:
+    pkgs.vimUtils.buildVimPluginFrom2Nix {
+      pname = "vim-plugin-${name}";
+      version = "git";
+      src = builtins.fetchGit { url = "https://github.com/${repo}.git"; };
+    };
 in {
 
   # home.file = {
@@ -55,7 +62,9 @@ in {
 
 
         lua << EOF
+
         ${lib.strings.fileContents ./lua/init.lua}
+
         EOF
 
         ${lib.strings.fileContents ./vimscript/lsp-config.vim}
@@ -76,6 +85,9 @@ in {
 
     # loaded on launch
     plugins = with pkgs.vimPlugins; [
+
+      (plugin "colorizer-lua" "norcalli/nvim-colorizer.lua")
+
       vim-nix
       # vim-indent-guides
       # vimpreviewpandoc

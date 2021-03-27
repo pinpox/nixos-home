@@ -1,15 +1,5 @@
 " Plugin options
 
-" Arduino
-let g:arduino_programmer = 'arduino:avrispmkii'                   " arduino programmer
-let g:arduino_dir = '/usr/share/arduino'
-let g:arduino_args = '--verbose-upload'
-
-" Markdown
-let g:livedown_browser = "firefox"                                " the browser to use for preview
-
-" Fzf, show file preview
-let g:fzf_files_options = '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 " Switch
 let g:switch_custom_definitions =

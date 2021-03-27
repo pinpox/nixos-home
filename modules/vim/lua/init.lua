@@ -91,3 +91,20 @@ require'lspconfig'.jsonls.setup {
 	}
 }
 
+-- Plugin variables
+-- Arduino
+vim.g.arduino_programmer =  'arduino:avrispmkii'
+vim.g.arduino_dir = '/usr/share/arduino'
+vim.g.arduino_args = '--verbose-upload'
+
+
+-- Markdown
+-- the browser to use for preview
+vim.g.livedown_browser = "firefox"
+
+-- Fzf, show file preview
+vim.g.fzf_files_options = '--preview "(coderay {} || cat {}) 2> /dev/null | head -\'.&lines.\'"'
+
+
+
+
