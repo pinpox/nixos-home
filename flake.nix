@@ -4,7 +4,6 @@
   inputs.nur.url = "github:nix-community/NUR";
   inputs.dotfiles-awesome.url = "github:pinpox/dotfiles-awesome";
   inputs.neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-  inputs.neovim-exta-plugins.url = "path:./modules/vim/exta-plugins";
 
   outputs = { self, nixpkgs, dotfiles-awesome, nur, neovim-nightly }: {
     # outputs = { self, nixpkgs, dotfiles-awesome, nur }: {

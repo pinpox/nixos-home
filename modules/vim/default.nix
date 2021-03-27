@@ -1,12 +1,18 @@
 { config, pkgs, lib, ... }:
 let
   vars = import ./vars.nix;
-  plugin = name: repo:
+
+  plugin = name: repo: branch: sha256:
     pkgs.vimUtils.buildVimPluginFrom2Nix {
       pname = "vim-plugin-${name}";
       version = "git";
-      src = builtins.fetchGit { url = "https://github.com/${repo}.git"; };
+      src = builtins.fetchGit {
+        url = "https://github.com/${repo}.git";
+        ref = branch;
+        rev = sha256;
+      };
     };
+
 in {
 
   # home.file = {
@@ -18,12 +24,12 @@ in {
   # };
 
   home.packages = with pkgs; [
-    nodePackages.pyright
-    nodePackages.yaml-language-server
-    nodePackages.vscode-json-languageserver-bin
-    vscode-extensions.golang.Go
-    gopls
-    terraform-ls
+    nodePackages.pyright # LSP python
+    nodePackages.yaml-language-server # LSP yaml
+    nodePackages.vscode-json-languageserver-bin # LSP json
+    vscode-extensions.golang.Go # Golang snippets
+    gopls # LSP go
+    terraform-ls # LSP terraform
     terraform # TODO add options to enable/disable large packages like terraform
   ];
 
@@ -37,7 +43,7 @@ in {
     withPython3 = true;
     withRuby = true;
 
-    extraConfig = lib.strings.concatStrings [
+    extraConfig = builtins.concatStringsSep "\n" [
 
       # PLUGINS:
       (lib.strings.fileContents ./vimscript/plugins.vim)
@@ -60,17 +66,18 @@ in {
       ''
 
 
-
         lua << EOF
 
         ${lib.strings.fileContents ./lua/init.lua}
+
+        ${lib.strings.fileContents ./lua/which-key.lua}
 
         EOF
 
         ${lib.strings.fileContents ./vimscript/lsp-config.vim}
 
+        " Add snippet directories from packages
         let g:vsnip_snippet_dirs = ['${pkgs.vscode-extensions.golang.Go}/share/vscode/extensions/golang.Go/snippets/']
-
 
         inoremap <silent><expr> <C-Space> compe#complete()
         inoremap <silent><expr> <CR>      compe#confirm('<CR>')
@@ -79,14 +86,14 @@ in {
         inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
       ''
 
-      # COC:
-      # (lib.strings.fileContents ./vim/coc_settings.vim)
     ];
 
     # loaded on launch
     plugins = with pkgs.vimPlugins; [
 
-      (plugin "colorizer-lua" "norcalli/nvim-colorizer.lua")
+      # TODO Remove when PR is merged https://github.com/NixOS/nixpkgs/pull/117813
+      (plugin "nvim-whichkey-setup.lua" "AckslD/nvim-whichkey-setup.lua" "main"
+        "59aa0a4287adf6c2c9faabf912cdc005230e7c98")
 
       vim-nix
       # vim-indent-guides
@@ -147,7 +154,6 @@ in {
 # nicwest/vim-camelsnek'
 # prabirshrestha/async.vim'
 # rafalbromirski/vim-aurora'
-# rhysd/committia.vim'                  " Better commit message editor
 # rrethy/vim-hexokinase'
 # stevearc/vim-arduino'
 # thinca/vim-textobj-between'           "Text objects for a range between a character
