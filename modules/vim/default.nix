@@ -10,11 +10,11 @@ in {
   #     "${pkgs.tree-sitter.builtGrammars.go}/parser";
   # };
 
-
   home.packages = with pkgs; [
     nodePackages.pyright
     nodePackages.yaml-language-server
     nodePackages.vscode-json-languageserver-bin
+    vscode-extensions.golang.Go
     gopls
     terraform-ls
     terraform # TODO add options to enable/disable large packages like terraform
@@ -59,6 +59,15 @@ in {
         EOF
 
         ${lib.strings.fileContents ./vimscript/lsp-config.vim}
+
+        let g:vsnip_snippet_dirs = ['${pkgs.vscode-extensions.golang.Go}/share/vscode/extensions/golang.Go/snippets/']
+
+
+        inoremap <silent><expr> <C-Space> compe#complete()
+        inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+        inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+        inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+        inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
       ''
 
       # COC:
@@ -72,16 +81,15 @@ in {
       # vimpreviewpandoc
       nvim-compe
       nvim-lspconfig
-      lsp_extensions-nvim
+      vim-vsnip
+      vim-vsnip-integ
       # nvim-treesitter
+
       colorizer
       committia-vim
       BufOnly-vim
       ansible-vim
       base16-vim
-      # coc-nvim
-      # coc-lua
-      # dracula-vim
       fzf-vim
       vista-vim
       gotests-vim
