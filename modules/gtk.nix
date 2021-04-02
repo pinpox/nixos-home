@@ -51,9 +51,6 @@ in {
 
   nixpkgs.overlays = [
     (self: super: {
-
-      nerdfonts = super.nerdfonts.override { fonts = [ "SourceCodePro" ]; };
-
       generated-gtk-theme = self.stdenv.mkDerivation rec {
         name = "generated-gtk-theme";
         src = materia-theme;
@@ -77,7 +74,7 @@ in {
     enable = true;
 
     font = {
-      name = "Source Sans Pro 9";
+      name = "Source Sans Pro";
       package = pkgs.source-sans-pro;
     };
 
@@ -85,6 +82,7 @@ in {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
+
     theme = {
       name = "Generated";
       package = pkgs.generated-gtk-theme;

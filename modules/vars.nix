@@ -42,15 +42,15 @@
 
   font = {
     normal = {
-      family = "Sauce Code Pro Nerd Font";
+      family = "Sauce Code Pro Nerd Font Mono";
       style = "Semibold";
     };
     bold = {
-      family = "Sauce Code Pro Nerd Font";
+      family = "Sauce Code Pro Nerd Font Mono";
       style = "Bold";
     };
     italic = {
-      family = "Sauce Code Pro Nerd Font";
+      family = "Sauce Code Pro Nerd Font Mono";
       style = "Semibold Italic";
     };
     size = 10;
