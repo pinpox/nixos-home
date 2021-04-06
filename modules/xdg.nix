@@ -420,11 +420,6 @@ in {
                     '';
       };
 
-      coc_settings = {
-        target = "nvim/coc-settings.json";
-        source = ./vim/coc-settings.json;
-      };
-
       mpris = {
         executable = true;
         text = ''
