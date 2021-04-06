@@ -8,3 +8,6 @@ disabled = true
 
 [python]
 disabled = true
+
+[nix_shell]
+symbol = "❄  "

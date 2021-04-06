@@ -52,7 +52,6 @@ in {
     scrot
     signal-desktop
     spotify
-    styx
     tealdeer
     thunderbird-bin
     timewarrior

@@ -15,14 +15,6 @@ let
 
 in {
 
-  # home.file = {
-  #   "${config.xdg.configHome}/nvim/parser/c.so".source =
-  #     "${pkgs.tree-sitter.builtGrammars.c}/parser";
-
-  #   "${config.xdg.configHome}/nvim/parser/go.so".source =
-  #     "${pkgs.tree-sitter.builtGrammars.go}/parser";
-  # };
-
   home.packages = with pkgs; [
     nodePackages.pyright # LSP python
     nodePackages.yaml-language-server # LSP yaml
@@ -54,8 +46,6 @@ in {
       # FILE BROWSING:
       (lib.strings.fileContents ./vimscript/netrw.vim)
 
-      # KEY MAPPINGS:
-      (lib.strings.fileContents ./vimscript/mappings.vim)
 
       # APPEARANCE:
       (lib.strings.fileContents ./vimscript/style.vim)
@@ -65,10 +55,12 @@ in {
 
       ''
 
-
         lua << EOF
 
         ${lib.strings.fileContents ./lua/init.lua}
+
+        -- KEY MAPPINGS:
+        ${lib.strings.fileContents ./lua/mappings.lua}
 
         ${lib.strings.fileContents ./lua/which-key.lua}
 
