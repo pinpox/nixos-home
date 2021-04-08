@@ -15,16 +15,16 @@
         imports = [
           ./home.nix
           dotfiles-awesome.nixosModules.dotfiles
-          {
-            nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ];
-          }
-          # { nixpkgs.overlays = [ nur.overlay ]; }
+          { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; }
         ];
       };
 
       # Serevr user configuration, only CLI
       server = {
-        imports = [ ./home-server.nix { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; } ];
+        imports = [
+          ./home-server.nix
+          { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; }
+        ];
       };
     };
   };
