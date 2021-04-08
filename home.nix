@@ -46,6 +46,7 @@ in {
     nix-index
     openvpn
     papirus-icon-theme
+    recursive
     pavucontrol
     pkg-config
     playerctl
