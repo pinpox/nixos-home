@@ -24,7 +24,7 @@
 
       # Serevr user configuration, only CLI
       server = {
-        imports = [ ./home-server.nix { nixpkgs.overlays = [ nur.overlay ]; } ];
+        imports = [ ./home-server.nix { nixpkgs.overlays = [ nur.overlay neovim-nightly.overlay ]; } ];
       };
     };
   };
