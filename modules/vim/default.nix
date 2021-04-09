@@ -46,7 +46,6 @@ in {
       # FILE BROWSING:
       (lib.strings.fileContents ./vimscript/netrw.vim)
 
-
       # APPEARANCE:
       (lib.strings.fileContents ./vimscript/style.vim)
 
@@ -84,10 +83,11 @@ in {
     plugins = with pkgs.vimPlugins; [
 
       # TODO Remove when PR is merged https://github.com/NixOS/nixpkgs/pull/117813
-      (plugin "nvim-whichkey-setup.lua" "AckslD/nvim-whichkey-setup.lua" "main"
-        "59aa0a4287adf6c2c9faabf912cdc005230e7c98")
+      # (plugin "nvim-whichkey-setup.lua" "AckslD/nvim-whichkey-setup.lua" "main"
+      #   "59aa0a4287adf6c2c9faabf912cdc005230e7c98")
 
       vim-nix
+      nvim-whichkey-setup-lua
       # vim-indent-guides
       # vimpreviewpandoc
       nvim-compe
