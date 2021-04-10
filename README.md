@@ -2,64 +2,7 @@
 
 [![Build Status](https://drone.lounge.rocks/api/badges/pinpox/nixos-home/status.svg)](https://drone.lounge.rocks/pinpox/nixos-home)
 
-My user setup for [NixOS](https://nixos.org) Desktops.  System configuration is in a
-[separate repository](https://github.com/pinpox/nixos).  Visit
+## DEPRECATION NOTICE:
+This repository is unmaintained and only here to allow reviewing commit history. The configuration has been merged into my [main nixos configuration repository](https://github.com/pinpox/nixos)
+
 [pablo.tools](https://pablo.tools/blog) for details.
-
-## Setup
-
-The following steps are assumed to be taken as the user for which the
-configuration should be set up.
-
-### Install home-manager
-
-Install home-manager for unstable channel and removed generated config.
-
-```bash
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '<home-manager>' -A install
-rm .config/nixpkgs/home.nix
-```
-
-### Install configuration
-
-Since SSH-keys may not be present and my yubikey is not set up yet, use HTTPS to
-clone the configuration instead of SSH.
-
-```bash
-# Move generated configuration out of the way
-mv ~/.config/nixpkgs .config/nixpkgs-old
-
-# Clone repository to correct location
-git clone https://github.com/pinpox/nixos-home.git ~/.config/nixpkgs
-```
-
-### Rebuild
-
-Run:
-
-```bash
-
-# For desktops
-home-manager switch
-
-# For servers (no GUI)
-home-manager  -f .config/nixpkgs/home-server.nix switch
-```
-
-If everything went well, log out and back in. Consider changing the remote of
-the configuation repository to use SSH now instead of HTTPS.
-
-```bash
-cd ~/.config/nixpkgs
-git remote set-url origin git@github.com:pinpox/nixos-home.git
-```
-
-# TODO 
-
-- generate ~/.xinitrc
-```
-exec ~/.hm-xsession
-```
-
